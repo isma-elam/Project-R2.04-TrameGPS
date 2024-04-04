@@ -6,6 +6,7 @@
 #define LONGUEUR_LONG_LAT 11
 
 void extraireHeure (char* heure, char* const trame);
+void extraireLongitude(char* heure, char* trame);
 
 struct trameInfo {
     int nbTrame;
@@ -13,16 +14,6 @@ struct trameInfo {
     char longtitude[LONGUEUR_HEURE+1];
 };
 
-void extraireHeure (char* heure, char* const trame){
-    char* p;
-    int i = 0;
-    p=strchr(trame,',');
-    strncat(heure,p+1,LONGUEUR_HEURE);
-}
-
-int main(void){
-    char t [100]="$GPGGA,123519,4807.038,N,01131.324,E,1,08,0.9,545.4,M,46.9,M, , *42";
-    char h [LONGUEUR_HEURE]="/0";
-    extraireHeure(&h,t);
-    printf("%s\n",h);
-}
+void extraireHeure (char* heure, char* const trame);
+void extraireLongitude(char* longitude, char* trame);
+void extraireLatitude(char* latitude, char* trame);
