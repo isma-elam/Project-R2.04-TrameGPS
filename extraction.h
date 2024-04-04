@@ -15,5 +15,5 @@ struct trameInfo {
 };
 
 void extraireHeure (char* heure, char* const trame);
-void extraireLongitude(char* longitude, char* trame);
-void extraireLatitude(char* latitude, char* trame);
+void extraireLongitude(char* longitude, char* const trame);
+void extraireLatitude(char* latitude, char* const trame);

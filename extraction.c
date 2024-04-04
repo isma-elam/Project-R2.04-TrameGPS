@@ -7,7 +7,7 @@ void extraireHeure (char* heure, char* const trame){
     strncat(heure,p+1,LONGUEUR_HEURE);
 }
 
-void extraireLongitude(char* longitude, char* trame){
+void extraireLongitude(char* longitude, char* const trame){
     char* p;
     char* p2;
     int i = 0;
@@ -22,7 +22,7 @@ void extraireLongitude(char* longitude, char* trame){
     strncat(longitude,p2+1,1); 
 }
 
-void extraireLatitude(char* latitude, char* trame){
+void extraireLatitude(char* latitude, char* const trame){
     char* p;
     char* p2;
     int i = 0;
