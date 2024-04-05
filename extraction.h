@@ -5,9 +5,6 @@
 #define LONGUEUR_HEURE 6
 #define LONGUEUR_LONG_LAT 15
 
-void extraireHeure (char* heure, char* const trame);
-void extraireLongitude(char* heure, char* trame);
-
 struct trameInfo {
     int nbTrame;
     char heure[LONGUEUR_HEURE+1];
