@@ -1,5 +1,24 @@
 #include "extraction.h"
 
+void initialiserInfoTrame(struct trameInfo* t){
+    t->heure[0]='\0';
+    t->latitude[0]='\0';
+    t->longtitude[0]='\0';
+
+}
+void extraireInfoTrame(char* const tChar,struct trameInfo* t){
+    // char h [LONGUEUR_HEURE+1]="\0";
+    // char lo [LONGUEUR_LONG_LAT]="\0";
+    // char la [LONGUEUR_LONG_LAT]="\0";
+    extraireHeure(t->heure,tChar);
+    printf("Heure : %s\n",t->heure);
+    extraireLatitude(t->latitude,tChar);
+    printf("Latitude : %s\n",t->latitude);
+    // conversionHeure()
+    extraireLongitude(t->longtitude,tChar);
+    printf("Longitude : %s\n",t->longtitude);
+}
+
 void extraireHeure (char* heure, char* const trame){
     char* p;
     int i = 0;
@@ -7,22 +26,21 @@ void extraireHeure (char* heure, char* const trame){
     strncat(heure,p+1,LONGUEUR_HEURE);
 }
 
-void extraireLongitude(char* longitude, char* const trame){
+void extraireLatitude(char* latitude, char* const trame){
     char* p;
     char* p2;
-    int i = 0;
     p=strchr(trame,',');
     p=p+1;
     p=strchr(p,',');
     p=p+1;
     p2=p;
     p2=strchr(p,',');
-    strncat(longitude,p,p2-p);
-    strcat(longitude,",");
-    strncat(longitude,p2+1,1); 
+    strncat(latitude,p,p2-p);
+    strcat(latitude,",");
+    strncat(latitude,p2+1,1); 
 }
 
-void extraireLatitude(char* latitude, char* const trame){
+void extraireLongitude(char* longitude, char* const trame){
     char* p;
     char* p2;
     int i = 0;
@@ -34,7 +52,7 @@ void extraireLatitude(char* latitude, char* const trame){
     }
     p2=p;
     p2=strchr(p,',');
-    strncat(latitude,p,p2-p);
-    strcat(latitude,",");
-    strncat(latitude,p2+1,1); 
+    strncat(longitude,p,p2-p);
+    strcat(longitude,",");
+    strncat(longitude,p2+1,1); 
 }
