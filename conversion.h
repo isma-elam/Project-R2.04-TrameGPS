@@ -1,3 +1,5 @@
+#ifndef CONVERSION_H
+#define CONVERSION_H
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -19,3 +21,4 @@ struct heureInfo{
 
 void conversionLongLat(char* const dec,struct dmsInfo* d);
 void conversionHeure(char* const heure,struct heureInfo* h);
+#endif 

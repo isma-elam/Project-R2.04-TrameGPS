@@ -1,16 +1,22 @@
+SOURCES = $(wildcard *.c)
+BINAIRES = $(patsubst %.c,%.o,${SOURCES})
+
 all : main
 
-main : main.c extraction.o conversion.o affichage.o
-	gcc extraction.o conversion.o affichage.o main.c -o main -lm
+main : ${BINAIRES}
+	gcc $^ -o $@ -lm
+
+main.o : main.c
+	gcc -c $^
 
 extraction.o : extraction.c extraction.h
-	gcc extraction.c -c
+	gcc -c $<
 
 conversion.o : conversion.c conversion.h
-	gcc conversion.c -c
+	gcc -c $<
 
 affichage.o : affichage.c affichage.h
-	gcc affichage.c -c
+	gcc -c $<
 
 clean : 
 	rm *.o main
