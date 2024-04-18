@@ -18,5 +18,8 @@ conversion.o : conversion.c conversion.h
 affichage.o : affichage.c affichage.h
 	gcc -c $<
 
+chargerRep.o : chargerRep.c chargerRep.h
+	gcc -c $<
+
 clean : 
-	rm *.o main
+	rm *.o main donnees_extraites.txt

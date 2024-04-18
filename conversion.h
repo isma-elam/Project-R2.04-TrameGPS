@@ -19,6 +19,7 @@ struct heureInfo{
     int second;
 };
 
-void conversionLongLat(char* const dec,struct dmsInfo* d);
+void conversionLat(char* const dec,struct dmsInfo* d);
+void conversionLong(char* const dec,struct dmsInfo* d);
 void conversionHeure(char* const heure,struct heureInfo* h);
 #endif 

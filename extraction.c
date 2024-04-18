@@ -1,11 +1,5 @@
 #include "extraction.h"
 
-// void initialiserInfoTrame(struct trameInfo* t){
-//     t->heure[0]='\0';
-//     t->latitude[0]='\0';
-//     t->longtitude[0]='\0';
-
-// }
 void extraireInfoTrame(char* tChar,struct trameInfo* t){
     char heure [LONGUEUR_HEURE+1]="\0";
     char lo [LONGUEUR_LONG_LAT+1]="\0";
@@ -14,10 +8,10 @@ void extraireInfoTrame(char* tChar,struct trameInfo* t){
     conversionHeure(heure,&t->heure);
 
     extraireLatitude(la,tChar);
-    conversionLongLat(la,&t->latitude);
+    conversionLat(la,&t->latitude);
 
     extraireLongitude(lo,tChar);
-    conversionLongLat(lo,&t->longitude);
+    conversionLong(lo,&t->longitude);
 }
 
 void extraireHeure (char* heure, char* const trame){
