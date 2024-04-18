@@ -1,6 +1,9 @@
 #include "extraction.h"
 #include "affichage.h"
 #include "chargerRep.h"
+#include <string.h>
+
+#define LG_NOM_FICHIER 50
 
 int main(void){
     struct trameTab trameTab;
@@ -11,11 +14,15 @@ int main(void){
 
     switch (anomalie)
     {
-    case OK:
-        charger(&trameTab,&lgTramTab,"data.txt",ptRep);
+    case OK: {
+        char nomFicSource[LG_NOM_FICHIER]="\0";
+        printf("Nom du fichier source : \n");
+        scanf("%s",nomFicSource);
+        charger(&trameTab,&lgTramTab,nomFicSource,ptRep);
         ranger(trameTab,lgTramTab,"enregistrements.txt");
         printf("Extraction d'informations terminée, les données sont enregistrées dans le fichier nommé « enregistrement.txt »\n");
         break;
+    }
     case TYPE_INVALIDE:
         printf("Extraction d'information impossible : Type du format de la trame GPS NMEA 0183 n'est pas du type GPGGA.\n");
         printf("Verifier format de la trame dans le fichier source.\n");

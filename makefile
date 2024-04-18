@@ -25,4 +25,4 @@ verificationFormat.o : verificationFormat.c verificationFormat.h
 	gcc -c $<
 
 clean : 
-	rm *.o main enregistrements.txt
+	rm *.o main 

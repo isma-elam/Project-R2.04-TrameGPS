@@ -61,7 +61,7 @@ De plus nous avons utilisé GitLab car il nous a permis de suivre les modificati
 **Compilateur GCC**<br/>
 En ce qui concerne le compilateur, nous avons utilisé gcc, le suite de compilateurs C la plus largement utilisée car elle est open source est disponible gratuitement.
 
-Dans l'ensemble, la combinaison de ces outils offre un environnement de développement complet pour la construction de notre projet de manière efficace en founissant les outils pour promouvoir la qualité du code, la collaboration et la maintenabilité.
+La combinaison de ces outils offre un environnement de développement complet pour la construction de notre projet de manière efficace en founissant les outils pour promouvoir la qualité du code, la collaboration et la maintenabilité.
 
 ## Défis Rencontrés et Fonctionnalités Futures
 Tout au long de ce projet, l'un des défis rencontrés a été la gestion des données d'entrée, notamment l'analyse et la conversion des coordonnées géographiques (latitude et longitude) dans différents formats. Cependant, avec les ressources fournies dans le sujet ainsi que d'autres que nous avons répertoriées dans les références, nous avons pu mieux comprendre le sujet.
