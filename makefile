@@ -21,5 +21,8 @@ affichage.o : affichage.c affichage.h
 chargerRep.o : chargerRep.c chargerRep.h
 	gcc -c $<
 
+verificationFormat.o : verificationFormat.c verificationFormat.h
+	gcc -c $<
+
 clean : 
-	rm *.o main donnees_extraites.txt
+	rm *.o main enregistrements.txt

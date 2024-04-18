@@ -1,6 +1,15 @@
-# Project-R2.04-TrameGPS
+# Project 1 : Analyse de trames GPS
 
+## Description du Projet
+L'intérêt de ce projet est de développer une application de géolocalisation permettant d'analyse des trames GPS du type GPGGA suivant la norme NMEA 0183. Cette appliCation dispose d'un ensemble de fonctions qui permettent à l'utilisateur d'extraire et d'étudier les informations provenant des trames GPS, notamment l'heure de réception, la latitude et la longitude.
 
+**Qu'est-ce que NMEA 0183?
+NMEA 0183 est un protocole de messagerie simple utilisé pour la communication entre l'électornique marine, définie et contrôlée par National Marine Electronics Association (NMEA). Les données de ce protocole sont transmises sous forme de chaînes ASCII dans différents formats en fonction des information qu'elles peuvent fournir. 
+La structure générale des trames GPS NMEA 0183 commence par un signe $ et se termine par un retour chariot et un saut de ligne. Chaque champ de données dans la phrase étant séparé par un virgule.
+GPGGA est un format NMEA 0183 de base et courant, utilisé pour décrire les données de temps de position et de type fix.
+
+Format GPGGA : 
+<img src="https://docs.arduino.cc/static/63d81cb4391da3e616bbcfab7c9d12d8/4ef49/gps-nmea-0183_img01.png" align="center">
 
 ## Getting started
 
@@ -9,6 +18,7 @@ To make it easy for you to get started with GitLab, here's a list of recommended
 Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
 ## Add your files
+align
 
 - [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
 - [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
