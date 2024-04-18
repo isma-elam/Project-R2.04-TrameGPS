@@ -45,9 +45,10 @@ make clean
 ## Outils Utilisées
 <img align="left" alt="VSC" width="30px" style="padding-right:10px;" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"/>
 <img align="left" alt="gitlab" width="30px" style="padding-right:10px;" src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/144_Gitlab_logo_logos-512.png"/>
-<img align="left" alt="VSC" width="30px" style="padding-right:10px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnhvWjvqUnTezWbHC_IVirn00DdaXSBSp9WbIlgvqi5A&s"/>
+<img align="left" alt="VSC" width="30px" style="padding-right:10px;" src="https://banner2.cleanpng.com/20180630/twj/kisspng-gnu-compiler-collection-gnu-make-gnu-project-tor-5b3722efb121c2.3552215415303400797255.jpg"/>
 <br/>
-<br/>**Visual Studio Code (VS Code)**
+<br/>
+**Visual Studio Code (VS Code)**
 Pour ce projet nous avons utilisé Visual Studio Code (VS Code) comme environnement de développement intégré (IDE) car il est très polyvalent et personnalisable. Nous avons pu utiliser le terminal ainsi que GitLab car VS Code s'intègre à Git. Cela nous a permis d'avoir une interface utilisateur conviviale, une large gamme d'extensions et un contrôle de cersion efficace dans l'IDE.
 
 **GitLab**
