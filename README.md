@@ -46,9 +46,9 @@ make clean
 Les données contenant plusieurs trames GPS sont d'abord lues à partir d'un document fourni par l'utilisateur (un exemple du fichier nommé "data.txt" est donné). Les trames sont traitées une par une en vérifiant le type de trame en vérifiant le type de trame et en s'assurant qu'elle comporte au moins 15 champs. Ensuite, les informations pertinentes, à savoir l'heure de réception, la longitude et la latitude, sont extraites et testées pour leur format. Ensuite, la longitude et la latitude sont converties du format décimal au format degré. L'heure de réception est également formatée. Enfine, les informations traitées sont stockées dans un autre fichier nommé "enregistrement.txt".
 
 ## Outils Utilisées
-<img alt="VSC" width="30px" style="margin-right:100px;" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"/>
-<img alt="gitlab" width="30px" style="margin-right:100px; float: left;" src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/144_Gitlab_logo_logos-512.png"/>
-<img alt="VSC" width="30px" style="margin-right:100px; float:left;" src="https://miro.medium.com/v2/resize:fit:512/1*ucKJplvEklLYDMUMCkax3Q.png"/>
+<img alt="VSC" width="30px" style="margin-right:300px;" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"/>
+<img alt="gitlab" width="30px" style="margin-right:300px;" src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/144_Gitlab_logo_logos-512.png"/>
+<img alt="VSC" width="30px" style="margin-right:300px;" src="https://miro.medium.com/v2/resize:fit:512/1*ucKJplvEklLYDMUMCkax3Q.png"/>
 <br/>
 <br/>
 
