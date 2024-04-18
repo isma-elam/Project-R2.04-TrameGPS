@@ -4,7 +4,7 @@
 L'intérêt de ce projet est de développer une application de géolocalisation permettant d'analyse des trames GPS du type GPGGA suivant la norme NMEA 0183. Cette appliCation dispose d'un ensemble de fonctions qui permettent à l'utilisateur d'extraire et d'étudier les informations provenant des trames GPS, notamment l'heure de réception, la latitude et la longitude.
 
 **Qu'est-ce que NMEA 0183?**
-\nNMEA 0183 est un protocole de messagerie simple utilisé pour la communication entre l'électornique marine, définie et contrôlée par National Marine Electronics Association (NMEA). Les données de ce protocole sont transmises sous forme de chaînes ASCII dans différents formats en fonction des information qu'elles peuvent fournir. 
+<br/>NMEA 0183 est un protocole de messagerie simple utilisé pour la communication entre l'électornique marine, définie et contrôlée par National Marine Electronics Association (NMEA). Les données de ce protocole sont transmises sous forme de chaînes ASCII dans différents formats en fonction des information qu'elles peuvent fournir. 
 La structure générale des trames GPS NMEA 0183 commence par un signe $ et se termine par un retour chariot et un saut de ligne. Chaque champ de données dans la phrase étant séparé par un virgule.
 GPGGA est un format NMEA 0183 de base et courant, utilisé pour décrire les données de temps de position et de type fix.
 
@@ -45,7 +45,7 @@ make clean
 ## Outils Utilisées
 <img align="left" alt="Java" width="30px" style="padding-right:10px;" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"/>
 
-\n**Visual Studio Code (VS Code)**
+<br/>**Visual Studio Code (VS Code)**
 Pour ce projet nous avons utilisé Visual Studio Code (VS Code) comme environnement de développement intégré (IDE) car il est très polyvalent et personnalisable. Nous avons pu utiliser le terminal ainsi que GitLab car VS Code s'intègre à Git. Cela nous a permis d'avoir une interface utilisateur conviviale, une large gamme d'extensions et un contrôle de cersion efficace dans l'IDE.
 
 **GitLab**
