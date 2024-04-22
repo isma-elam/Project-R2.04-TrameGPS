@@ -13,6 +13,7 @@ void charger(struct trameTab* trameTab,int* nb,char nomFic[],jmp_buf ptRep){
             if(ligne[strlen(ligne)-1]=='\n'){
                 ligne[strlen(ligne)-1]=='\0';
             }
+            verifier_nombre_champs(ligne,ptRep);
             verifier_type_trame(ligne,ptRep);
             verifier_format_heure(ligne,ptRep);      
             extraireInfoTrame(ligne,&tInfo);
