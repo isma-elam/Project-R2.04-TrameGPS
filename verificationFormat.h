@@ -11,7 +11,8 @@ typedef enum{
     NB_CHAMPS_INVALIDE,
     FORMAT_HEURE_INVALIDE,
     LATITUDE_INVALIDE,
-    LONGITUDE_INVALIDE
+    LONGITUDE_INVALIDE,
+    CHEMIN_INVALIDE
 } Exception;
 
 void verifier_type_trame(char* trame,jmp_buf ptRep);

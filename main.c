@@ -15,12 +15,27 @@ int main(void){
     switch (anomalie)
     {
     case OK: {
+        int choix=0;
+        choix=affichageMenu();
         char nomFicSource[LG_NOM_FICHIER]="\0";
-        printf("Nom du fichier source : \n");
-        scanf("%s",nomFicSource);
-        charger(&trameTab,&lgTramTab,nomFicSource,ptRep);
-        ranger(trameTab,lgTramTab,"enregistrements.txt");
-        printf("Extraction d'informations terminée, les données sont enregistrées dans le fichier nommé « enregistrement.txt »\n");
+        switch(choix){
+            case 0:
+                printf("Merci. Au revoir!\n");
+                break;
+            case 1:
+                printf("Veuillez entrer les trames GPS une par une, suivies d'un appui sur la touche Entrée\n");
+                lireDonnees(&trameTab,&lgTramTab,nomFicSource,ptRep);
+                ranger(trameTab,lgTramTab,"enregistrements.txt");
+                break;
+            case 2:
+                printf("Nom du chemin du fichier source : \n");
+                scanf("%s",nomFicSource);
+                charger(&trameTab,&lgTramTab,nomFicSource,ptRep);
+                ranger(trameTab,lgTramTab,"enregistrements.txt");
+                printf("Extraction d'informations terminée, les données sont enregistrées dans le fichier nommé « enregistrement.txt »\n");
+                break;
+        }
+        
         break;
     }
     case TYPE_INVALIDE:

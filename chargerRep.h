@@ -17,4 +17,5 @@ struct trameTab {
 
 void charger(struct trameTab* trameTab,int* nb,char nomFic[],jmp_buf ptRep);
 void ranger(struct trameTab trameTab,int nb,char nomFic[]);
+void lireDonnees(struct trameTab* trameTab,int* nb,char nomFic[],jmp_buf ptRep);
 #endif

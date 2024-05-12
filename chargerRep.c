@@ -7,8 +7,9 @@ void charger(struct trameTab* trameTab,int* nb,char nomFic[],jmp_buf ptRep){
     struct trameInfo tInfo;
     if (file==NULL){
         printf("Impossible d'ouvrir en lecture le fichier %s\n",nomFic);
+        longjmp(ptRep,CHEMIN_INVALIDE);
     }else{ 
-        char ligne[100]="\0";
+        char ligne[200]="\0";
         while (fgets(ligne, sizeof(ligne), file) != NULL && *nb < LONGUEUR_TRAME){
             if(ligne[strlen(ligne)-1]=='\n'){
                 ligne[strlen(ligne)-1]=='\0';
@@ -21,13 +22,28 @@ void charger(struct trameTab* trameTab,int* nb,char nomFic[],jmp_buf ptRep){
             verifier_latitude(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,ptRep);
             verifier_longitude(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,ptRep);
             trameTab->trame[*nb]=tInfo;
-            // affichageHeure(trameTab->trame[*nb].heure);
-            // affichageLongLat(trameTab->trame[*nb].latitude);
-            // affichageLongLat(trameTab->trame[*nb].longitude);
             (*nb)++;  
         }
     }
     fclose(file);
+}
+
+void lireDonnees(struct trameTab* trameTab,int* nb,char nomFic[],jmp_buf ptRep){
+    char ligne[200]="\0";
+    struct trameInfo tInfo;
+    scanf("%s",ligne);
+    printf("%s\n",ligne);
+    if(ligne[strlen(ligne)-1]=='\n'){
+        ligne[strlen(ligne)-1]=='\0';
+    }
+    verifier_nombre_champs(ligne,ptRep);
+    verifier_type_trame(ligne,ptRep);
+    verifier_format_heure(ligne,ptRep);      
+    extraireInfoTrame(ligne,&tInfo);
+    verifier_heure_min_sec(tInfo.heure.heure,tInfo.heure.minute,tInfo.heure.second,ptRep);
+    verifier_latitude(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,ptRep);
+    verifier_longitude(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,ptRep);
+    trameTab->trame[*nb]=tInfo;
 }
 
 void ranger(struct trameTab trameTab,int nb,char nomFic[]){
