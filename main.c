@@ -1,3 +1,29 @@
+/******************************************************************************
+*  ASR => 4R2.04                                                              *
+*******************************************************************************
+*                                                                             *
+*  N° de Sujet : 1                                                            *
+*                                                                             *
+*******************************************************************************
+*                                                                             *
+*  Intitulé : Analyse de trames GPS                                           *
+*                                                                             *
+*******************************************************************************
+*                                                                             *
+*  Nom-prénom1 : EE Ellisa                                                    *
+*                                                                             *
+*  Nom-prénom2 : EL-AMRANI Ismaël                                             *
+*                                                                             *
+*  Nom-prénom3 :                                                              *
+*                                                                             *
+*  Nom-prénom4 :                                                              *
+*                                                                             *
+*******************************************************************************
+*                                                                             *
+*  Nom du fichier : main.c                                                    *
+*                                                                             *
+******************************************************************************/
+
 #include "extraction.h"
 #include "affichage.h"
 #include "chargerRep.h"
@@ -15,17 +41,18 @@ int main(void){
     switch (anomalie)
     {
     case OK: {
-        int choix=0;
-        choix=affichageMenu();
+        int choix=affichageMenu();
         char nomFicSource[LG_NOM_FICHIER]="\0";
+
         switch(choix){
             case 0:
                 printf("Merci. Au revoir!\n");
                 break;
             case 1:
-                printf("Veuillez entrer les trames GPS une par une, suivies d'un appui sur la touche Entrée\n");
+                printf("Veuillez entrer les trames GPS une par une, suivies d'un appui sur la touche Entrée. Pour terminer, veuillez entrer \"exit\".\n");
                 lireDonnees(&trameTab,&lgTramTab,nomFicSource,ptRep);
                 ranger(trameTab,lgTramTab,"enregistrements.txt");
+                printf("Extraction d'informations terminée, les données sont enregistrées dans le fichier nommé « enregistrement.txt »\n");
                 break;
             case 2:
                 printf("Nom du chemin du fichier source : \n");
@@ -35,7 +62,18 @@ int main(void){
                 printf("Extraction d'informations terminée, les données sont enregistrées dans le fichier nommé « enregistrement.txt »\n");
                 break;
         }
-        
+
+        int choixAffichage=affichageDonneesChoix();
+
+        switch(choixAffichage){
+            case 0:
+                printf("Vous pouvez consulter les données dans le fichier nommé « enregistrement.txt »\n");
+                printf("Merci. Au revoir!\n");
+                break;
+            case 1:
+                affichageDonneesFichier("enregistrements.txt");
+                break;
+        }
         break;
     }
     case TYPE_INVALIDE:

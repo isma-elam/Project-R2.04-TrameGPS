@@ -5,7 +5,6 @@ L'intérêt de ce projet est de développer une application de géolocalisation 
 
 **Qu'est-ce que NMEA 0183?**
 <br/>NMEA 0183 est un protocole de messagerie simple utilisé pour la communication entre l'électornique marine, définie et contrôlée par National Marine Electronics Association (NMEA). Les données de ce protocole sont transmises sous forme de chaînes ASCII dans différents formats en fonction des information qu'elles peuvent fournir. 
-La structure générale des trames GPS NMEA 0183 commence par un signe $ et se termine par un retour chariot et un saut de ligne. Chaque champ de données dans la phrase étant séparé par un virgule.
 GPGGA est un format NMEA 0183 de base et courant, utilisé pour décrire les données de temps de position et de type fix.
 
 Format GPGGA : 

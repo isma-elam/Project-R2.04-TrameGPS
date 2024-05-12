@@ -1,3 +1,29 @@
+/******************************************************************************
+*  ASR => 4R2.04                                                              *
+*******************************************************************************
+*                                                                             *
+*  N° de Sujet : 1                                                            *
+*                                                                             *
+*******************************************************************************
+*                                                                             *
+*  Intitulé : Analyse de trames GPS                                           *
+*                                                                             *
+*******************************************************************************
+*                                                                             *
+*  Nom-prénom1 : EE Ellisa                                                    *
+*                                                                             *
+*  Nom-prénom2 : EL-AMRANI Ismaël                                             *
+*                                                                             *
+*  Nom-prénom3 :                                                              *
+*                                                                             *
+*  Nom-prénom4 :                                                              *
+*                                                                             *
+*******************************************************************************
+*                                                                             *
+*  Nom du fichier : affichage.c                                               *
+*                                                                             *
+******************************************************************************/
+
 #include "affichage.h"
 #include "conversion.h"
 
@@ -22,4 +48,37 @@ int affichageMenu(){
             scanf("%d",&choix);
         } 
     return choix;
+}
+
+int affichageDonneesChoix(){
+    int choixAffichage=0;
+    printf("Voulez-vouz afficher les données? 1 - oui, 0 - non\n");
+    scanf("%d",&choixAffichage);
+    while (choixAffichage!=1 && choixAffichage!=0){
+        printf("Veillez entrer votre choix.\n");
+        printf("Voulez-vouz afficher les données? 1 - oui, 0 - non\n");
+        scanf("%d",&choixAffichage);
+    }
+    return choixAffichage;
+}
+
+void affichageDonneesFichier(char nomFic[]){
+    printf("\nContenu du fichier \"%s\" : \n",nomFic);
+    FILE* file;
+    file = fopen(nomFic,"r");
+    if (file==NULL){
+        printf("Impossible d'ouvrir en lecture le fichier %s\n",nomFic);
+    }
+    char c;
+    if (c == EOF) {
+        printf("File is empty or couldn't be read.\n");
+        fclose(file);
+    }
+    printf("%c",c);
+    while (c != EOF){
+        printf("%c",c);
+        c=fgetc(file);
+    }
+    fclose(file);
+    
 }
