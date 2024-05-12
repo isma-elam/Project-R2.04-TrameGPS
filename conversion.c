@@ -77,6 +77,4 @@ void conversionHeure(char* const heure,struct heureInfo* h){
     strncat(secondChar,heure+4,2);
     h->heure=strtol(heureChar,NULL,10);
     h->minute=strtol(minuteChar,NULL,10);
-    h->second=strtol(secondChar,NULL,10);
-    // printf("h:%d  m:%d  s:%d\n",h->heure,h->minute,h->second);
 }

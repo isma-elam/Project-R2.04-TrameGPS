@@ -1,0 +1,69 @@
+\hypertarget{md_README_autotoc_md1}{}\doxysection{Description du Projet}\label{md_README_autotoc_md1}
+L\textquotesingle{}intérêt de ce projet est de développer une application de géolocalisation permettant d\textquotesingle{}analyse des trames GPS du {\bfseries{type GPGGA}} suivant la norme NMEA 0183. Cette application dispose d\textquotesingle{}un ensemble de fonctions qui permettent à l\textquotesingle{}utilisateur d\textquotesingle{}extraire et d\textquotesingle{}étudier les informations provenant des trames GPS, notamment l\textquotesingle{}heure de réception, la latitude et la longitude.
+
+{\bfseries{Qu\textquotesingle{}est-\/ce que NMEA 0183?}} ~\newline
+NMEA 0183 est un protocole de messagerie simple utilisé pour la communication entre l\textquotesingle{}électornique marine, définie et contrôlée par National Marine Electronics Association (NMEA). Les données de ce protocole sont transmises sous forme de chaînes ASCII dans différents formats en fonction des information qu\textquotesingle{}elles peuvent fournir. GPGGA est un format NMEA 0183 de base et courant, utilisé pour décrire les données de temps de position et de type fix.
+
+Format GPGGA \+: \hypertarget{md_README_autotoc_md2}{}\doxysection{Installation}\label{md_README_autotoc_md2}
+{\bfseries{Prérequis}}  
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}d\textquotesingle{}exploitaiton \+: cette application est compatible avec Windows, mac\+OS et Linux. 
+
+{\bfseries{Installation}}
+\begin{DoxyEnumerate}
+\item Clonez le dépôt 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://gitlab.info.iut-\/tlse3.fr/wwl4521a/project-\/r2.04-\/tramegps.git}
+
+\end{DoxyCode}
+
+\item Naviguez jusqu\textquotesingle{}au répertoire du projet 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd repertoireProjet}
+
+\end{DoxyCode}
+
+\item Utilisez le Makefile pour compiler le code source 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make}
+
+\end{DoxyCode}
+
+\item Pour supprimer les fichiers supplémentaires 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make clean}
+
+\end{DoxyCode}
+ {\bfseries{Utilisation d\textquotesingle{}application}}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Créez un fichier avec vos données stockées dedans, un exemple est donné dans le fichier data.\+txt.
+\item Exécutez le programme compilé\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./main}
+
+\end{DoxyCode}
+
+\item Suivez les instructions pour interagir avec l\textquotesingle{}application. Vous devez saisir le nom de votre dossier. Les données extraites seront ensuite enregistrées dans un dossier appelé \char`\"{}enregistrements.\+txt\char`\"{} dans votre répertoire de travail.
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md3}{}\doxysection{Comment cet application fonctionne-\/t-\/il?}\label{md_README_autotoc_md3}
+Les données contenant plusieurs trames GPS sont d\textquotesingle{}abord lues à partir d\textquotesingle{}un document fourni par l\textquotesingle{}utilisateur (un exemple du fichier nommé \char`\"{}data.\+txt\char`\"{} est donné). Les trames sont traitées une par une en vérifiant le type de trame en vérifiant le type de trame et en s\textquotesingle{}assurant qu\textquotesingle{}elle comporte au moins 15 champs. Ensuite, les informations pertinentes, à savoir l\textquotesingle{}heure de réception, la longitude et la latitude, sont extraites et testées pour leur format. Ensuite, la longitude et la latitude sont converties du format décimal au format degré. L\textquotesingle{}heure de réception est également formatée. Enfine, les informations traitées sont stockées dans un autre fichier nommé \char`\"{}enregistrement.\+txt\char`\"{}.\hypertarget{md_README_autotoc_md4}{}\doxysection{Outils Utilisées}\label{md_README_autotoc_md4}
+   ~\newline
+ ~\newline
+
+
+{\bfseries{Visual Studio Code (VS Code)}}~\newline
+ Pour ce projet nous avons utilisé Visual Studio Code (VS Code) comme environnement de développement intégré (IDE) car il est très polyvalent et personnalisable. Nous avons pu utiliser le terminal ainsi que Git\+Lab car VS Code s\textquotesingle{}intègre à Git. Cela nous a permis d\textquotesingle{}avoir une interface utilisateur conviviale, une large gamme d\textquotesingle{}extensions et un contrôle de cersion efficace dans l\textquotesingle{}IDE.
+
+{\bfseries{Git\+Lab}}~\newline
+ De plus nous avons utilisé Git\+Lab car il nous a permis de suivre les modifications tout au long ce projet et de collaborer avec les membre de l\textquotesingle{}équipe, ce qui nous a permis de collaborer, de faire des revues de code et de suivre les problèmes de fusion.
+
+{\bfseries{Compilateur GCC}}~\newline
+ En ce qui concerne le compilateur, nous avons utilisé gcc, le suite de compilateurs C la plus largement utilisée car elle est open source est disponible gratuitement.
+
+La combinaison de ces outils offre un environnement de développement complet pour la construction de notre projet de manière efficace en founissant les outils pour promouvoir la qualité du code, la collaboration et la maintenabilité.\hypertarget{md_README_autotoc_md5}{}\doxysection{Défis Rencontrés et Fonctionnalités Futures}\label{md_README_autotoc_md5}
+Tout au long de ce projet, l\textquotesingle{}un des défis rencontrés a été la gestion des données d\textquotesingle{}entrée, notamment l\textquotesingle{}analyse et la conversion des coordonnées géographiques (latitude et longitude) dans différents formats. Cependant, avec les ressources fournies dans le sujet ainsi que d\textquotesingle{}autres que nous avons répertoriées dans les références, nous avons pu mieux comprendre le sujet.
+
+Nous avons également rencontré des difficultés avec l\textquotesingle{}utilisation de Git\+Lab sur VS Code car nous sommes assez nouveaux dans ce domaine. Bien que cela ait ralenti notre rythme au début de notre projet, la maîtrise de l\textquotesingle{}utilisation de Git\+Lab nous a permis de collaborer plus efficacement car nous pouvons travailler virtuellement sur le même projet et fusionner nos codes.
+
+Comme notre projet se concentre uniquement sur l\textquotesingle{}analyse des trames GPS de type GPGGA, nous espérons à l\textquotesingle{}avenir pouvoir développer davantage notre application pour pouvoir traiter d\textquotesingle{}autres formats tels que GPGLL, GPGSA, GPGSV, etc. 

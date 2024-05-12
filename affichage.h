@@ -27,16 +27,45 @@
 #ifndef AFFICHAGE_H
 #define AFFICHAGE_H
 
+/**
+ * @file affichage.h
+ * @author Ellisa EE
+ * @brief 
+ * @version 0.1
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 #include "conversion.h"
 #include <stdio.h>
 
-void affichageLongLat(struct dmsInfo d);
-
-void affichageHeure(struct heureInfo h);
-
+/**
+ * @brief Affiche le menu et permet à l'utilisateur de choisir une méthode pour lire les données
+ * 
+ * Affiche un menu avec les options disponibles pour lire les trames GPS
+ * L'utilisateur peut choisir de saisr les données manuellement, de les lire à partir d'un fichier en donnant son chemin ou de quitter l'application
+ * 
+ * @return Le choix de l'utilisateur (0 pour auitter, 1 pour saisir manuellement, 2 pour lire à partir d'un fichier)
+ */
 int affichageMenu();
 
+/**
+ * @brief Permet à l'utilisateur de choisir s'il souhaite afficher le résultat de l'analyse de trames GPS données.
+ * 
+ * Demande à l'utilisateur s'il souhaite afficher les données.
+ * L'utilisateur peut répondre par oui (1) ou non (0).
+ * 
+ * @return Le choix de l'utilisateur (1 pour oui, 0 pour non).
+ */
 int affichageDonneesChoix();
 
+/**
+ * @brief Affiche le contenu du fichier contenant le résultat de l'analyse de trames GPS.
+ * 
+ * Affiche le contenu du fichier contenant le résultat de l'analyse de trames GPS.
+ * Si le fichier ne peut pas être ouvert en lecture, affiche un message d'erreur.
+ * 
+ * @param nomFic Le nom du fichier à afficher contenant le résultat de l'analyse de trames GPS.
+ */
 void affichageDonneesFichier(char nomFic[]);
 #endif 

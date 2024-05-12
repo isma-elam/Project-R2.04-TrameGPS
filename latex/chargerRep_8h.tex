@@ -1,0 +1,207 @@
+\hypertarget{chargerRep_8h}{}\doxysection{charger\+Rep.\+h File Reference}
+\label{chargerRep_8h}\index{chargerRep.h@{chargerRep.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$setjmp.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}extraction.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}verification\+Format.\+h\char`\"{}}\newline
+Include dependency graph for charger\+Rep.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtrameTab}{trame\+Tab}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{chargerRep_8h_a1cbef1b0680751f9779242549c60e23c}\label{chargerRep_8h_a1cbef1b0680751f9779242549c60e23c}} 
+\#define {\bfseries LONGUEUR\+\_\+\+TRAME}~100
+\item 
+\mbox{\Hypertarget{chargerRep_8h_a32fcc9ac4b5952235690c2557deedcf9}\label{chargerRep_8h_a32fcc9ac4b5952235690c2557deedcf9}} 
+\#define {\bfseries MAX\+\_\+\+NUM\+\_\+\+TRAME}~50
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{chargerRep_8h_a8102fa3dc464cd1b163071bc0163affb}{charger}} (struct \mbox{\hyperlink{structtrameTab}{trame\+Tab}} $\ast$\mbox{\hyperlink{structtrameTab}{trame\+Tab}}, int $\ast$nb, char nom\+Fic\mbox{[}$\,$\mbox{]}, jmp\+\_\+buf pt\+Rep)
+\begin{DoxyCompactList}\small\item\em Charge les données à partir d\textquotesingle{}un fichier dans une structure de trames. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{chargerRep_8h_ae3401947b2cc31b6673b5501b150f4a4}{lire\+Donnees}} (struct \mbox{\hyperlink{structtrameTab}{trame\+Tab}} $\ast$\mbox{\hyperlink{structtrameTab}{trame\+Tab}}, int $\ast$nb, char nom\+Fic\mbox{[}$\,$\mbox{]}, jmp\+\_\+buf pt\+Rep)
+\begin{DoxyCompactList}\small\item\em Lit les données à partir de l\textquotesingle{}entrée standard et les stocke dans une structure de trames. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{chargerRep_8h_ad9d1bf5c650879e63b81f71e39d22a5b}{ranger}} (struct \mbox{\hyperlink{structtrameTab}{trame\+Tab}} \mbox{\hyperlink{structtrameTab}{trame\+Tab}}, int nb, char nom\+Fic\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Enregistre les données d\textquotesingle{}une structure de trames dans un fichier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Ellisa EE 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{chargerRep_8h_a8102fa3dc464cd1b163071bc0163affb}\label{chargerRep_8h_a8102fa3dc464cd1b163071bc0163affb}} 
+\index{chargerRep.h@{chargerRep.h}!charger@{charger}}
+\index{charger@{charger}!chargerRep.h@{chargerRep.h}}
+\doxysubsubsection{\texorpdfstring{charger()}{charger()}}
+{\footnotesize\ttfamily void charger (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structtrameTab}{trame\+Tab}} $\ast$}]{trame\+Tab,  }\item[{int $\ast$}]{nb,  }\item[{char}]{nom\+Fic\mbox{[}$\,$\mbox{]},  }\item[{jmp\+\_\+buf}]{pt\+Rep }\end{DoxyParamCaption})}
+
+
+
+Charge les données à partir d\textquotesingle{}un fichier dans une structure de trames. 
+
+Cette fonction lit les données à partir d\textquotesingle{}un fichier spécifié par son nom et les charge dans une structure de trames. Cette structure est comprise d\textquotesingle{}un tableau de trames et un numéro pour indiquer le nombre de trames stockés. Elle vérifie également la validité des données (nombre de champs, type de trame, format de l\textquotesingle{}heure) en appelant d\textquotesingle{}autres fonctions de vérification.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structtrameTab}{trame\+Tab}}} & Pointeur vers la structure de trames où stocker les données. \\
+\hline
+{\em nb} & Pointeur vers le nombre de trames chargées. \\
+\hline
+{\em nom\+Fic} & Le nom du fichier à partir duquel lire les données. \\
+\hline
+{\em pt\+Rep} & Pointeur vers le point de reprise pour la gestion des erreurs avec longjmp. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file charger\+Rep.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29                                                                            \{}
+\DoxyCodeLine{30     FILE* file;}
+\DoxyCodeLine{31     *nb=0;}
+\DoxyCodeLine{32     file = fopen(nomFic,\textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{33     \textcolor{keyword}{struct }\mbox{\hyperlink{structtrameInfo}{trameInfo}} tInfo;}
+\DoxyCodeLine{34     \textcolor{keywordflow}{if} (file==NULL)\{}
+\DoxyCodeLine{35         printf(\textcolor{stringliteral}{"{}Impossible d'ouvrir en lecture le fichier \%s\(\backslash\)n"{}},nomFic);}
+\DoxyCodeLine{36         longjmp(ptRep,CHEMIN\_INVALIDE);}
+\DoxyCodeLine{37     \}\textcolor{keywordflow}{else}\{ }
+\DoxyCodeLine{38         \textcolor{keywordtype}{char} ligne[200]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{39         \textcolor{keywordflow}{while} (fgets(ligne, \textcolor{keyword}{sizeof}(ligne), file) != NULL \&\& *nb < LONGUEUR\_TRAME)\{}
+\DoxyCodeLine{40             \textcolor{keywordflow}{if}(ligne[strlen(ligne)-\/1]==\textcolor{charliteral}{'\(\backslash\)n'})\{}
+\DoxyCodeLine{41                 ligne[strlen(ligne)-\/1]==\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{42             \}}
+\DoxyCodeLine{43             verifier\_nombre\_champs(ligne,ptRep);}
+\DoxyCodeLine{44             verifier\_type\_trame(ligne,ptRep);}
+\DoxyCodeLine{45             verifier\_format\_heure(ligne,ptRep);      }
+\DoxyCodeLine{46             extraireInfoTrame(ligne,\&tInfo);}
+\DoxyCodeLine{47             verifier\_heure\_min\_sec(tInfo.heure.heure,tInfo.heure.minute,tInfo.heure.second,ptRep);}
+\DoxyCodeLine{48             verifier\_latitude(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,ptRep);}
+\DoxyCodeLine{49             verifier\_longitude(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,ptRep);}
+\DoxyCodeLine{50             \mbox{\hyperlink{structtrameTab}{trameTab}}-\/>trame[*nb]=tInfo;}
+\DoxyCodeLine{51             (*nb)++;  }
+\DoxyCodeLine{52         \}}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54     fclose(file);}
+\DoxyCodeLine{55 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{chargerRep_8h_ae3401947b2cc31b6673b5501b150f4a4}\label{chargerRep_8h_ae3401947b2cc31b6673b5501b150f4a4}} 
+\index{chargerRep.h@{chargerRep.h}!lireDonnees@{lireDonnees}}
+\index{lireDonnees@{lireDonnees}!chargerRep.h@{chargerRep.h}}
+\doxysubsubsection{\texorpdfstring{lireDonnees()}{lireDonnees()}}
+{\footnotesize\ttfamily void lire\+Donnees (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structtrameTab}{trame\+Tab}} $\ast$}]{trame\+Tab,  }\item[{int $\ast$}]{nb,  }\item[{char}]{nom\+Fic\mbox{[}$\,$\mbox{]},  }\item[{jmp\+\_\+buf}]{pt\+Rep }\end{DoxyParamCaption})}
+
+
+
+Lit les données à partir de l\textquotesingle{}entrée standard et les stocke dans une structure de trames. 
+
+Cette fonction lit les données à partir de l\textquotesingle{}entrée standard (clavier) et les stocke dans une structure de trames. Cette structure est comprise d\textquotesingle{}un tableau de trames et un numéro pour indiquer le nombre de trames stockés. Elle vérifie également la validité des données (nombre de champs, type de trame, format de l\textquotesingle{}heure) en appelant d\textquotesingle{}autres fonctions de vérification.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structtrameTab}{trame\+Tab}}} & Pointeur vers la structure de trames où stocker les données. \\
+\hline
+{\em nb} & Pointeur vers le nombre de trames lues. \\
+\hline
+{\em nom\+Fic} & Le nom du fichier à partir duquel lire les données. \\
+\hline
+{\em pt\+Rep} & Pointeur vers le point de reprise pour la gestion des erreurs avec longjmp. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file charger\+Rep.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57                                                                                \{}
+\DoxyCodeLine{58     \textcolor{keywordtype}{char} ligne[200];}
+\DoxyCodeLine{59     *nb=0;}
+\DoxyCodeLine{60     \textcolor{keyword}{struct }\mbox{\hyperlink{structtrameInfo}{trameInfo}} tInfo;}
+\DoxyCodeLine{61     scanf(\textcolor{stringliteral}{"{} \%[\string^\(\backslash\)n]"{}},ligne);}
+\DoxyCodeLine{62     \textcolor{keywordflow}{if}(ligne[strlen(ligne)-\/1]==\textcolor{charliteral}{'\(\backslash\)n'})\{}
+\DoxyCodeLine{63         ligne[strlen(ligne)-\/1]==\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{64     \}}
+\DoxyCodeLine{65     \textcolor{keywordflow}{while} (strcmp(ligne,\textcolor{stringliteral}{"{}exit"{}})!=0 \&\& *nb < LONGUEUR\_TRAME)\{}
+\DoxyCodeLine{66         verifier\_nombre\_champs(ligne,ptRep);}
+\DoxyCodeLine{67         verifier\_type\_trame(ligne,ptRep);}
+\DoxyCodeLine{68         verifier\_format\_heure(ligne,ptRep);      }
+\DoxyCodeLine{69         extraireInfoTrame(ligne,\&tInfo);}
+\DoxyCodeLine{70         verifier\_heure\_min\_sec(tInfo.heure.heure,tInfo.heure.minute,tInfo.heure.second,ptRep);}
+\DoxyCodeLine{71         verifier\_latitude(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,ptRep);}
+\DoxyCodeLine{72         verifier\_longitude(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,ptRep);}
+\DoxyCodeLine{73         \mbox{\hyperlink{structtrameTab}{trameTab}}-\/>trame[*nb]=tInfo;}
+\DoxyCodeLine{74         (*nb)++;}
+\DoxyCodeLine{75         scanf(\textcolor{stringliteral}{"{} \%[\string^\(\backslash\)n]"{}},ligne);}
+\DoxyCodeLine{76         \textcolor{keywordflow}{if}(ligne[strlen(ligne)-\/1]==\textcolor{charliteral}{'\(\backslash\)n'})\{}
+\DoxyCodeLine{77             ligne[strlen(ligne)-\/1]==\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{78         \}}
+\DoxyCodeLine{79     \}    }
+\DoxyCodeLine{80 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{chargerRep_8h_ad9d1bf5c650879e63b81f71e39d22a5b}\label{chargerRep_8h_ad9d1bf5c650879e63b81f71e39d22a5b}} 
+\index{chargerRep.h@{chargerRep.h}!ranger@{ranger}}
+\index{ranger@{ranger}!chargerRep.h@{chargerRep.h}}
+\doxysubsubsection{\texorpdfstring{ranger()}{ranger()}}
+{\footnotesize\ttfamily void ranger (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structtrameTab}{trame\+Tab}}}]{trame\+Tab,  }\item[{int}]{nb,  }\item[{char}]{nom\+Fic\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Enregistre les données d\textquotesingle{}une structure de trames dans un fichier. 
+
+Cette fonction enregistre les données contenues dans une structure de trames dans un fichier spécifié par son nom. Les données sont écrites dans un format spécifique pour chaque trame. Exemple du format \+: Heure \+: 13h35m19s ; Latitude \+: 48°7\textquotesingle{}2.\+28\char`\"{} ; Longitude \+: 11°31\textquotesingle{}19.\+44\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structtrameTab}{trame\+Tab}}} & La structure de trames contenant les données à enregistrer. \\
+\hline
+{\em nb} & Le nombre de trames à enregistrer. \\
+\hline
+{\em nom\+Fic} & Le nom du fichier où enregistrer les données. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file charger\+Rep.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82                                                           \{}
+\DoxyCodeLine{83     FILE* file;}
+\DoxyCodeLine{84     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{85     file = fopen(nomFic,\textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{86     \textcolor{keywordflow}{if} (file == NULL)\{}
+\DoxyCodeLine{87         printf(\textcolor{stringliteral}{"{}Impossible d'ouvrir en ecriture le fichier \%s\(\backslash\)n"{}},nomFic);}
+\DoxyCodeLine{88     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{89         \textcolor{keywordflow}{for} (i = 0 ; i < nb ; i++)\{}
+\DoxyCodeLine{90             fprintf(file,\textcolor{stringliteral}{"{}Heure : \%dh\%dm\%ds ; Latitude : \%d°\%d\(\backslash\)'\%.2f\(\backslash\)"{} ; Longitude : \%d°\%d\(\backslash\)'\%.2f\(\backslash\)"{}\(\backslash\)n"{}},}
+\DoxyCodeLine{91             \mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].heure.heure,\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].heure.minute,\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].heure.second,}
+\DoxyCodeLine{92             \mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].latitude.degre,\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].latitude.minute,\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].latitude.second,}
+\DoxyCodeLine{93             \mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].longitude.degre,\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].longitude.minute,\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].longitude.second);}
+\DoxyCodeLine{94         \}}
+\DoxyCodeLine{95     \}}
+\DoxyCodeLine{96     fclose(file);}
+\DoxyCodeLine{97 \}}
+
+\end{DoxyCode}
