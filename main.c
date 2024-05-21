@@ -47,7 +47,7 @@ int main(void){
     jmp_buf ptRep;
     Exception anomalie;
     anomalie=setjmp(ptRep);
-
+    int exit=0;
     switch (anomalie)
     {
     case OK: {
@@ -61,28 +61,39 @@ int main(void){
             case 1:
                 printf("Veuillez entrer les trames GPS une par une, suivies d'un appui sur la touche Entrée. Pour terminer, veuillez entrer \"exit\".\n");
                 lireDonnees(&trameTab,&lgTramTab,nomFicSource,ptRep);
-                ranger(trameTab,lgTramTab,"enregistrements.txt");
-                printf("Extraction d'informations terminée, les données sont enregistrées dans le fichier nommé « enregistrement.txt »\n");
+                if (lgTramTab==0){
+                    printf("Pas de trame GPS données. Merci. Au revoir!\n");
+                    exit=1;
+                }else{
+                    ranger(trameTab,lgTramTab,"enregistrements.txt");
+                    printf("Extraction d'informations terminée, les données sont enregistrées dans le fichier nommé « enregistrement.txt »\n");
+                }
                 break;
             case 2:
                 printf("Nom du chemin du fichier source : \n");
                 scanf("%s",nomFicSource);
                 charger(&trameTab,&lgTramTab,nomFicSource,ptRep);
-                ranger(trameTab,lgTramTab,"enregistrements.txt");
-                printf("Extraction d'informations terminée, les données sont enregistrées dans le fichier nommé « enregistrement.txt »\n");
+                if (lgTramTab==0){
+                    printf("Pas de trame GPS données. Merci. Au revoir!\n");
+                    exit=1;
+                }else{
+                    ranger(trameTab,lgTramTab,"enregistrements.txt");
+                    printf("Extraction d'informations terminée, les données sont enregistrées dans le fichier nommé « enregistrement.txt »\n");
+                }
                 break;
         }
 
-        int choixAffichage=affichageDonneesChoix();
-
-        switch(choixAffichage){
-            case 0:
-                printf("Vous pouvez consulter les données dans le fichier nommé « enregistrement.txt »\n");
-                printf("Merci. Au revoir!\n");
-                break;
-            case 1:
-                affichageDonneesFichier("enregistrements.txt");
-                break;
+        if (exit!=1){
+            int choixAffichage=affichageDonneesChoix();
+            switch(choixAffichage){
+                case 0:
+                    printf("Vous pouvez consulter les données dans le fichier nommé « enregistrement.txt »\n");
+                    printf("Merci. Au revoir!\n");
+                    break;
+                case 1:
+                    affichageDonneesFichier("enregistrements.txt");
+                    break;
+            }  
         }
         break;
     }
