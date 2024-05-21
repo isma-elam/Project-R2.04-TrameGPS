@@ -24,6 +24,17 @@
 *                                                                             *
 ******************************************************************************/
 
+/**
+ * @file affichage.c
+ * @brief Ce fichier contient les corps des fonctions pour l'affichage des données GPS.
+ * 
+ * Les fonctions ici permettent d'afficher un menu, de choisir la méthode de lecture des données,
+ * d'afficher les données extraites ou chargées, et de gérer les exceptions.
+ * 
+ * @author Ellisa EE, Ismael EL-AMRANI
+ * @date 2024
+ */
+
 #include "affichage.h"
 #include "conversion.h"
 

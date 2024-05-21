@@ -7,12 +7,7 @@ L\textquotesingle{}intérêt de ce projet est de développer une application de 
 NMEA 0183 est un protocole de messagerie simple utilisé pour la communication entre l\textquotesingle{}électornique marine, définie et contrôlée par National Marine Electronics Association (NMEA). Les données de ce protocole sont transmises sous forme de chaînes ASCII dans différents formats en fonction des information qu\textquotesingle{}elles peuvent fournir. GPGGA est un format NMEA 0183 de base et courant, utilisé pour décrire les données de temps de position et de type fix.
 
 Format GPGGA \+: \hypertarget{index_autotoc_md2}{}\doxysection{Installation}\label{index_autotoc_md2}
-{\bfseries{Prérequis}}  
-\begin{DoxyItemize}
-\item 
-\end{DoxyItemize}d\textquotesingle{}exploitaiton \+: cette application est compatible avec Windows, mac\+OS et Linux. 
 
-{\bfseries{Installation}}
 \begin{DoxyEnumerate}
 \item Clonez le dépôt 
 \begin{DoxyCode}{0}
@@ -37,19 +32,41 @@ Format GPGGA \+: \hypertarget{index_autotoc_md2}{}\doxysection{Installation}\lab
 \DoxyCodeLine{make clean}
 
 \end{DoxyCode}
- {\bfseries{Utilisation d\textquotesingle{}application}}
-\end{DoxyEnumerate}
+ 
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md3}{}\doxysection{Utilisation d\textquotesingle{}application}\label{index_autotoc_md3}
+
 \begin{DoxyEnumerate}
-\item Créez un fichier avec vos données stockées dedans, un exemple est donné dans le fichier data.\+txt.
-\item Exécutez le programme compilé\+: 
+\item Après avoir compilé le code source à l\textquotesingle{}aide de la commande make executez le programme en tapant\+: 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{./main}
 
 \end{DoxyCode}
 
-\item Suivez les instructions pour interagir avec l\textquotesingle{}application. Vous devez saisir le nom de votre dossier. Les données extraites seront ensuite enregistrées dans un dossier appelé \char`\"{}enregistrements.\+txt\char`\"{} dans votre répertoire de travail.
-\end{DoxyEnumerate}\hypertarget{index_autotoc_md3}{}\doxysection{Comment cet application fonctionne-\/t-\/il?}\label{index_autotoc_md3}
-Les données contenant plusieurs trames GPS sont d\textquotesingle{}abord lues à partir d\textquotesingle{}un document fourni par l\textquotesingle{}utilisateur (un exemple du fichier nommé \char`\"{}data.\+txt\char`\"{} est donné). Les trames sont traitées une par une en vérifiant le type de trame en vérifiant le type de trame et en s\textquotesingle{}assurant qu\textquotesingle{}elle comporte au moins 15 champs. Ensuite, les informations pertinentes, à savoir l\textquotesingle{}heure de réception, la longitude et la latitude, sont extraites et testées pour leur format. Ensuite, la longitude et la latitude sont converties du format décimal au format degré. L\textquotesingle{}heure de réception est également formatée. Enfine, les informations traitées sont stockées dans un autre fichier nommé \char`\"{}enregistrement.\+txt\char`\"{}.\hypertarget{index_autotoc_md4}{}\doxysection{Outils Utilisées}\label{index_autotoc_md4}
+\item Le programme vous demandera de choisir l\textquotesingle{}une des options suivantes en tapant le numéro correspondant\+:
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item 1 \+: Saisir manuellement les trames GPS
+\item 2 \+: Lire les trames GPS à partir d\textquotesingle{}un fichier
+\item 3 \+: Quitter l\textquotesingle{}application
+\end{DoxyItemize}
+\begin{DoxyEnumerate}
+\item Si vous choisissez de saisir manuellement les données, entrez les trames GPS une par une, suivies par la touche \char`\"{}\+Entrée\char`\"{}. Pour terminer la saisie, tapez \char`\"{}exit\char`\"{}.
+\item Si vous choisissez de lire les trames GPS à partir d\textquotesingle{}un fichier, indiquez le chemin vers votre fichier. Le format des trames GPS dans le fichier doit être comme le suivant\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$GPGGA,133519,4807.038,N,01131.324,E,1,08,0.9,545.4,M,46.9,M, ,*42}
+\DoxyCodeLine{\$GPGGA,123519,4124.8963,N,08151.6838,W,1,08,0.9,545.4,M,46.9,M, ,*42}
+\DoxyCodeLine{\$GPGGA,235317.000,4003.9039,N,10512.5793,W,1,08,1.6,1577.9,M,-\/20.7,M,,0000*5F}
+
+\end{DoxyCode}
+
+\item Les résultats des converesions seront enregistrés dans un fichier appelé \char`\"{}enregistrements.\+txt\char`\"{} situé dans le répertoire du projet.
+\item Le programme vous demandera ensuite si vous souhaitez afficher les résultats de la conversion dans le terminal.
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item Si vous répondez 1 (oui), les résultats contenus dans le fichier \char`\"{}enregistrements.\+txt\char`\"{} seront affichés et le programme se terminera.
+\item Si vous répondez 0 (non), le programme se terminera sans affichage.
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysection{Comment cet application fonctionne-\/t-\/il?}\label{index_autotoc_md4}
+Les données contenant plusieurs trames GPS sont d\textquotesingle{}abord lues à partir d\textquotesingle{}un document fourni par l\textquotesingle{}utilisateur (un exemple du fichier nommé \char`\"{}data.\+txt\char`\"{} est donné). Les trames sont traitées une par une en vérifiant le type de trame en vérifiant le type de trame et en s\textquotesingle{}assurant qu\textquotesingle{}elle comporte au moins 15 champs. Ensuite, les informations pertinentes, à savoir l\textquotesingle{}heure de réception, la longitude et la latitude, sont extraites et testées pour leur format. Ensuite, la longitude et la latitude sont converties du format décimal au format degré. L\textquotesingle{}heure de réception est également formatée. Enfine, les informations traitées sont stockées dans un autre fichier nommé \char`\"{}enregistrement.\+txt\char`\"{}.\hypertarget{index_autotoc_md5}{}\doxysection{Outils Utilisées}\label{index_autotoc_md5}
    ~\newline
  ~\newline
 
@@ -63,7 +80,7 @@ Les données contenant plusieurs trames GPS sont d\textquotesingle{}abord lues �
 {\bfseries{Compilateur GCC}}~\newline
  En ce qui concerne le compilateur, nous avons utilisé gcc, le suite de compilateurs C la plus largement utilisée car elle est open source est disponible gratuitement.
 
-La combinaison de ces outils offre un environnement de développement complet pour la construction de notre projet de manière efficace en founissant les outils pour promouvoir la qualité du code, la collaboration et la maintenabilité.\hypertarget{index_autotoc_md5}{}\doxysection{Défis Rencontrés et Fonctionnalités Futures}\label{index_autotoc_md5}
+La combinaison de ces outils offre un environnement de développement complet pour la construction de notre projet de manière efficace en founissant les outils pour promouvoir la qualité du code, la collaboration et la maintenabilité.\hypertarget{index_autotoc_md6}{}\doxysection{Défis Rencontrés et Fonctionnalités Futures}\label{index_autotoc_md6}
 Tout au long de ce projet, l\textquotesingle{}un des défis rencontrés a été la gestion des données d\textquotesingle{}entrée, notamment l\textquotesingle{}analyse et la conversion des coordonnées géographiques (latitude et longitude) dans différents formats. Cependant, avec les ressources fournies dans le sujet ainsi que d\textquotesingle{}autres que nous avons répertoriées dans les références, nous avons pu mieux comprendre le sujet.
 
 Nous avons également rencontré des difficultés avec l\textquotesingle{}utilisation de Git\+Lab sur VS Code car nous sommes assez nouveaux dans ce domaine. Bien que cela ait ralenti notre rythme au début de notre projet, la maîtrise de l\textquotesingle{}utilisation de Git\+Lab nous a permis de collaborer plus efficacement car nous pouvons travailler virtuellement sur le même projet et fusionner nos codes.

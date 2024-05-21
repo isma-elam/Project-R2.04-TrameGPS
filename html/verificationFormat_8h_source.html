@@ -66,7 +66,7 @@ $(function() {
 <div class="title">verificationFormat.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
+<a href="verificationFormat_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*  ASR =&gt; 4R2.04                                                              *</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*******************************************************************************</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*                                                                             *</span></div>
@@ -92,30 +92,42 @@ $(function() {
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">*                                                                             *</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">******************************************************************************/</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;setjmp.h&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;extraction.h&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define LONGUEUR_PREFIXE 6</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define LONGUEUR_HEURE 6</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span>{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    OK, </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    TYPE_INVALIDE, </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    NB_CHAMPS_INVALIDE,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    FORMAT_HEURE_INVALIDE,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    LATITUDE_INVALIDE,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    LONGITUDE_INVALIDE,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    CHEMIN_INVALIDE</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;} Exception;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> verifier_type_trame(<span class="keywordtype">char</span>* trame,jmp_buf ptRep);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">void</span> verifier_nombre_champs(<span class="keywordtype">char</span>* trame,jmp_buf ptRep);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> verifier_format_heure(<span class="keywordtype">char</span>* trame,jmp_buf ptRep);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> verifier_heure_min_sec(<span class="keywordtype">int</span> heure,<span class="keywordtype">int</span> min,<span class="keywordtype">int</span> sec, jmp_buf ptRep);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> verifier_latitude(<span class="keywordtype">int</span> degre, <span class="keywordtype">int</span> minute, <span class="keywordtype">float</span> second,jmp_buf ptRep);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> verifier_longitude(<span class="keywordtype">int</span> degre, <span class="keywordtype">int</span> minute, <span class="keywordtype">float</span> second,jmp_buf ptRep);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;setjmp.h&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="extraction_8h.html">extraction.h</a>&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define LONGUEUR_PREFIXE 6</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define LONGUEUR_HEURE 6</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span>{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    OK, </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    TYPE_INVALIDE, </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    NB_CHAMPS_INVALIDE,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    FORMAT_HEURE_INVALIDE,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    LATITUDE_INVALIDE,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    LONGITUDE_INVALIDE,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    CHEMIN_INVALIDE</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;} Exception;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span> <a class="code" href="verificationFormat_8h.html#a80d50523d2035c3429b07c6c12294f18">verifier_type_trame</a>(<span class="keywordtype">char</span>* trame,jmp_buf ptRep);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> <a class="code" href="verificationFormat_8h.html#a3e95b8ae569dc5ff91749fe5d1d1495b">verifier_nombre_champs</a>(<span class="keywordtype">char</span>* trame,jmp_buf ptRep);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">void</span> <a class="code" href="verificationFormat_8h.html#aa8612598656151584883a57fc4b5ab17">verifier_format_heure</a>(<span class="keywordtype">char</span>* trame,jmp_buf ptRep);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">void</span> <a class="code" href="verificationFormat_8h.html#ac7a329cfb0776e800305d76d50e44b62">verifier_heure_min_sec</a>(<span class="keywordtype">int</span> heure,<span class="keywordtype">int</span> min,<span class="keywordtype">int</span> sec, jmp_buf ptRep);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordtype">void</span> <a class="code" href="verificationFormat_8h.html#acf17eff23be33d9dda8876705952027a">verifier_latitude</a>(<span class="keywordtype">int</span> degre, <span class="keywordtype">int</span> minute, <span class="keywordtype">float</span> second,jmp_buf ptRep);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keywordtype">void</span> <a class="code" href="verificationFormat_8h.html#a6e6448a215b6acf053b0dba7d8be47be">verifier_longitude</a>(<span class="keywordtype">int</span> degre, <span class="keywordtype">int</span> minute, <span class="keywordtype">float</span> second,jmp_buf ptRep);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="ttc" id="aextraction_8h_html"><div class="ttname"><a href="extraction_8h.html">extraction.h</a></div><div class="ttdoc">Ce fichier contient les déclarations des fonctions pour extraire les données GPS.</div></div>
+<div class="ttc" id="averificationFormat_8h_html_a3e95b8ae569dc5ff91749fe5d1d1495b"><div class="ttname"><a href="verificationFormat_8h.html#a3e95b8ae569dc5ff91749fe5d1d1495b">verifier_nombre_champs</a></div><div class="ttdeci">void verifier_nombre_champs(char *trame, jmp_buf ptRep)</div><div class="ttdoc">Vérifie le nombre de champs dans la trame GPS.</div><div class="ttdef"><b>Definition:</b> <a href="verificationFormat_8c_source.html#l00045">verificationFormat.c:45</a></div></div>
+<div class="ttc" id="averificationFormat_8h_html_a6e6448a215b6acf053b0dba7d8be47be"><div class="ttname"><a href="verificationFormat_8h.html#a6e6448a215b6acf053b0dba7d8be47be">verifier_longitude</a></div><div class="ttdeci">void verifier_longitude(int degre, int minute, float second, jmp_buf ptRep)</div><div class="ttdoc">Vérifie le format de la longitude dans la trame GPS.</div><div class="ttdef"><b>Definition:</b> <a href="verificationFormat_8c_source.html#l00077">verificationFormat.c:77</a></div></div>
+<div class="ttc" id="averificationFormat_8h_html_a80d50523d2035c3429b07c6c12294f18"><div class="ttname"><a href="verificationFormat_8h.html#a80d50523d2035c3429b07c6c12294f18">verifier_type_trame</a></div><div class="ttdeci">void verifier_type_trame(char *trame, jmp_buf ptRep)</div><div class="ttdoc">Vérifie le type de la trame GPS.</div><div class="ttdef"><b>Definition:</b> <a href="verificationFormat_8c_source.html#l00039">verificationFormat.c:39</a></div></div>
+<div class="ttc" id="averificationFormat_8h_html_aa8612598656151584883a57fc4b5ab17"><div class="ttname"><a href="verificationFormat_8h.html#aa8612598656151584883a57fc4b5ab17">verifier_format_heure</a></div><div class="ttdeci">void verifier_format_heure(char *trame, jmp_buf ptRep)</div><div class="ttdoc">Vérifie le format de l'heure dans la trame GPS.</div><div class="ttdef"><b>Definition:</b> <a href="verificationFormat_8c_source.html#l00057">verificationFormat.c:57</a></div></div>
+<div class="ttc" id="averificationFormat_8h_html_ac7a329cfb0776e800305d76d50e44b62"><div class="ttname"><a href="verificationFormat_8h.html#ac7a329cfb0776e800305d76d50e44b62">verifier_heure_min_sec</a></div><div class="ttdeci">void verifier_heure_min_sec(int heure, int min, int sec, jmp_buf ptRep)</div><div class="ttdoc">Vérifie le format des heures, minutes et secondes.</div><div class="ttdef"><b>Definition:</b> <a href="verificationFormat_8c_source.html#l00065">verificationFormat.c:65</a></div></div>
+<div class="ttc" id="averificationFormat_8h_html_acf17eff23be33d9dda8876705952027a"><div class="ttname"><a href="verificationFormat_8h.html#acf17eff23be33d9dda8876705952027a">verifier_latitude</a></div><div class="ttdeci">void verifier_latitude(int degre, int minute, float second, jmp_buf ptRep)</div><div class="ttdoc">Vérifie le format de la latitude dans la trame GPS.</div><div class="ttdef"><b>Definition:</b> <a href="verificationFormat_8c_source.html#l00071">verificationFormat.c:71</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

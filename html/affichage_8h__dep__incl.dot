@@ -3,26 +3,26 @@ digraph "affichage.h"
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="affichage.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="affichage.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Ce fichier contient les déclarations des fonctions pour l'affichage des données GPS."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="affichage.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$affichage_8c_source.html",tooltip=" "];
+  Node2 [label="affichage.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$affichage_8c.html",tooltip="Ce fichier contient les corps des fonctions pour l'affichage des données GPS."];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="extraction.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$extraction_8h_source.html",tooltip=" "];
+  Node3 [label="extraction.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$extraction_8h.html",tooltip="Ce fichier contient les déclarations des fonctions pour extraire les données GPS."];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="chargerRep.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$chargerRep_8h.html",tooltip=" "];
+  Node4 [label="chargerRep.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$chargerRep_8h.html",tooltip="Ce fichier contient les déclarations des fonctions pour charger les données GPS."];
   Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="chargerRep.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$chargerRep_8c_source.html",tooltip=" "];
+  Node5 [label="chargerRep.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$chargerRep_8c.html",tooltip="Ce fichier contient les corps des fonctions pour charger et stocker les données GPS."];
   Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c_source.html",tooltip=" "];
+  Node6 [label="main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html",tooltip="Programme principal pour l'extraction et l'affichage de données GPS."];
   Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="conversion.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$conversion_8c_source.html",tooltip=" "];
+  Node7 [label="conversion.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$conversion_8c.html",tooltip="Ce fichier contient les corps des fonctions pour la conversion de coordonnées et d'heures."];
   Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="extraction.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$extraction_8c_source.html",tooltip=" "];
+  Node8 [label="extraction.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$extraction_8c.html",tooltip="Ce fichier contient les corps des fonctions pour extraire et convertir les informations de trame GPS."];
   Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="verificationFormat.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$verificationFormat_8h_source.html",tooltip=" "];
+  Node9 [label="verificationFormat.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$verificationFormat_8h.html",tooltip="Ce fichier contient les déclarations des fonctions pour vérifier le format des données GPS."];
   Node9 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node10 [label="verificationFormat.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$verificationFormat_8c_source.html",tooltip=" "];
+  Node10 [label="verificationFormat.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$verificationFormat_8c.html",tooltip="Ce fichier contient les corps des fonctions pour vérifier le format des trames GPS."];
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

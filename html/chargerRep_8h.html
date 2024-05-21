@@ -70,11 +70,14 @@ $(function() {
 <div class="title">chargerRep.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Ce fichier contient les déclarations des fonctions pour charger les données GPS.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;setjmp.h&gt;</code><br />
-<code>#include &quot;extraction.h&quot;</code><br />
-<code>#include &quot;verificationFormat.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="extraction_8h_source.html">extraction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="verificationFormat_8h_source.html">verificationFormat.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for chargerRep.h:</div>
 <div class="dyncontent">
@@ -91,12 +94,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrameTab.html">trameTab</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure contenant un tableau de trames et le nombre de trames.  <a href="structtrameTab.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a1cbef1b0680751f9779242549c60e23c"><td class="memItemLeft" align="right" valign="top"><a id="a1cbef1b0680751f9779242549c60e23c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>LONGUEUR_TRAME</b>&#160;&#160;&#160;100</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LONGUEUR_TRAME</b>&#160;&#160;&#160;200</td></tr>
 <tr class="separator:a1cbef1b0680751f9779242549c60e23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32fcc9ac4b5952235690c2557deedcf9"><td class="memItemLeft" align="right" valign="top"><a id="a32fcc9ac4b5952235690c2557deedcf9"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_NUM_TRAME</b>&#160;&#160;&#160;50</td></tr>
@@ -115,8 +119,8 @@ Functions</h2></td></tr>
 <tr class="separator:ad9d1bf5c650879e63b81f71e39d22a5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Ellisa EE </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.1</dd></dl>
+<div class="textblock"><p>Ce fichier contient les déclarations des fonctions pour charger les données GPS. </p>
+<dl class="section author"><dt>Author</dt><dd>Ellisa EE, Ismael EL-AMRANI</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="chargerRep_8h_source.html">chargerRep.h</a>.</p>
@@ -163,7 +167,7 @@ Functions</h2></td></tr>
 <p>Cette fonction lit les données à partir d'un fichier spécifié par son nom et les charge dans une structure de trames. Cette structure est comprise d'un tableau de trames et un numéro pour indiquer le nombre de trames stockés. Elle vérifie également la validité des données (nombre de champs, type de trame, format de l'heure) en appelant d'autres fonctions de vérification.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structtrameTab.html">trameTab</a></td><td>Pointeur vers la structure de trames où stocker les données. </td></tr>
+    <tr><td class="paramname"><a class="el" href="structtrameTab.html" title="Structure contenant un tableau de trames et le nombre de trames.">trameTab</a></td><td>Pointeur vers la structure de trames où stocker les données. </td></tr>
     <tr><td class="paramname">nb</td><td>Pointeur vers le nombre de trames chargées. </td></tr>
     <tr><td class="paramname">nomFic</td><td>Le nom du fichier à partir duquel lire les données. </td></tr>
     <tr><td class="paramname">ptRep</td><td>Pointeur vers le point de reprise pour la gestion des erreurs avec longjmp. </td></tr>
@@ -171,36 +175,43 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="chargerRep_8c_source.html#l00029">29</a> of file <a class="el" href="chargerRep_8c_source.html">chargerRep.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                                                           {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    FILE* file;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    *nb=0;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    file = fopen(nomFic,<span class="stringliteral">&quot;r&quot;</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtrameInfo.html">trameInfo</a> tInfo;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> (file==NULL){</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        printf(<span class="stringliteral">&quot;Impossible d&#39;ouvrir en lecture le fichier %s\n&quot;</span>,nomFic);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        longjmp(ptRep,CHEMIN_INVALIDE);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }<span class="keywordflow">else</span>{ </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">char</span> ligne[200]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">while</span> (fgets(ligne, <span class="keyword">sizeof</span>(ligne), file) != NULL &amp;&amp; *nb &lt; LONGUEUR_TRAME){</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">if</span>(ligne[strlen(ligne)-1]==<span class="charliteral">&#39;\n&#39;</span>){</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                ligne[strlen(ligne)-1]==<span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            verifier_nombre_champs(ligne,ptRep);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            verifier_type_trame(ligne,ptRep);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            verifier_format_heure(ligne,ptRep);      </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            extraireInfoTrame(ligne,&amp;tInfo);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            verifier_heure_min_sec(tInfo.heure.heure,tInfo.heure.minute,tInfo.heure.second,ptRep);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            verifier_latitude(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,ptRep);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            verifier_longitude(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,ptRep);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="structtrameTab.html">trameTab</a>-&gt;trame[*nb]=tInfo;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            (*nb)++;  </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    fclose(file);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="ttc" id="astructtrameInfo_html"><div class="ttname"><a href="structtrameInfo.html">trameInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="extraction_8h_source.html#l00039">extraction.h:39</a></div></div>
-<div class="ttc" id="astructtrameTab_html"><div class="ttname"><a href="structtrameTab.html">trameTab</a></div><div class="ttdef"><b>Definition:</b> <a href="chargerRep_8h_source.html#l00049">chargerRep.h:49</a></div></div>
+<p class="definition">Definition at line <a class="el" href="chargerRep_8c_source.html#l00039">39</a> of file <a class="el" href="chargerRep_8c_source.html">chargerRep.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                                           {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    FILE* file;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    *nb=0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    file = fopen(nomFic,<span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtrameInfo.html">trameInfo</a> tInfo;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (file==NULL){</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        printf(<span class="stringliteral">&quot;Impossible d&#39;ouvrir en lecture le fichier %s\n&quot;</span>,nomFic);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        longjmp(ptRep,CHEMIN_INVALIDE);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }<span class="keywordflow">else</span>{ </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">char</span> ligne[LONGUEUR_TRAME]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">while</span> (fgets(ligne, <span class="keyword">sizeof</span>(ligne), file) != NULL &amp;&amp; *nb &lt; LONGUEUR_TRAME){</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span>(ligne[strlen(ligne)-1]==<span class="charliteral">&#39;\n&#39;</span>){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                ligne[strlen(ligne)-1]==<span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="verificationFormat_8c.html#a3e95b8ae569dc5ff91749fe5d1d1495b">verifier_nombre_champs</a>(ligne,ptRep);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="verificationFormat_8c.html#a80d50523d2035c3429b07c6c12294f18">verifier_type_trame</a>(ligne,ptRep);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="verificationFormat_8c.html#aa8612598656151584883a57fc4b5ab17">verifier_format_heure</a>(ligne,ptRep);      </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="extraction_8c.html#a104029a943c0f967614ebc3071445a00">extraireInfoTrame</a>(ligne,&amp;tInfo);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="verificationFormat_8c.html#ac7a329cfb0776e800305d76d50e44b62">verifier_heure_min_sec</a>(tInfo.heure.heure,tInfo.heure.minute,tInfo.heure.second,ptRep);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="verificationFormat_8c.html#acf17eff23be33d9dda8876705952027a">verifier_latitude</a>(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,ptRep);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="verificationFormat_8c.html#a6e6448a215b6acf053b0dba7d8be47be">verifier_longitude</a>(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,ptRep);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="structtrameTab.html">trameTab</a>-&gt;trame[*nb]=tInfo;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            (*nb)++;  </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    fclose(file);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="ttc" id="aextraction_8c_html_a104029a943c0f967614ebc3071445a00"><div class="ttname"><a href="extraction_8c.html#a104029a943c0f967614ebc3071445a00">extraireInfoTrame</a></div><div class="ttdeci">void extraireInfoTrame(char *tChar, struct trameInfo *t)</div><div class="ttdoc">Extrait les informations d'une trame donnée et les stocke dans une structure trameInfo.</div><div class="ttdef"><b>Definition:</b> <a href="extraction_8c_source.html#l00040">extraction.c:40</a></div></div>
+<div class="ttc" id="astructtrameInfo_html"><div class="ttname"><a href="structtrameInfo.html">trameInfo</a></div><div class="ttdoc">Structure représentant les informations extraites d'une trame GPS.</div><div class="ttdef"><b>Definition:</b> <a href="extraction_8h_source.html#l00053">extraction.h:53</a></div></div>
+<div class="ttc" id="astructtrameTab_html"><div class="ttname"><a href="structtrameTab.html">trameTab</a></div><div class="ttdoc">Structure contenant un tableau de trames et le nombre de trames.</div><div class="ttdef"><b>Definition:</b> <a href="chargerRep_8h_source.html#l00054">chargerRep.h:54</a></div></div>
+<div class="ttc" id="averificationFormat_8c_html_a3e95b8ae569dc5ff91749fe5d1d1495b"><div class="ttname"><a href="verificationFormat_8c.html#a3e95b8ae569dc5ff91749fe5d1d1495b">verifier_nombre_champs</a></div><div class="ttdeci">void verifier_nombre_champs(char *trame, jmp_buf ptRep)</div><div class="ttdoc">Vérifie le nombre de champs dans la trame GPS.</div><div class="ttdef"><b>Definition:</b> <a href="verificationFormat_8c_source.html#l00045">verificationFormat.c:45</a></div></div>
+<div class="ttc" id="averificationFormat_8c_html_a6e6448a215b6acf053b0dba7d8be47be"><div class="ttname"><a href="verificationFormat_8c.html#a6e6448a215b6acf053b0dba7d8be47be">verifier_longitude</a></div><div class="ttdeci">void verifier_longitude(int degre, int minute, float second, jmp_buf ptRep)</div><div class="ttdoc">Vérifie le format de la longitude dans la trame GPS.</div><div class="ttdef"><b>Definition:</b> <a href="verificationFormat_8c_source.html#l00077">verificationFormat.c:77</a></div></div>
+<div class="ttc" id="averificationFormat_8c_html_a80d50523d2035c3429b07c6c12294f18"><div class="ttname"><a href="verificationFormat_8c.html#a80d50523d2035c3429b07c6c12294f18">verifier_type_trame</a></div><div class="ttdeci">void verifier_type_trame(char *trame, jmp_buf ptRep)</div><div class="ttdoc">Vérifie le type de la trame GPS.</div><div class="ttdef"><b>Definition:</b> <a href="verificationFormat_8c_source.html#l00039">verificationFormat.c:39</a></div></div>
+<div class="ttc" id="averificationFormat_8c_html_aa8612598656151584883a57fc4b5ab17"><div class="ttname"><a href="verificationFormat_8c.html#aa8612598656151584883a57fc4b5ab17">verifier_format_heure</a></div><div class="ttdeci">void verifier_format_heure(char *trame, jmp_buf ptRep)</div><div class="ttdoc">Vérifie le format de l'heure dans la trame GPS.</div><div class="ttdef"><b>Definition:</b> <a href="verificationFormat_8c_source.html#l00057">verificationFormat.c:57</a></div></div>
+<div class="ttc" id="averificationFormat_8c_html_ac7a329cfb0776e800305d76d50e44b62"><div class="ttname"><a href="verificationFormat_8c.html#ac7a329cfb0776e800305d76d50e44b62">verifier_heure_min_sec</a></div><div class="ttdeci">void verifier_heure_min_sec(int heure, int min, int sec, jmp_buf ptRep)</div><div class="ttdoc">Vérifie le format des heures, minutes et secondes.</div><div class="ttdef"><b>Definition:</b> <a href="verificationFormat_8c_source.html#l00065">verificationFormat.c:65</a></div></div>
+<div class="ttc" id="averificationFormat_8c_html_acf17eff23be33d9dda8876705952027a"><div class="ttname"><a href="verificationFormat_8c.html#acf17eff23be33d9dda8876705952027a">verifier_latitude</a></div><div class="ttdeci">void verifier_latitude(int degre, int minute, float second, jmp_buf ptRep)</div><div class="ttdoc">Vérifie le format de la latitude dans la trame GPS.</div><div class="ttdef"><b>Definition:</b> <a href="verificationFormat_8c_source.html#l00071">verificationFormat.c:71</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -246,7 +257,7 @@ Functions</h2></td></tr>
 <p>Cette fonction lit les données à partir de l'entrée standard (clavier) et les stocke dans une structure de trames. Cette structure est comprise d'un tableau de trames et un numéro pour indiquer le nombre de trames stockés. Elle vérifie également la validité des données (nombre de champs, type de trame, format de l'heure) en appelant d'autres fonctions de vérification.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structtrameTab.html">trameTab</a></td><td>Pointeur vers la structure de trames où stocker les données. </td></tr>
+    <tr><td class="paramname"><a class="el" href="structtrameTab.html" title="Structure contenant un tableau de trames et le nombre de trames.">trameTab</a></td><td>Pointeur vers la structure de trames où stocker les données. </td></tr>
     <tr><td class="paramname">nb</td><td>Pointeur vers le nombre de trames lues. </td></tr>
     <tr><td class="paramname">nomFic</td><td>Le nom du fichier à partir duquel lire les données. </td></tr>
     <tr><td class="paramname">ptRep</td><td>Pointeur vers le point de reprise pour la gestion des erreurs avec longjmp. </td></tr>
@@ -254,31 +265,31 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="chargerRep_8c_source.html#l00057">57</a> of file <a class="el" href="chargerRep_8c_source.html">chargerRep.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                                                               {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">char</span> ligne[200];</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    *nb=0;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtrameInfo.html">trameInfo</a> tInfo;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    scanf(<span class="stringliteral">&quot; %[^\n]&quot;</span>,ligne);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span>(ligne[strlen(ligne)-1]==<span class="charliteral">&#39;\n&#39;</span>){</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        ligne[strlen(ligne)-1]==<span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">while</span> (strcmp(ligne,<span class="stringliteral">&quot;exit&quot;</span>)!=0 &amp;&amp; *nb &lt; LONGUEUR_TRAME){</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        verifier_nombre_champs(ligne,ptRep);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        verifier_type_trame(ligne,ptRep);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        verifier_format_heure(ligne,ptRep);      </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        extraireInfoTrame(ligne,&amp;tInfo);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        verifier_heure_min_sec(tInfo.heure.heure,tInfo.heure.minute,tInfo.heure.second,ptRep);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        verifier_latitude(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,ptRep);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        verifier_longitude(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,ptRep);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="structtrameTab.html">trameTab</a>-&gt;trame[*nb]=tInfo;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        (*nb)++;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        scanf(<span class="stringliteral">&quot; %[^\n]&quot;</span>,ligne);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span>(ligne[strlen(ligne)-1]==<span class="charliteral">&#39;\n&#39;</span>){</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            ligne[strlen(ligne)-1]==<span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }    </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="chargerRep_8c_source.html#l00067">67</a> of file <a class="el" href="chargerRep_8c_source.html">chargerRep.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                                                               {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">char</span> ligne[LONGUEUR_TRAME];</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    *nb=0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtrameInfo.html">trameInfo</a> tInfo;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    scanf(<span class="stringliteral">&quot; %[^\n]&quot;</span>,ligne);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span>(ligne[strlen(ligne)-1]==<span class="charliteral">&#39;\n&#39;</span>){</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        ligne[strlen(ligne)-1]==<span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">while</span> (strcmp(ligne,<span class="stringliteral">&quot;exit&quot;</span>)!=0 &amp;&amp; *nb &lt; LONGUEUR_TRAME){</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="verificationFormat_8c.html#a3e95b8ae569dc5ff91749fe5d1d1495b">verifier_nombre_champs</a>(ligne,ptRep);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="verificationFormat_8c.html#a80d50523d2035c3429b07c6c12294f18">verifier_type_trame</a>(ligne,ptRep);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="verificationFormat_8c.html#aa8612598656151584883a57fc4b5ab17">verifier_format_heure</a>(ligne,ptRep);      </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="extraction_8c.html#a104029a943c0f967614ebc3071445a00">extraireInfoTrame</a>(ligne,&amp;tInfo);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="verificationFormat_8c.html#ac7a329cfb0776e800305d76d50e44b62">verifier_heure_min_sec</a>(tInfo.heure.heure,tInfo.heure.minute,tInfo.heure.second,ptRep);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="verificationFormat_8c.html#acf17eff23be33d9dda8876705952027a">verifier_latitude</a>(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,ptRep);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="verificationFormat_8c.html#a6e6448a215b6acf053b0dba7d8be47be">verifier_longitude</a>(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,ptRep);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="structtrameTab.html">trameTab</a>-&gt;trame[*nb]=tInfo;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        (*nb)++;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        scanf(<span class="stringliteral">&quot; %[^\n]&quot;</span>,ligne);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">if</span>(ligne[strlen(ligne)-1]==<span class="charliteral">&#39;\n&#39;</span>){</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            ligne[strlen(ligne)-1]==<span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }    </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -318,30 +329,36 @@ Functions</h2></td></tr>
 <p>Cette fonction enregistre les données contenues dans une structure de trames dans un fichier spécifié par son nom. Les données sont écrites dans un format spécifique pour chaque trame. Exemple du format : Heure : 13h35m19s ; Latitude : 48°7'2.28" ; Longitude : 11°31'19.44"</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structtrameTab.html">trameTab</a></td><td>La structure de trames contenant les données à enregistrer. </td></tr>
+    <tr><td class="paramname"><a class="el" href="structtrameTab.html" title="Structure contenant un tableau de trames et le nombre de trames.">trameTab</a></td><td>La structure de trames contenant les données à enregistrer. </td></tr>
     <tr><td class="paramname">nb</td><td>Le nombre de trames à enregistrer. </td></tr>
     <tr><td class="paramname">nomFic</td><td>Le nom du fichier où enregistrer les données. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="chargerRep_8c_source.html#l00082">82</a> of file <a class="el" href="chargerRep_8c_source.html">chargerRep.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                          {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    FILE* file;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">int</span> i;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    file = fopen(nomFic,<span class="stringliteral">&quot;w&quot;</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (file == NULL){</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        printf(<span class="stringliteral">&quot;Impossible d&#39;ouvrir en ecriture le fichier %s\n&quot;</span>,nomFic);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }<span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">for</span> (i = 0 ; i &lt; nb ; i++){</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            fprintf(file,<span class="stringliteral">&quot;Heure : %dh%dm%ds ; Latitude : %d°%d\&#39;%.2f\&quot; ; Longitude : %d°%d\&#39;%.2f\&quot;\n&quot;</span>,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <a class="code" href="structtrameTab.html">trameTab</a>.trame[i].heure.heure,<a class="code" href="structtrameTab.html">trameTab</a>.trame[i].heure.minute,<a class="code" href="structtrameTab.html">trameTab</a>.trame[i].heure.second,</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="structtrameTab.html">trameTab</a>.trame[i].latitude.degre,<a class="code" href="structtrameTab.html">trameTab</a>.trame[i].latitude.minute,<a class="code" href="structtrameTab.html">trameTab</a>.trame[i].latitude.second,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="structtrameTab.html">trameTab</a>.trame[i].longitude.degre,<a class="code" href="structtrameTab.html">trameTab</a>.trame[i].longitude.minute,<a class="code" href="structtrameTab.html">trameTab</a>.trame[i].longitude.second);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    fclose(file);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="chargerRep_8c_source.html#l00092">92</a> of file <a class="el" href="chargerRep_8c_source.html">chargerRep.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                                          {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    FILE* file;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    file = fopen(nomFic,<span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (file == NULL){</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        printf(<span class="stringliteral">&quot;Impossible d&#39;ouvrir en ecriture le fichier %s\n&quot;</span>,nomFic);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">for</span> (i = 0 ; i &lt; nb ; i++){</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            fprintf(file,<span class="stringliteral">&quot;Heure : %dh%dm%ds ; Latitude : %d°%d\&#39;%.2f\&quot; ; Longitude : %d°%d\&#39;%.2f\&quot;\n&quot;</span>,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="structtrameTab.html">trameTab</a>.trame[i].heure.<a class="code" href="structheureInfo.html#ab54841d8fa6fbde98300765ad23d1527">heure</a>,<a class="code" href="structtrameTab.html">trameTab</a>.trame[i].heure.<a class="code" href="structheureInfo.html#a310ea773c06448c7498e7778d6a7684c">minute</a>,<a class="code" href="structtrameTab.html">trameTab</a>.trame[i].heure.<a class="code" href="structheureInfo.html#a3de49535b792c032cd4e8e5a109dd08b">second</a>,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="structtrameTab.html">trameTab</a>.trame[i].latitude.<a class="code" href="structdmsInfo.html#a5e460b73705789c00d05a2d0167cc03f">degre</a>,<a class="code" href="structtrameTab.html">trameTab</a>.trame[i].latitude.<a class="code" href="structdmsInfo.html#a96f61f6df40f6a8704860dc9c303471c">minute</a>,<a class="code" href="structtrameTab.html">trameTab</a>.trame[i].latitude.<a class="code" href="structdmsInfo.html#a415d6d599f8e7e0a825f0d8990bc9ec8">second</a>,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <a class="code" href="structtrameTab.html">trameTab</a>.trame[i].longitude.<a class="code" href="structdmsInfo.html#a5e460b73705789c00d05a2d0167cc03f">degre</a>,<a class="code" href="structtrameTab.html">trameTab</a>.trame[i].longitude.<a class="code" href="structdmsInfo.html#a96f61f6df40f6a8704860dc9c303471c">minute</a>,<a class="code" href="structtrameTab.html">trameTab</a>.trame[i].longitude.<a class="code" href="structdmsInfo.html#a415d6d599f8e7e0a825f0d8990bc9ec8">second</a>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    fclose(file);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="ttc" id="astructdmsInfo_html_a415d6d599f8e7e0a825f0d8990bc9ec8"><div class="ttname"><a href="structdmsInfo.html#a415d6d599f8e7e0a825f0d8990bc9ec8">dmsInfo::second</a></div><div class="ttdeci">float second</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8h_source.html#l00052">conversion.h:52</a></div></div>
+<div class="ttc" id="astructdmsInfo_html_a5e460b73705789c00d05a2d0167cc03f"><div class="ttname"><a href="structdmsInfo.html#a5e460b73705789c00d05a2d0167cc03f">dmsInfo::degre</a></div><div class="ttdeci">int degre</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8h_source.html#l00050">conversion.h:50</a></div></div>
+<div class="ttc" id="astructdmsInfo_html_a96f61f6df40f6a8704860dc9c303471c"><div class="ttname"><a href="structdmsInfo.html#a96f61f6df40f6a8704860dc9c303471c">dmsInfo::minute</a></div><div class="ttdeci">int minute</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8h_source.html#l00051">conversion.h:51</a></div></div>
+<div class="ttc" id="astructheureInfo_html_a310ea773c06448c7498e7778d6a7684c"><div class="ttname"><a href="structheureInfo.html#a310ea773c06448c7498e7778d6a7684c">heureInfo::minute</a></div><div class="ttdeci">int minute</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8h_source.html#l00064">conversion.h:64</a></div></div>
+<div class="ttc" id="astructheureInfo_html_a3de49535b792c032cd4e8e5a109dd08b"><div class="ttname"><a href="structheureInfo.html#a3de49535b792c032cd4e8e5a109dd08b">heureInfo::second</a></div><div class="ttdeci">int second</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8h_source.html#l00065">conversion.h:65</a></div></div>
+<div class="ttc" id="astructheureInfo_html_ab54841d8fa6fbde98300765ad23d1527"><div class="ttname"><a href="structheureInfo.html#ab54841d8fa6fbde98300765ad23d1527">heureInfo::heure</a></div><div class="ttdeci">int heure</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8h_source.html#l00063">conversion.h:63</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

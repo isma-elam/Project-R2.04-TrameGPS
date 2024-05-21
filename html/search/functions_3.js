@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ranger_24',['ranger',['../chargerRep_8h.html#ad9d1bf5c650879e63b81f71e39d22a5b',1,'chargerRep.c']]]
+  ['initialiserinfotrame_67',['initialiserInfoTrame',['../extraction_8h.html#aa67bdec2622de4a0aed6d59ceaded133',1,'extraction.h']]]
 ];

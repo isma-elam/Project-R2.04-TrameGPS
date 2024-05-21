@@ -23,6 +23,16 @@
 *  Nom du fichier : verificationFormat.c                                      *
 *                                                                             *
 ******************************************************************************/
+/**
+ * @file verificationFormat.c
+ * @brief Ce fichier contient les corps des fonctions pour vérifier le format des trames GPS.
+ * 
+ * Les fonctions ici permettent de vérifier le type de trame, le nombre de champs,
+ * le format de l'heure, la validité des coordonnées de latitude et de longitude.
+ * 
+ * @author Ellisa EE, Ismael EL-AMRANI
+ * @date 2024
+ */
 
 #include "verificationFormat.h"
 

@@ -26,6 +26,16 @@
 
 #include "chargerRep.h"
 
+/**
+ * @file chargerRep.c
+ * @brief Ce fichier contient les corps des fonctions pour charger et stocker les données GPS.
+ * 
+ * Les fonctions ici permettent de charger les données à partir d'un fichier ou de l'entrée standard,
+ * de vérifier leur validité et de les stocker dans une structure de trames.
+ * 
+ * @author Ellisa EE, Ismael EL-AMRANI
+ * @date 2024
+ */
 void charger(struct trameTab* trameTab,int* nb,char nomFic[],jmp_buf ptRep){
     FILE* file;
     *nb=0;

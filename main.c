@@ -24,6 +24,16 @@
 *                                                                             *
 ******************************************************************************/
 
+/**
+ * @file main.c
+ * @brief Programme principal pour l'extraction et l'affichage de données GPS.
+ *
+ * Ce programme permet d'extraire des trames GPS, de vérifier leur validité et de les afficher.
+ * Il utilise les modules "extraction.h", "affichage.h" et "chargerRep.h".
+ *
+ * @author Ellisa EE, Ismael EL-AMRANI
+ */
+
 #include "extraction.h"
 #include "affichage.h"
 #include "chargerRep.h"

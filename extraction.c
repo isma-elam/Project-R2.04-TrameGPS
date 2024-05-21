@@ -24,6 +24,17 @@
 *                                                                             *
 ******************************************************************************/
 
+/**
+ * @file extraction.c
+ * @brief Ce fichier contient les corps des fonctions pour extraire et convertir les informations de trame GPS.
+ * 
+ * Les fonctions ici permettent d'extraire les heures, latitudes et longitudes
+ * à partir d'une trame GPS au format décimal, puis de les convertir en degrés, minutes et secondes.
+ * 
+ * @author Ellisa EE, Ismael EL-AMRANI
+ * @date 2024
+ */
+
 #include "extraction.h"
 
 void extraireInfoTrame(char* tChar,struct trameInfo* t){

@@ -66,7 +66,7 @@ $(function() {
 <div class="title">main.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
+<a href="main_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*  ASR =&gt; 4R2.04                                                              *</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*******************************************************************************</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*                                                                             *</span></div>
@@ -92,90 +92,91 @@ $(function() {
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">*                                                                             *</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">******************************************************************************/</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;extraction.h&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="affichage_8h.html">affichage.h</a>&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chargerRep_8h.html">chargerRep.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define LG_NOM_FICHIER 50</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">void</span>){</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtrameTab.html">trameTab</a> <a class="code" href="structtrameTab.html">trameTab</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">int</span> lgTramTab;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    jmp_buf ptRep;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    Exception anomalie;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    anomalie=setjmp(ptRep);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">switch</span> (anomalie)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">case</span> OK: {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">int</span> choix=<a class="code" href="affichage_8h.html#a7c190fbca47364a8ddc6c5a2c50c308e">affichageMenu</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">char</span> nomFicSource[LG_NOM_FICHIER]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">switch</span>(choix){</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">case</span> 0:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                printf(<span class="stringliteral">&quot;Merci. Au revoir!\n&quot;</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                printf(<span class="stringliteral">&quot;Veuillez entrer les trames GPS une par une, suivies d&#39;un appui sur la touche Entrée. Pour terminer, veuillez entrer \&quot;exit\&quot;.\n&quot;</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <a class="code" href="chargerRep_8h.html#ae3401947b2cc31b6673b5501b150f4a4">lireDonnees</a>(&amp;<a class="code" href="structtrameTab.html">trameTab</a>,&amp;lgTramTab,nomFicSource,ptRep);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <a class="code" href="chargerRep_8h.html#ad9d1bf5c650879e63b81f71e39d22a5b">ranger</a>(<a class="code" href="structtrameTab.html">trameTab</a>,lgTramTab,<span class="stringliteral">&quot;enregistrements.txt&quot;</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                printf(<span class="stringliteral">&quot;Extraction d&#39;informations terminée, les données sont enregistrées dans le fichier nommé « enregistrement.txt »\n&quot;</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">case</span> 2:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                printf(<span class="stringliteral">&quot;Nom du chemin du fichier source : \n&quot;</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                scanf(<span class="stringliteral">&quot;%s&quot;</span>,nomFicSource);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <a class="code" href="chargerRep_8h.html#a8102fa3dc464cd1b163071bc0163affb">charger</a>(&amp;<a class="code" href="structtrameTab.html">trameTab</a>,&amp;lgTramTab,nomFicSource,ptRep);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <a class="code" href="chargerRep_8h.html#ad9d1bf5c650879e63b81f71e39d22a5b">ranger</a>(<a class="code" href="structtrameTab.html">trameTab</a>,lgTramTab,<span class="stringliteral">&quot;enregistrements.txt&quot;</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                printf(<span class="stringliteral">&quot;Extraction d&#39;informations terminée, les données sont enregistrées dans le fichier nommé « enregistrement.txt »\n&quot;</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">int</span> choixAffichage=<a class="code" href="affichage_8h.html#a1ac3bdfbdc153068f7218a946e4e3e8c">affichageDonneesChoix</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">switch</span>(choixAffichage){</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">case</span> 0:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                printf(<span class="stringliteral">&quot;Vous pouvez consulter les données dans le fichier nommé « enregistrement.txt »\n&quot;</span>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                printf(<span class="stringliteral">&quot;Merci. Au revoir!\n&quot;</span>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <a class="code" href="affichage_8h.html#a7864f4c36edf57890d9e7681198cf8bb">affichageDonneesFichier</a>(<span class="stringliteral">&quot;enregistrements.txt&quot;</span>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">case</span> TYPE_INVALIDE:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        printf(<span class="stringliteral">&quot;Extraction d&#39;information impossible : Type du format de la trame GPS NMEA 0183 n&#39;est pas du type GPGGA.\n&quot;</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        printf(<span class="stringliteral">&quot;Verifier format de la trame dans le fichier source.\n&quot;</span>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">case</span> NB_CHAMPS_INVALIDE:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        printf(<span class="stringliteral">&quot;Extraction d&#39;information impossible : Nombre de champs invalide\n&quot;</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        printf(<span class="stringliteral">&quot;Verifier si la trame dans le fichier source a 15 champs en total\n&quot;</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">case</span> FORMAT_HEURE_INVALIDE:</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        printf(<span class="stringliteral">&quot;Extraction d&#39;information impossible : Format de l&#39;heure invalide.\n&quot;</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        printf(<span class="stringliteral">&quot;Verifier format de l&#39;heure de la trame dans le fichier source.\n&quot;</span>); </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">case</span> LATITUDE_INVALIDE:</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        printf(<span class="stringliteral">&quot;Extraction d&#39;information impossible : Valeur du latitude invalide.\n&quot;</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        printf(<span class="stringliteral">&quot;Verifier valeur du latitude de la trame dans le fichier source.\n&quot;</span>);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">case</span> LONGITUDE_INVALIDE:</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        printf(<span class="stringliteral">&quot;Extraction d&#39;information impossible : Valeur du longitude invalide.\n&quot;</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        printf(<span class="stringliteral">&quot;Verifier valeur du longitude de la trame dans le fichier source.\n&quot;</span>);   </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
-<div class="ttc" id="aaffichage_8h_html"><div class="ttname"><a href="affichage_8h.html">affichage.h</a></div></div>
-<div class="ttc" id="aaffichage_8h_html_a1ac3bdfbdc153068f7218a946e4e3e8c"><div class="ttname"><a href="affichage_8h.html#a1ac3bdfbdc153068f7218a946e4e3e8c">affichageDonneesChoix</a></div><div class="ttdeci">int affichageDonneesChoix()</div><div class="ttdoc">Permet à l'utilisateur de choisir s'il souhaite afficher le résultat de l'analyse de trames GPS donné...</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8c_source.html#l00045">affichage.c:45</a></div></div>
-<div class="ttc" id="aaffichage_8h_html_a7864f4c36edf57890d9e7681198cf8bb"><div class="ttname"><a href="affichage_8h.html#a7864f4c36edf57890d9e7681198cf8bb">affichageDonneesFichier</a></div><div class="ttdeci">void affichageDonneesFichier(char nomFic[])</div><div class="ttdoc">Affiche le contenu du fichier contenant le résultat de l'analyse de trames GPS.</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8c_source.html#l00057">affichage.c:57</a></div></div>
-<div class="ttc" id="aaffichage_8h_html_a7c190fbca47364a8ddc6c5a2c50c308e"><div class="ttname"><a href="affichage_8h.html#a7c190fbca47364a8ddc6c5a2c50c308e">affichageMenu</a></div><div class="ttdeci">int affichageMenu()</div><div class="ttdoc">Affiche le menu et permet à l'utilisateur de choisir une méthode pour lire les données.</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8c_source.html#l00030">affichage.c:30</a></div></div>
-<div class="ttc" id="achargerRep_8h_html"><div class="ttname"><a href="chargerRep_8h.html">chargerRep.h</a></div></div>
-<div class="ttc" id="achargerRep_8h_html_a8102fa3dc464cd1b163071bc0163affb"><div class="ttname"><a href="chargerRep_8h.html#a8102fa3dc464cd1b163071bc0163affb">charger</a></div><div class="ttdeci">void charger(struct trameTab *trameTab, int *nb, char nomFic[], jmp_buf ptRep)</div><div class="ttdoc">Charge les données à partir d'un fichier dans une structure de trames.</div><div class="ttdef"><b>Definition:</b> <a href="chargerRep_8c_source.html#l00029">chargerRep.c:29</a></div></div>
-<div class="ttc" id="achargerRep_8h_html_ad9d1bf5c650879e63b81f71e39d22a5b"><div class="ttname"><a href="chargerRep_8h.html#ad9d1bf5c650879e63b81f71e39d22a5b">ranger</a></div><div class="ttdeci">void ranger(struct trameTab trameTab, int nb, char nomFic[])</div><div class="ttdoc">Enregistre les données d'une structure de trames dans un fichier.</div><div class="ttdef"><b>Definition:</b> <a href="chargerRep_8c_source.html#l00082">chargerRep.c:82</a></div></div>
-<div class="ttc" id="achargerRep_8h_html_ae3401947b2cc31b6673b5501b150f4a4"><div class="ttname"><a href="chargerRep_8h.html#ae3401947b2cc31b6673b5501b150f4a4">lireDonnees</a></div><div class="ttdeci">void lireDonnees(struct trameTab *trameTab, int *nb, char nomFic[], jmp_buf ptRep)</div><div class="ttdoc">Lit les données à partir de l'entrée standard et les stocke dans une structure de trames.</div><div class="ttdef"><b>Definition:</b> <a href="chargerRep_8c_source.html#l00057">chargerRep.c:57</a></div></div>
-<div class="ttc" id="astructtrameTab_html"><div class="ttname"><a href="structtrameTab.html">trameTab</a></div><div class="ttdef"><b>Definition:</b> <a href="chargerRep_8h_source.html#l00049">chargerRep.h:49</a></div></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="extraction_8h.html">extraction.h</a>&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="affichage_8h.html">affichage.h</a>&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chargerRep_8h.html">chargerRep.h</a>&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define LG_NOM_FICHIER 50</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">void</span>){</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtrameTab.html">trameTab</a> <a class="code" href="structtrameTab.html">trameTab</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">int</span> lgTramTab;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    jmp_buf ptRep;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    Exception anomalie;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    anomalie=setjmp(ptRep);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">switch</span> (anomalie)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">case</span> OK: {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">int</span> choix=<a class="code" href="affichage_8c.html#a7c190fbca47364a8ddc6c5a2c50c308e">affichageMenu</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">char</span> nomFicSource[LG_NOM_FICHIER]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">switch</span>(choix){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                printf(<span class="stringliteral">&quot;Merci. Au revoir!\n&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                printf(<span class="stringliteral">&quot;Veuillez entrer les trames GPS une par une, suivies d&#39;un appui sur la touche Entrée. Pour terminer, veuillez entrer \&quot;exit\&quot;.\n&quot;</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <a class="code" href="chargerRep_8c.html#ae3401947b2cc31b6673b5501b150f4a4">lireDonnees</a>(&amp;<a class="code" href="structtrameTab.html">trameTab</a>,&amp;lgTramTab,nomFicSource,ptRep);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <a class="code" href="chargerRep_8c.html#ad9d1bf5c650879e63b81f71e39d22a5b">ranger</a>(<a class="code" href="structtrameTab.html">trameTab</a>,lgTramTab,<span class="stringliteral">&quot;enregistrements.txt&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                printf(<span class="stringliteral">&quot;Extraction d&#39;informations terminée, les données sont enregistrées dans le fichier nommé « enregistrement.txt »\n&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                printf(<span class="stringliteral">&quot;Nom du chemin du fichier source : \n&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                scanf(<span class="stringliteral">&quot;%s&quot;</span>,nomFicSource);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="chargerRep_8c.html#a8102fa3dc464cd1b163071bc0163affb">charger</a>(&amp;<a class="code" href="structtrameTab.html">trameTab</a>,&amp;lgTramTab,nomFicSource,ptRep);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <a class="code" href="chargerRep_8c.html#ad9d1bf5c650879e63b81f71e39d22a5b">ranger</a>(<a class="code" href="structtrameTab.html">trameTab</a>,lgTramTab,<span class="stringliteral">&quot;enregistrements.txt&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                printf(<span class="stringliteral">&quot;Extraction d&#39;informations terminée, les données sont enregistrées dans le fichier nommé « enregistrement.txt »\n&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">int</span> choixAffichage=<a class="code" href="affichage_8c.html#a1ac3bdfbdc153068f7218a946e4e3e8c">affichageDonneesChoix</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">switch</span>(choixAffichage){</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                printf(<span class="stringliteral">&quot;Vous pouvez consulter les données dans le fichier nommé « enregistrement.txt »\n&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                printf(<span class="stringliteral">&quot;Merci. Au revoir!\n&quot;</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="affichage_8c.html#a7864f4c36edf57890d9e7681198cf8bb">affichageDonneesFichier</a>(<span class="stringliteral">&quot;enregistrements.txt&quot;</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">case</span> TYPE_INVALIDE:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        printf(<span class="stringliteral">&quot;Extraction d&#39;information impossible : Type du format de la trame GPS NMEA 0183 n&#39;est pas du type GPGGA.\n&quot;</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        printf(<span class="stringliteral">&quot;Verifier format de la trame dans le fichier source.\n&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">case</span> NB_CHAMPS_INVALIDE:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        printf(<span class="stringliteral">&quot;Extraction d&#39;information impossible : Nombre de champs invalide\n&quot;</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        printf(<span class="stringliteral">&quot;Verifier si la trame dans le fichier source a 15 champs en total\n&quot;</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">case</span> FORMAT_HEURE_INVALIDE:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        printf(<span class="stringliteral">&quot;Extraction d&#39;information impossible : Format de l&#39;heure invalide.\n&quot;</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        printf(<span class="stringliteral">&quot;Verifier format de l&#39;heure de la trame dans le fichier source.\n&quot;</span>); </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">case</span> LATITUDE_INVALIDE:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        printf(<span class="stringliteral">&quot;Extraction d&#39;information impossible : Valeur du latitude invalide.\n&quot;</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        printf(<span class="stringliteral">&quot;Verifier valeur du latitude de la trame dans le fichier source.\n&quot;</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">case</span> LONGITUDE_INVALIDE:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        printf(<span class="stringliteral">&quot;Extraction d&#39;information impossible : Valeur du longitude invalide.\n&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        printf(<span class="stringliteral">&quot;Verifier valeur du longitude de la trame dans le fichier source.\n&quot;</span>);   </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="ttc" id="aaffichage_8c_html_a1ac3bdfbdc153068f7218a946e4e3e8c"><div class="ttname"><a href="affichage_8c.html#a1ac3bdfbdc153068f7218a946e4e3e8c">affichageDonneesChoix</a></div><div class="ttdeci">int affichageDonneesChoix()</div><div class="ttdoc">Permet à l'utilisateur de choisir s'il souhaite afficher le résultat de l'analyse de trames GPS donné...</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8c_source.html#l00056">affichage.c:56</a></div></div>
+<div class="ttc" id="aaffichage_8c_html_a7864f4c36edf57890d9e7681198cf8bb"><div class="ttname"><a href="affichage_8c.html#a7864f4c36edf57890d9e7681198cf8bb">affichageDonneesFichier</a></div><div class="ttdeci">void affichageDonneesFichier(char nomFic[])</div><div class="ttdoc">Affiche le contenu du fichier contenant le résultat de l'analyse de trames GPS.</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8c_source.html#l00068">affichage.c:68</a></div></div>
+<div class="ttc" id="aaffichage_8c_html_a7c190fbca47364a8ddc6c5a2c50c308e"><div class="ttname"><a href="affichage_8c.html#a7c190fbca47364a8ddc6c5a2c50c308e">affichageMenu</a></div><div class="ttdeci">int affichageMenu()</div><div class="ttdoc">Affiche le menu et permet à l'utilisateur de choisir une méthode pour lire les données.</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8c_source.html#l00041">affichage.c:41</a></div></div>
+<div class="ttc" id="aaffichage_8h_html"><div class="ttname"><a href="affichage_8h.html">affichage.h</a></div><div class="ttdoc">Ce fichier contient les déclarations des fonctions pour l'affichage des données GPS.</div></div>
+<div class="ttc" id="achargerRep_8c_html_a8102fa3dc464cd1b163071bc0163affb"><div class="ttname"><a href="chargerRep_8c.html#a8102fa3dc464cd1b163071bc0163affb">charger</a></div><div class="ttdeci">void charger(struct trameTab *trameTab, int *nb, char nomFic[], jmp_buf ptRep)</div><div class="ttdoc">Charge les données à partir d'un fichier dans une structure de trames.</div><div class="ttdef"><b>Definition:</b> <a href="chargerRep_8c_source.html#l00039">chargerRep.c:39</a></div></div>
+<div class="ttc" id="achargerRep_8c_html_ad9d1bf5c650879e63b81f71e39d22a5b"><div class="ttname"><a href="chargerRep_8c.html#ad9d1bf5c650879e63b81f71e39d22a5b">ranger</a></div><div class="ttdeci">void ranger(struct trameTab trameTab, int nb, char nomFic[])</div><div class="ttdoc">Enregistre les données d'une structure de trames dans un fichier.</div><div class="ttdef"><b>Definition:</b> <a href="chargerRep_8c_source.html#l00092">chargerRep.c:92</a></div></div>
+<div class="ttc" id="achargerRep_8c_html_ae3401947b2cc31b6673b5501b150f4a4"><div class="ttname"><a href="chargerRep_8c.html#ae3401947b2cc31b6673b5501b150f4a4">lireDonnees</a></div><div class="ttdeci">void lireDonnees(struct trameTab *trameTab, int *nb, char nomFic[], jmp_buf ptRep)</div><div class="ttdoc">Lit les données à partir de l'entrée standard et les stocke dans une structure de trames.</div><div class="ttdef"><b>Definition:</b> <a href="chargerRep_8c_source.html#l00067">chargerRep.c:67</a></div></div>
+<div class="ttc" id="achargerRep_8h_html"><div class="ttname"><a href="chargerRep_8h.html">chargerRep.h</a></div><div class="ttdoc">Ce fichier contient les déclarations des fonctions pour charger les données GPS.</div></div>
+<div class="ttc" id="aextraction_8h_html"><div class="ttname"><a href="extraction_8h.html">extraction.h</a></div><div class="ttdoc">Ce fichier contient les déclarations des fonctions pour extraire les données GPS.</div></div>
+<div class="ttc" id="astructtrameTab_html"><div class="ttname"><a href="structtrameTab.html">trameTab</a></div><div class="ttdoc">Structure contenant un tableau de trames et le nombre de trames.</div><div class="ttdef"><b>Definition:</b> <a href="chargerRep_8h_source.html#l00054">chargerRep.h:54</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

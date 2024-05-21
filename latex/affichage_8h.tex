@@ -1,5 +1,152 @@
 \hypertarget{affichage_8h}{}\doxysection{affichage.\+h File Reference}
 \label{affichage_8h}\index{affichage.h@{affichage.h}}
+
+
+Ce fichier contient les déclarations des fonctions pour l\textquotesingle{}affichage des données GPS.  
+
+
 {\ttfamily \#include \char`\"{}conversion.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 Include dependency graph for affichage.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{affichage_8h_a7c190fbca47364a8ddc6c5a2c50c308e}{affichage\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Affiche le menu et permet à l\textquotesingle{}utilisateur de choisir une méthode pour lire les données. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{affichage_8h_a1ac3bdfbdc153068f7218a946e4e3e8c}{affichage\+Donnees\+Choix}} ()
+\begin{DoxyCompactList}\small\item\em Permet à l\textquotesingle{}utilisateur de choisir s\textquotesingle{}il souhaite afficher le résultat de l\textquotesingle{}analyse de trames GPS données. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{affichage_8h_a7864f4c36edf57890d9e7681198cf8bb}{affichage\+Donnees\+Fichier}} (char nom\+Fic\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Affiche le contenu du fichier contenant le résultat de l\textquotesingle{}analyse de trames GPS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ce fichier contient les déclarations des fonctions pour l\textquotesingle{}affichage des données GPS. 
+
+\begin{DoxyAuthor}{Author}
+Ellisa EE, Ismael EL-\/\+AMRANI
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{affichage_8h_a1ac3bdfbdc153068f7218a946e4e3e8c}\label{affichage_8h_a1ac3bdfbdc153068f7218a946e4e3e8c}} 
+\index{affichage.h@{affichage.h}!affichageDonneesChoix@{affichageDonneesChoix}}
+\index{affichageDonneesChoix@{affichageDonneesChoix}!affichage.h@{affichage.h}}
+\doxysubsubsection{\texorpdfstring{affichageDonneesChoix()}{affichageDonneesChoix()}}
+{\footnotesize\ttfamily int affichage\+Donnees\+Choix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Permet à l\textquotesingle{}utilisateur de choisir s\textquotesingle{}il souhaite afficher le résultat de l\textquotesingle{}analyse de trames GPS données. 
+
+Demande à l\textquotesingle{}utilisateur s\textquotesingle{}il souhaite afficher les données. L\textquotesingle{}utilisateur peut répondre par oui (1) ou non (0).
+
+\begin{DoxyReturn}{Returns}
+Le choix de l\textquotesingle{}utilisateur (1 pour oui, 0 pour non). 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file affichage.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{56                            \{}
+\DoxyCodeLine{57     \textcolor{keywordtype}{int} choixAffichage=0;}
+\DoxyCodeLine{58     printf(\textcolor{stringliteral}{"{}Voulez-\/vouz afficher les données? 1 -\/ oui, 0 -\/ non\(\backslash\)n"{}});}
+\DoxyCodeLine{59     scanf(\textcolor{stringliteral}{"{}\%d"{}},\&choixAffichage);}
+\DoxyCodeLine{60     \textcolor{keywordflow}{while} (choixAffichage!=1 \&\& choixAffichage!=0)\{}
+\DoxyCodeLine{61         printf(\textcolor{stringliteral}{"{}Veillez entrer votre choix.\(\backslash\)n"{}});}
+\DoxyCodeLine{62         printf(\textcolor{stringliteral}{"{}Voulez-\/vouz afficher les données? 1 -\/ oui, 0 -\/ non\(\backslash\)n"{}});}
+\DoxyCodeLine{63         scanf(\textcolor{stringliteral}{"{}\%d"{}},\&choixAffichage);}
+\DoxyCodeLine{64     \}}
+\DoxyCodeLine{65     \textcolor{keywordflow}{return} choixAffichage;}
+\DoxyCodeLine{66 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{affichage_8h_a7864f4c36edf57890d9e7681198cf8bb}\label{affichage_8h_a7864f4c36edf57890d9e7681198cf8bb}} 
+\index{affichage.h@{affichage.h}!affichageDonneesFichier@{affichageDonneesFichier}}
+\index{affichageDonneesFichier@{affichageDonneesFichier}!affichage.h@{affichage.h}}
+\doxysubsubsection{\texorpdfstring{affichageDonneesFichier()}{affichageDonneesFichier()}}
+{\footnotesize\ttfamily void affichage\+Donnees\+Fichier (\begin{DoxyParamCaption}\item[{char}]{nom\+Fic\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Affiche le contenu du fichier contenant le résultat de l\textquotesingle{}analyse de trames GPS. 
+
+Affiche le contenu du fichier contenant le résultat de l\textquotesingle{}analyse de trames GPS. Si le fichier ne peut pas être ouvert en lecture, affiche un message d\textquotesingle{}erreur.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom\+Fic} & Le nom du fichier à afficher contenant le résultat de l\textquotesingle{}analyse de trames GPS. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file affichage.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{68                                            \{}
+\DoxyCodeLine{69     printf(\textcolor{stringliteral}{"{}\(\backslash\)nContenu du fichier \(\backslash\)"{}\%s\(\backslash\)"{} : \(\backslash\)n"{}},nomFic);}
+\DoxyCodeLine{70     FILE* file;}
+\DoxyCodeLine{71     file = fopen(nomFic,\textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{72     \textcolor{keywordflow}{if} (file==NULL)\{}
+\DoxyCodeLine{73         printf(\textcolor{stringliteral}{"{}Impossible d'ouvrir en lecture le fichier \%s\(\backslash\)n"{}},nomFic);}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75     \textcolor{keywordtype}{char} c;}
+\DoxyCodeLine{76     \textcolor{keywordflow}{if} (c == EOF) \{}
+\DoxyCodeLine{77         printf(\textcolor{stringliteral}{"{}File is empty or couldn't be read.\(\backslash\)n"{}});}
+\DoxyCodeLine{78         fclose(file);}
+\DoxyCodeLine{79     \}}
+\DoxyCodeLine{80     printf(\textcolor{stringliteral}{"{}\%c"{}},c);}
+\DoxyCodeLine{81     \textcolor{keywordflow}{while} (c != EOF)\{}
+\DoxyCodeLine{82         printf(\textcolor{stringliteral}{"{}\%c"{}},c);}
+\DoxyCodeLine{83         c=fgetc(file);}
+\DoxyCodeLine{84     \}}
+\DoxyCodeLine{85     fclose(file);}
+\DoxyCodeLine{86     }
+\DoxyCodeLine{87 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{affichage_8h_a7c190fbca47364a8ddc6c5a2c50c308e}\label{affichage_8h_a7c190fbca47364a8ddc6c5a2c50c308e}} 
+\index{affichage.h@{affichage.h}!affichageMenu@{affichageMenu}}
+\index{affichageMenu@{affichageMenu}!affichage.h@{affichage.h}}
+\doxysubsubsection{\texorpdfstring{affichageMenu()}{affichageMenu()}}
+{\footnotesize\ttfamily int affichage\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Affiche le menu et permet à l\textquotesingle{}utilisateur de choisir une méthode pour lire les données. 
+
+Affiche un menu avec les options disponibles pour lire les trames GPS L\textquotesingle{}utilisateur peut choisir de saisr les données manuellement, de les lire à partir d\textquotesingle{}un fichier en donnant son chemin ou de quitter l\textquotesingle{}application
+
+\begin{DoxyReturn}{Returns}
+Le choix de l\textquotesingle{}utilisateur (0 pour auitter, 1 pour saisir manuellement, 2 pour lire à partir d\textquotesingle{}un fichier) 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file affichage.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41                    \{}
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} choix = -\/1;}
+\DoxyCodeLine{43     printf(\textcolor{stringliteral}{"{}Comment voulez-\/vous lire vos données? Veuillez choisir l'une des méthodes suivantes pour commencer:\(\backslash\)n"{}});}
+\DoxyCodeLine{44     printf(\textcolor{stringliteral}{"{}1 -\/ Saisir mes données manuellement\(\backslash\)n"{}});}
+\DoxyCodeLine{45     printf(\textcolor{stringliteral}{"{}2 -\/ Lire mes données à partir d'un fichier\(\backslash\)n"{}});}
+\DoxyCodeLine{46     printf(\textcolor{stringliteral}{"{}0 -\/ Je quitte l'application\(\backslash\)n"{}});}
+\DoxyCodeLine{47     scanf(\textcolor{stringliteral}{"{}\%d"{}},\&choix);}
+\DoxyCodeLine{48     \textcolor{keywordflow}{while}(choix<0||choix>2)\{}
+\DoxyCodeLine{49         printf(\textcolor{stringliteral}{"{}\(\backslash\)nErreur de saisie, veuillez réessayer.\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{50         \mbox{\hyperlink{affichage_8c_a7c190fbca47364a8ddc6c5a2c50c308e}{affichageMenu}}(\&choix);}
+\DoxyCodeLine{51         scanf(\textcolor{stringliteral}{"{}\%d"{}},\&choix);}
+\DoxyCodeLine{52     \} }
+\DoxyCodeLine{53     \textcolor{keywordflow}{return} choix;}
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}

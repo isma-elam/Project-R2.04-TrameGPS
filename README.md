@@ -11,12 +11,6 @@ Format GPGGA :
 <img src="https://docs.arduino.cc/static/63d81cb4391da3e616bbcfab7c9d12d8/4ef49/gps-nmea-0183_img01.png" align="center">
 
 ## Installation
-**Prérequis**
-<li>
-    <ul>Système d'exploitaiton : cette application est compatible avec Windows, macOS et Linux.</ul>
-</li>
-
-**Installation**
 1. Clonez le dépôt
 ```
 git clone https://gitlab.info.iut-tlse3.fr/wwl4521a/project-r2.04-tramegps.git
@@ -33,13 +27,31 @@ make
 ```
 make clean
 ```
-**Utilisation d'application**
-1. Créez un fichier avec vos données stockées dedans, un exemple est donné dans le fichier data.txt.
-2. Exécutez le programme compilé:
+## Utilisation d'application
+1. Après avoir compilé le code source à l'aide de la commande make executez le programme en tapant:
 ```
 ./main
 ```
-3. Suivez les instructions pour interagir avec l'application. Vous devez saisir le nom de votre dossier. Les données extraites seront ensuite enregistrées dans un dossier appelé "enregistrements.txt" dans votre répertoire de travail.
+2. Le programme vous demandera de choisir l'une des options suivantes en tapant le numéro correspondant:
+* 1 : Saisir manuellement les trames GPS 
+* 2 : Lire les trames GPS à partir d'un fichier
+* 3 : Quitter l'application
+
+3. Si vous choisissez de saisir manuellement les données, entrez les trames GPS une par une, suivies par la touche "Entrée". Pour terminer la saisie, tapez "exit".
+
+4. Si vous choisissez de lire les trames GPS à partir d'un fichier, indiquez le chemin vers votre fichier. Le format des trames GPS dans le fichier doit être comme le suivant:
+```
+$GPGGA,133519,4807.038,N,01131.324,E,1,08,0.9,545.4,M,46.9,M, ,*42
+$GPGGA,123519,4124.8963,N,08151.6838,W,1,08,0.9,545.4,M,46.9,M, ,*42
+$GPGGA,235317.000,4003.9039,N,10512.5793,W,1,08,1.6,1577.9,M,-20.7,M,,0000*5F
+
+```
+
+5. Les résultats des converesions seront enregistrés dans un fichier appelé "enregistrements.txt" situé dans le répertoire du projet.
+
+6. Le programme vous demandera ensuite si vous souhaitez afficher les résultats de la conversion dans le terminal. 
+* Si vous répondez 1 (oui), les résultats contenus dans le fichier "enregistrements.txt" seront affichés et le programme se terminera.
+* Si vous répondez 0 (non), le programme se terminera sans affichage.
 
 ## Comment cet application fonctionne-t-il?
 Les données contenant plusieurs trames GPS sont d'abord lues à partir d'un document fourni par l'utilisateur (un exemple du fichier nommé "data.txt" est donné). Les trames sont traitées une par une en vérifiant le type de trame en vérifiant le type de trame et en s'assurant qu'elle comporte au moins 15 champs. Ensuite, les informations pertinentes, à savoir l'heure de réception, la longitude et la latitude, sont extraites et testées pour leur format. Ensuite, la longitude et la latitude sont converties du format décimal au format degré. L'heure de réception est également formatée. Enfine, les informations traitées sont stockées dans un autre fichier nommé "enregistrement.txt".
@@ -59,7 +71,6 @@ De plus nous avons utilisé GitLab car il nous a permis de suivre les modificati
 
 **Compilateur GCC**<br/>
 En ce qui concerne le compilateur, nous avons utilisé gcc, le suite de compilateurs C la plus largement utilisée car elle est open source est disponible gratuitement.
-
 La combinaison de ces outils offre un environnement de développement complet pour la construction de notre projet de manière efficace en founissant les outils pour promouvoir la qualité du code, la collaboration et la maintenabilité.
 
 ## Défis Rencontrés et Fonctionnalités Futures

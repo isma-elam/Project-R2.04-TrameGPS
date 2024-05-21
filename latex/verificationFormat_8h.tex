@@ -1,0 +1,279 @@
+\hypertarget{verificationFormat_8h}{}\doxysection{verification\+Format.\+h File Reference}
+\label{verificationFormat_8h}\index{verificationFormat.h@{verificationFormat.h}}
+
+
+Ce fichier contient les déclarations des fonctions pour vérifier le format des données GPS.  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$setjmp.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}extraction.\+h\char`\"{}}\newline
+Include dependency graph for verification\+Format.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{verificationFormat_8h_ab290a202b1d291cc5c9cea38ecf4df3c}\label{verificationFormat_8h_ab290a202b1d291cc5c9cea38ecf4df3c}} 
+\#define {\bfseries LONGUEUR\+\_\+\+PREFIXE}~6
+\item 
+\mbox{\Hypertarget{verificationFormat_8h_a581f2e6d757d0a01d56b93b0841aade8}\label{verificationFormat_8h_a581f2e6d757d0a01d56b93b0841aade8}} 
+\#define {\bfseries LONGUEUR\+\_\+\+HEURE}~6
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{verificationFormat_8h_a8852f03cd91327c7c725673317d85b46}\label{verificationFormat_8h_a8852f03cd91327c7c725673317d85b46}} 
+enum {\bfseries Exception} \{ \newline
+{\bfseries OK}
+, {\bfseries TYPE\+\_\+\+INVALIDE}
+, {\bfseries NB\+\_\+\+CHAMPS\+\_\+\+INVALIDE}
+, {\bfseries FORMAT\+\_\+\+HEURE\+\_\+\+INVALIDE}
+, \newline
+{\bfseries LATITUDE\+\_\+\+INVALIDE}
+, {\bfseries LONGITUDE\+\_\+\+INVALIDE}
+, {\bfseries CHEMIN\+\_\+\+INVALIDE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{verificationFormat_8h_a80d50523d2035c3429b07c6c12294f18}{verifier\+\_\+type\+\_\+trame}} (char $\ast$trame, jmp\+\_\+buf pt\+Rep)
+\begin{DoxyCompactList}\small\item\em Vérifie le type de la trame GPS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{verificationFormat_8h_a3e95b8ae569dc5ff91749fe5d1d1495b}{verifier\+\_\+nombre\+\_\+champs}} (char $\ast$trame, jmp\+\_\+buf pt\+Rep)
+\begin{DoxyCompactList}\small\item\em Vérifie le nombre de champs dans la trame GPS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{verificationFormat_8h_aa8612598656151584883a57fc4b5ab17}{verifier\+\_\+format\+\_\+heure}} (char $\ast$trame, jmp\+\_\+buf pt\+Rep)
+\begin{DoxyCompactList}\small\item\em Vérifie le format de l\textquotesingle{}heure dans la trame GPS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{verificationFormat_8h_ac7a329cfb0776e800305d76d50e44b62}{verifier\+\_\+heure\+\_\+min\+\_\+sec}} (int heure, int min, int sec, jmp\+\_\+buf pt\+Rep)
+\begin{DoxyCompactList}\small\item\em Vérifie le format des heures, minutes et secondes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{verificationFormat_8h_acf17eff23be33d9dda8876705952027a}{verifier\+\_\+latitude}} (int degre, int minute, float second, jmp\+\_\+buf pt\+Rep)
+\begin{DoxyCompactList}\small\item\em Vérifie le format de la latitude dans la trame GPS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{verificationFormat_8h_a6e6448a215b6acf053b0dba7d8be47be}{verifier\+\_\+longitude}} (int degre, int minute, float second, jmp\+\_\+buf pt\+Rep)
+\begin{DoxyCompactList}\small\item\em Vérifie le format de la longitude dans la trame GPS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ce fichier contient les déclarations des fonctions pour vérifier le format des données GPS. 
+
+\begin{DoxyAuthor}{Author}
+Ellisa EE, Ismael EL-\/\+AMRANI
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{verificationFormat_8h_aa8612598656151584883a57fc4b5ab17}\label{verificationFormat_8h_aa8612598656151584883a57fc4b5ab17}} 
+\index{verificationFormat.h@{verificationFormat.h}!verifier\_format\_heure@{verifier\_format\_heure}}
+\index{verifier\_format\_heure@{verifier\_format\_heure}!verificationFormat.h@{verificationFormat.h}}
+\doxysubsubsection{\texorpdfstring{verifier\_format\_heure()}{verifier\_format\_heure()}}
+{\footnotesize\ttfamily void verifier\+\_\+format\+\_\+heure (\begin{DoxyParamCaption}\item[{char $\ast$}]{trame,  }\item[{jmp\+\_\+buf}]{pt\+Rep }\end{DoxyParamCaption})}
+
+
+
+Vérifie le format de l\textquotesingle{}heure dans la trame GPS. 
+
+Cette fonction extrait l\textquotesingle{}heure de la trame GPS et vérifie si elle a la longueur correcte. Si l\textquotesingle{}heure n\textquotesingle{}a pas la longueur correcte, une longjmp est utilisée pour renvoyer une erreur.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trame} & La trame GPS contenant l\textquotesingle{}heure à vérifier. \\
+\hline
+{\em pt\+Rep} & Pointeur vers le contexte de saut pour gérer les erreurs. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file verification\+Format.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57                                                       \{}
+\DoxyCodeLine{58     \textcolor{keywordtype}{char} heure[7]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{59     \mbox{\hyperlink{extraction_8c_a1ca3d0e47327f24d14197a5dc3594192}{extraireHeure}}(heure,trame);}
+\DoxyCodeLine{60     \textcolor{keywordflow}{if}(strlen(heure)!=LONGUEUR\_HEURE)\{}
+\DoxyCodeLine{61         longjmp(ptRep,FORMAT\_HEURE\_INVALIDE);}
+\DoxyCodeLine{62     \}   }
+\DoxyCodeLine{63 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{verificationFormat_8h_ac7a329cfb0776e800305d76d50e44b62}\label{verificationFormat_8h_ac7a329cfb0776e800305d76d50e44b62}} 
+\index{verificationFormat.h@{verificationFormat.h}!verifier\_heure\_min\_sec@{verifier\_heure\_min\_sec}}
+\index{verifier\_heure\_min\_sec@{verifier\_heure\_min\_sec}!verificationFormat.h@{verificationFormat.h}}
+\doxysubsubsection{\texorpdfstring{verifier\_heure\_min\_sec()}{verifier\_heure\_min\_sec()}}
+{\footnotesize\ttfamily void verifier\+\_\+heure\+\_\+min\+\_\+sec (\begin{DoxyParamCaption}\item[{int}]{heure,  }\item[{int}]{min,  }\item[{int}]{sec,  }\item[{jmp\+\_\+buf}]{pt\+Rep }\end{DoxyParamCaption})}
+
+
+
+Vérifie le format des heures, minutes et secondes. 
+
+Cette fonction vérifie si les heures, minutes et secondes sont dans des plages valides. Si une des valeurs est invalide, une longjmp est utilisée pour renvoyer une erreur.
+
+
+\begin{DoxyParams}{Parameters}
+{\em heure} & Heure à vérifier. \\
+\hline
+{\em min} & Minute à vérifier. \\
+\hline
+{\em sec} & Seconde à vérifier. \\
+\hline
+{\em pt\+Rep} & Pointeur vers le contexte de saut pour gérer les erreurs. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file verification\+Format.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65                                                                      \{}
+\DoxyCodeLine{66     \textcolor{keywordflow}{if} (heure<0 || min<0 || sec<0 || heure>24 || min>59 || sec>59)\{}
+\DoxyCodeLine{67         longjmp(ptRep,FORMAT\_HEURE\_INVALIDE);}
+\DoxyCodeLine{68     \}}
+\DoxyCodeLine{69 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{verificationFormat_8h_acf17eff23be33d9dda8876705952027a}\label{verificationFormat_8h_acf17eff23be33d9dda8876705952027a}} 
+\index{verificationFormat.h@{verificationFormat.h}!verifier\_latitude@{verifier\_latitude}}
+\index{verifier\_latitude@{verifier\_latitude}!verificationFormat.h@{verificationFormat.h}}
+\doxysubsubsection{\texorpdfstring{verifier\_latitude()}{verifier\_latitude()}}
+{\footnotesize\ttfamily void verifier\+\_\+latitude (\begin{DoxyParamCaption}\item[{int}]{degre,  }\item[{int}]{minute,  }\item[{float}]{second,  }\item[{jmp\+\_\+buf}]{pt\+Rep }\end{DoxyParamCaption})}
+
+
+
+Vérifie le format de la latitude dans la trame GPS. 
+
+Cette fonction vérifie si la latitude est dans une plage valide. Si la latitude est invalide, une longjmp est utilisée pour renvoyer une erreur.
+
+
+\begin{DoxyParams}{Parameters}
+{\em degre} & Degré de latitude. \\
+\hline
+{\em minute} & Minute de latitude. \\
+\hline
+{\em second} & Seconde de latitude. \\
+\hline
+{\em pt\+Rep} & Pointeur vers le contexte de saut pour gérer les erreurs. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file verification\+Format.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71                                                                           \{}
+\DoxyCodeLine{72     \textcolor{keywordflow}{if} (degre<0 || degre>90 || minute<0 || minute>59 || second<0 || second>59)\{}
+\DoxyCodeLine{73         longjmp(ptRep,LATITUDE\_INVALIDE);}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{verificationFormat_8h_a6e6448a215b6acf053b0dba7d8be47be}\label{verificationFormat_8h_a6e6448a215b6acf053b0dba7d8be47be}} 
+\index{verificationFormat.h@{verificationFormat.h}!verifier\_longitude@{verifier\_longitude}}
+\index{verifier\_longitude@{verifier\_longitude}!verificationFormat.h@{verificationFormat.h}}
+\doxysubsubsection{\texorpdfstring{verifier\_longitude()}{verifier\_longitude()}}
+{\footnotesize\ttfamily void verifier\+\_\+longitude (\begin{DoxyParamCaption}\item[{int}]{degre,  }\item[{int}]{minute,  }\item[{float}]{second,  }\item[{jmp\+\_\+buf}]{pt\+Rep }\end{DoxyParamCaption})}
+
+
+
+Vérifie le format de la longitude dans la trame GPS. 
+
+Cette fonction vérifie si la longitude est dans une plage valide. Si la longitude est invalide, une longjmp est utilisée pour renvoyer une erreur.
+
+
+\begin{DoxyParams}{Parameters}
+{\em degre} & Degré de longitude. \\
+\hline
+{\em minute} & Minute de longitude. \\
+\hline
+{\em second} & Seconde de longitude. \\
+\hline
+{\em pt\+Rep} & Pointeur vers le contexte de saut pour gérer les erreurs. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file verification\+Format.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{77                                                                            \{}
+\DoxyCodeLine{78     \textcolor{keywordflow}{if} (degre<0 || degre>180 || minute<0 || minute>59 || second<0 || second>59)\{}
+\DoxyCodeLine{79         longjmp(ptRep,LONGITUDE\_INVALIDE);}
+\DoxyCodeLine{80     \}}
+\DoxyCodeLine{81 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{verificationFormat_8h_a3e95b8ae569dc5ff91749fe5d1d1495b}\label{verificationFormat_8h_a3e95b8ae569dc5ff91749fe5d1d1495b}} 
+\index{verificationFormat.h@{verificationFormat.h}!verifier\_nombre\_champs@{verifier\_nombre\_champs}}
+\index{verifier\_nombre\_champs@{verifier\_nombre\_champs}!verificationFormat.h@{verificationFormat.h}}
+\doxysubsubsection{\texorpdfstring{verifier\_nombre\_champs()}{verifier\_nombre\_champs()}}
+{\footnotesize\ttfamily void verifier\+\_\+nombre\+\_\+champs (\begin{DoxyParamCaption}\item[{char $\ast$}]{trame,  }\item[{jmp\+\_\+buf}]{pt\+Rep }\end{DoxyParamCaption})}
+
+
+
+Vérifie le nombre de champs dans la trame GPS. 
+
+Cette fonction compte le nombre de virgules dans la trame GPS pour vérifier si elle contient le nombre correct de champs (15). Si le nombre de champs est incorrect, une longjmp est utilisée pour renvoyer une erreur.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trame} & La trame à vérifier. \\
+\hline
+{\em pt\+Rep} & Pointeur vers le contexte de saut pour gérer les erreurs. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file verification\+Format.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45                                                       \{}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} nb\_virgules = 0;}
+\DoxyCodeLine{47     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0 ; i < strlen(trame); i++)\{}
+\DoxyCodeLine{48         \textcolor{keywordflow}{if} (trame[i]==\textcolor{charliteral}{','})\{}
+\DoxyCodeLine{49             nb\_virgules++;}
+\DoxyCodeLine{50         \}}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52     \textcolor{keywordflow}{if} (nb\_virgules!=14)\{}
+\DoxyCodeLine{53         longjmp(ptRep,NB\_CHAMPS\_INVALIDE);}
+\DoxyCodeLine{54     \} }
+\DoxyCodeLine{55 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{verificationFormat_8h_a80d50523d2035c3429b07c6c12294f18}\label{verificationFormat_8h_a80d50523d2035c3429b07c6c12294f18}} 
+\index{verificationFormat.h@{verificationFormat.h}!verifier\_type\_trame@{verifier\_type\_trame}}
+\index{verifier\_type\_trame@{verifier\_type\_trame}!verificationFormat.h@{verificationFormat.h}}
+\doxysubsubsection{\texorpdfstring{verifier\_type\_trame()}{verifier\_type\_trame()}}
+{\footnotesize\ttfamily void verifier\+\_\+type\+\_\+trame (\begin{DoxyParamCaption}\item[{char $\ast$}]{trame,  }\item[{jmp\+\_\+buf}]{pt\+Rep }\end{DoxyParamCaption})}
+
+
+
+Vérifie le type de la trame GPS. 
+
+Cette fonction vérifie si la trame GPS commence par le préfixe \char`\"{}\$\+GPGGA\char`\"{}. Si la trame n\textquotesingle{}a pas le bon préfixe, une longjmp est utilisée pour renvoyer une erreur.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trame} & La trame à vérifier. \\
+\hline
+{\em pt\+Rep} & Pointeur vers le contexte de saut pour gérer les erreurs. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file verification\+Format.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{39                                                    \{}
+\DoxyCodeLine{40     \textcolor{keywordflow}{if} (strncmp(trame,\textcolor{stringliteral}{"{}\$GPGGA"{}},LONGUEUR\_PREFIXE)!=0)\{}
+\DoxyCodeLine{41         longjmp(ptRep,TYPE\_INVALIDE);}
+\DoxyCodeLine{42     \}}
+\DoxyCodeLine{43 \}}
+
+\end{DoxyCode}

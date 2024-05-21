@@ -66,7 +66,7 @@ $(function() {
 <div class="title">extraction.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
+<a href="extraction_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*  ASR =&gt; 4R2.04                                                              *</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*******************************************************************************</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*                                                                             *</span></div>
@@ -92,60 +92,68 @@ $(function() {
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">*                                                                             *</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">******************************************************************************/</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;extraction.h&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> extraireInfoTrame(<span class="keywordtype">char</span>* tChar,<span class="keyword">struct</span> <a class="code" href="structtrameInfo.html">trameInfo</a>* t){</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">char</span> heure [LONGUEUR_HEURE+1]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">char</span> lo [LONGUEUR_LONG_LAT+1]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">char</span> la [LONGUEUR_LONG_LAT+1]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    extraireHeure(heure,tChar);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    conversionHeure(heure,&amp;t-&gt;heure);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    extraireLatitude(la,tChar);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    conversionLat(la,&amp;t-&gt;latitude);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    extraireLongitude(lo,tChar);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    conversionLong(lo,&amp;t-&gt;longitude);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> extraireHeure (<span class="keywordtype">char</span>* heure, <span class="keywordtype">char</span>* <span class="keyword">const</span> trame){</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">char</span>* p;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    p=strchr(trame,<span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    strncat(heure,p+1,LONGUEUR_HEURE);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="extraction_8h.html">extraction.h</a>&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="extraction_8c.html#a104029a943c0f967614ebc3071445a00">   40</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="extraction_8c.html#a104029a943c0f967614ebc3071445a00">extraireInfoTrame</a>(<span class="keywordtype">char</span>* tChar,<span class="keyword">struct</span> <a class="code" href="structtrameInfo.html">trameInfo</a>* t){</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">char</span> heure [LONGUEUR_HEURE+1]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">char</span> lo [LONGUEUR_LONG_LAT+1]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">char</span> la [LONGUEUR_LONG_LAT+1]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="extraction_8c.html#a1ca3d0e47327f24d14197a5dc3594192">extraireHeure</a>(heure,tChar);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="conversion_8c.html#ac9645bfae39dad716e3014034b482355">conversionHeure</a>(heure,&amp;t-&gt;heure);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="extraction_8c.html#a7d634ce44d31bc337ad38f2f3e64f569">extraireLatitude</a>(la,tChar);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="conversion_8c.html#ad58ecd23fb80830563dd233ec1527d14">conversionLat</a>(la,&amp;t-&gt;latitude);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> extraireLatitude(<span class="keywordtype">char</span>* latitude, <span class="keywordtype">char</span>* <span class="keyword">const</span> trame){</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">char</span>* p;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">char</span>* p2;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    p=strchr(trame,<span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    p=p+1;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    p=strchr(p,<span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    p=p+1;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    p2=p;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    p2=strchr(p,<span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    strncat(latitude,p,p2-p);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    strcat(latitude,<span class="stringliteral">&quot;,&quot;</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    strncat(latitude,p2+1,1); </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> extraireLongitude(<span class="keywordtype">char</span>* longitude, <span class="keywordtype">char</span>* <span class="keyword">const</span> trame){</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">char</span>* p;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">char</span>* p2;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    p=strchr(trame,<span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    p=p+1;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0 ; i &lt; 3 ; i++){</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        p=strchr(p,<span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        p=p+1;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    p2=p;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    p2=strchr(p,<span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    strncat(longitude,p,p2-p);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    strcat(longitude,<span class="stringliteral">&quot;,&quot;</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    strncat(longitude,p2+1,1); </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="ttc" id="astructtrameInfo_html"><div class="ttname"><a href="structtrameInfo.html">trameInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="extraction_8h_source.html#l00039">extraction.h:39</a></div></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="extraction_8c.html#a070c3a6e0e89749808de3541a6c88de3">extraireLongitude</a>(lo,tChar);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="conversion_8c.html#a6bc2d485dcc79873ff6322b8b99d4ca9">conversionLong</a>(lo,&amp;t-&gt;longitude);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="extraction_8c.html#a1ca3d0e47327f24d14197a5dc3594192">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="extraction_8c.html#a1ca3d0e47327f24d14197a5dc3594192">extraireHeure</a> (<span class="keywordtype">char</span>* heure, <span class="keywordtype">char</span>* <span class="keyword">const</span> trame){</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">char</span>* p;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    p=strchr(trame,<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    strncat(heure,p+1,LONGUEUR_HEURE);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="extraction_8c.html#a7d634ce44d31bc337ad38f2f3e64f569">   61</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="extraction_8c.html#a7d634ce44d31bc337ad38f2f3e64f569">extraireLatitude</a>(<span class="keywordtype">char</span>* latitude, <span class="keywordtype">char</span>* <span class="keyword">const</span> trame){</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">char</span>* p;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">char</span>* p2;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    p=strchr(trame,<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    p=p+1;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    p=strchr(p,<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    p=p+1;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    p2=p;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    p2=strchr(p,<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    strncat(latitude,p,p2-p);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    strcat(latitude,<span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    strncat(latitude,p2+1,1); </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="extraction_8c.html#a070c3a6e0e89749808de3541a6c88de3">   75</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="extraction_8c.html#a070c3a6e0e89749808de3541a6c88de3">extraireLongitude</a>(<span class="keywordtype">char</span>* longitude, <span class="keywordtype">char</span>* <span class="keyword">const</span> trame){</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">char</span>* p;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">char</span>* p2;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    p=strchr(trame,<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    p=p+1;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0 ; i &lt; 3 ; i++){</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        p=strchr(p,<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        p=p+1;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    p2=p;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    p2=strchr(p,<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    strncat(longitude,p,p2-p);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    strcat(longitude,<span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    strncat(longitude,p2+1,1); </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="ttc" id="aconversion_8c_html_a6bc2d485dcc79873ff6322b8b99d4ca9"><div class="ttname"><a href="conversion_8c.html#a6bc2d485dcc79873ff6322b8b99d4ca9">conversionLong</a></div><div class="ttdeci">void conversionLong(char *const dec, struct dmsInfo *d)</div><div class="ttdoc">Convertit une longitude décimale en degré, minutes, secondes (DMS)</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8c_source.html#l00060">conversion.c:60</a></div></div>
+<div class="ttc" id="aconversion_8c_html_ac9645bfae39dad716e3014034b482355"><div class="ttname"><a href="conversion_8c.html#ac9645bfae39dad716e3014034b482355">conversionHeure</a></div><div class="ttdeci">void conversionHeure(char *const heure, struct heureInfo *h)</div><div class="ttdoc">Convertit une heure en format châine de caractères en heures, minutes, secondes.</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8c_source.html#l00080">conversion.c:80</a></div></div>
+<div class="ttc" id="aconversion_8c_html_ad58ecd23fb80830563dd233ec1527d14"><div class="ttname"><a href="conversion_8c.html#ad58ecd23fb80830563dd233ec1527d14">conversionLat</a></div><div class="ttdeci">void conversionLat(char *const dec, struct dmsInfo *d)</div><div class="ttdoc">Convertit une latitude décimale en degrés, minutes, secondes (DMS)</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8c_source.html#l00040">conversion.c:40</a></div></div>
+<div class="ttc" id="aextraction_8c_html_a070c3a6e0e89749808de3541a6c88de3"><div class="ttname"><a href="extraction_8c.html#a070c3a6e0e89749808de3541a6c88de3">extraireLongitude</a></div><div class="ttdeci">void extraireLongitude(char *longitude, char *const trame)</div><div class="ttdoc">Extrait la longitude d'une trame donnée et la stocke dans une chaîne de caractères.</div><div class="ttdef"><b>Definition:</b> <a href="extraction_8c_source.html#l00075">extraction.c:75</a></div></div>
+<div class="ttc" id="aextraction_8c_html_a104029a943c0f967614ebc3071445a00"><div class="ttname"><a href="extraction_8c.html#a104029a943c0f967614ebc3071445a00">extraireInfoTrame</a></div><div class="ttdeci">void extraireInfoTrame(char *tChar, struct trameInfo *t)</div><div class="ttdoc">Extrait les informations d'une trame donnée et les stocke dans une structure trameInfo.</div><div class="ttdef"><b>Definition:</b> <a href="extraction_8c_source.html#l00040">extraction.c:40</a></div></div>
+<div class="ttc" id="aextraction_8c_html_a1ca3d0e47327f24d14197a5dc3594192"><div class="ttname"><a href="extraction_8c.html#a1ca3d0e47327f24d14197a5dc3594192">extraireHeure</a></div><div class="ttdeci">void extraireHeure(char *heure, char *const trame)</div><div class="ttdoc">Extrait l'heure d'une trame donnée et la stocke dans une chaîne de caractères.</div><div class="ttdef"><b>Definition:</b> <a href="extraction_8c_source.html#l00054">extraction.c:54</a></div></div>
+<div class="ttc" id="aextraction_8c_html_a7d634ce44d31bc337ad38f2f3e64f569"><div class="ttname"><a href="extraction_8c.html#a7d634ce44d31bc337ad38f2f3e64f569">extraireLatitude</a></div><div class="ttdeci">void extraireLatitude(char *latitude, char *const trame)</div><div class="ttdoc">Extrait la latitude d'une trame donnée et la stocke dans une chaîne de caractères.</div><div class="ttdef"><b>Definition:</b> <a href="extraction_8c_source.html#l00061">extraction.c:61</a></div></div>
+<div class="ttc" id="aextraction_8h_html"><div class="ttname"><a href="extraction_8h.html">extraction.h</a></div><div class="ttdoc">Ce fichier contient les déclarations des fonctions pour extraire les données GPS.</div></div>
+<div class="ttc" id="astructtrameInfo_html"><div class="ttname"><a href="structtrameInfo.html">trameInfo</a></div><div class="ttdoc">Structure représentant les informations extraites d'une trame GPS.</div><div class="ttdef"><b>Definition:</b> <a href="extraction_8h_source.html#l00053">extraction.h:53</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

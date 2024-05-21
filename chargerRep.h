@@ -26,9 +26,8 @@
 
 /**
  * @file chargerRep.h
- * @author Ellisa EE
- * @brief 
- * @version 0.1
+ * @author Ellisa EE, Ismael EL-AMRANI
+ * @brief Ce fichier contient les déclarations des fonctions pour charger les données GPS.
  * 
  * @copyright Copyright (c) 2024
  * 
