@@ -80,6 +80,9 @@ Pour ce projet nous avons utilisé Visual Studio Code (VS Code) comme environnem
 **GitLab**<br/>
 De plus nous avons utilisé GitLab car il nous a permis de suivre les modifications tout au long ce projet et de collaborer avec les membre de l'équipe, ce qui nous a permis de collaborer, de faire des revues de code et de suivre les problèmes de fusion.
 
+**Doxygen**
+Nous avons également intégré Doxygen à notre flux de travail pour documenter automatiquement notre code source. Cette intégration génère une documentation claire et structurée, ce qui facilite la compréhension du projet pour les membres de l'équipe et les contributeurs externes. En fournissant une vue détaillée des fonctions et des structures de données, Doxygen améliore la lisibilité du code et favorise les bonnes pratiques de programmation.
+
 **Compilateur GCC**<br/>
 En ce qui concerne le compilateur, nous avons utilisé gcc, le suite de compilateurs C la plus largement utilisée car elle est open source est disponible gratuitement.
 La combinaison de ces outils offre un environnement de développement complet pour la construction de notre projet de manière efficace en founissant les outils pour promouvoir la qualité du code, la collaboration et la maintenabilité.
