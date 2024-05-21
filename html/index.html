@@ -87,45 +87,45 @@ Installation</h1>
 </ol>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Utilisation d'application</h1>
-<ol type="1">
-<li>Après avoir compilé le code source à l'aide de la commande make executez le programme en tapant: <div class="fragment"><div class="line">./main</div>
-</div><!-- fragment --></li>
-<li>Le programme vous demandera de choisir l'une des options suivantes en tapant le numéro correspondant:</li>
-</ol>
-<ul>
-<li>1 : Saisir manuellement les trames GPS</li>
-<li>2 : Lire les trames GPS à partir d'un fichier</li>
-<li>3 : Quitter l'application</li>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Compilation et exécution du programme</h2>
+<p>Après avoir compilé le code source à l'aide de la commande make executez le programme en tapant: </p><div class="fragment"><div class="line">./main</div>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md5"></a>
+Choix des données d'entrée</h2>
+<p>Le programme vous demandera de choisir l'une des options suivantes en tapant le numéro correspondant:</p><ul>
+<li><b>1</b> : Saisir manuellement les trames GPS</li>
+<li><b>2</b> : Lire les trames GPS à partir d'un fichier</li>
+<li><b>3</b> : Quitter l'application</li>
 </ul>
-<ol type="1">
-<li>Si vous choisissez de saisir manuellement les données, entrez les trames GPS une par une, suivies par la touche "Entrée". Pour terminer la saisie, tapez "exit".</li>
-<li>Si vous choisissez de lire les trames GPS à partir d'un fichier, indiquez le chemin vers votre fichier. Le format des trames GPS dans le fichier doit être comme le suivant: <div class="fragment"><div class="line">$GPGGA,133519,4807.038,N,01131.324,E,1,08,0.9,545.4,M,46.9,M, ,*42</div>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Saisie manuelle des données</h2>
+<p>Si vous choisissez de saisir manuellement les données, entrez les trames GPS une par une, suivies par la touche "Entrée". Pour terminer la saisie, tapez "exit".</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Lecture des trames GPS à partir d'un fichier</h2>
+<p>Si vous choisissez de lire les trames GPS à partir d'un fichier, indiquez le chemin vers votre fichier. Le format des trames GPS dans le fichier doit être comme le suivant: </p><div class="fragment"><div class="line">$GPGGA,133519,4807.038,N,01131.324,E,1,08,0.9,545.4,M,46.9,M, ,*42</div>
 <div class="line">$GPGGA,123519,4124.8963,N,08151.6838,W,1,08,0.9,545.4,M,46.9,M, ,*42</div>
 <div class="line">$GPGGA,235317.000,4003.9039,N,10512.5793,W,1,08,1.6,1577.9,M,-20.7,M,,0000*5F</div>
-</div><!-- fragment --></li>
-<li>Les résultats des converesions seront enregistrés dans un fichier appelé "enregistrements.txt" situé dans le répertoire du projet.</li>
-<li>Le programme vous demandera ensuite si vous souhaitez afficher les résultats de la conversion dans le terminal.</li>
-</ol>
-<ul>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md8"></a>
+Enregistrement du résultat dans un fichier</h2>
+<p>Les résultats des converesions seront enregistrés dans un fichier appelé "enregistrements.txt" situé dans le répertoire du projet.</p>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Affichage du résultat</h2>
+<p>Le programme vous demandera ensuite si vous souhaitez afficher les résultats de la conversion dans le terminal.</p><ul>
 <li>Si vous répondez 1 (oui), les résultats contenus dans le fichier "enregistrements.txt" seront affichés et le programme se terminera.</li>
 <li>Si vous répondez 0 (non), le programme se terminera sans affichage.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Comment cet application fonctionne-t-il?</h1>
 <p>Les données contenant plusieurs trames GPS sont d'abord lues à partir d'un document fourni par l'utilisateur (un exemple du fichier nommé "data.txt" est donné). Les trames sont traitées une par une en vérifiant le type de trame en vérifiant le type de trame et en s'assurant qu'elle comporte au moins 15 champs. Ensuite, les informations pertinentes, à savoir l'heure de réception, la longitude et la latitude, sont extraites et testées pour leur format. Ensuite, la longitude et la latitude sont converties du format décimal au format degré. L'heure de réception est également formatée. Enfine, les informations traitées sont stockées dans un autre fichier nommé "enregistrement.txt".</p>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Outils Utilisées</h1>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VSC" style="pointer-events: none; margin-right:300px;" width="30px" class="inline"/> <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/144_Gitlab_logo_logos-512.png" alt="gitlab" width="30px" style="margin-right:300px;" class="inline"/> <img src="https://miro.medium.com/v2/resize:fit:512/1*ucKJplvEklLYDMUMCkax3Q.png" alt="VSC" width="30px" style="margin-right:300px;" class="inline"/> <br  />
- <br  />
-</p>
 <p><b>Visual Studio Code (VS Code)</b><br  />
  Pour ce projet nous avons utilisé Visual Studio Code (VS Code) comme environnement de développement intégré (IDE) car il est très polyvalent et personnalisable. Nous avons pu utiliser le terminal ainsi que GitLab car VS Code s'intègre à Git. Cela nous a permis d'avoir une interface utilisateur conviviale, une large gamme d'extensions et un contrôle de cersion efficace dans l'IDE.</p>
 <p><b>GitLab</b><br  />
  De plus nous avons utilisé GitLab car il nous a permis de suivre les modifications tout au long ce projet et de collaborer avec les membre de l'équipe, ce qui nous a permis de collaborer, de faire des revues de code et de suivre les problèmes de fusion.</p>
 <p><b>Compilateur GCC</b><br  />
- En ce qui concerne le compilateur, nous avons utilisé gcc, le suite de compilateurs C la plus largement utilisée car elle est open source est disponible gratuitement.</p>
-<p>La combinaison de ces outils offre un environnement de développement complet pour la construction de notre projet de manière efficace en founissant les outils pour promouvoir la qualité du code, la collaboration et la maintenabilité.</p>
-<h1><a class="anchor" id="autotoc_md6"></a>
+ En ce qui concerne le compilateur, nous avons utilisé gcc, le suite de compilateurs C la plus largement utilisée car elle est open source est disponible gratuitement. La combinaison de ces outils offre un environnement de développement complet pour la construction de notre projet de manière efficace en founissant les outils pour promouvoir la qualité du code, la collaboration et la maintenabilité.</p>
+<h1><a class="anchor" id="autotoc_md12"></a>
 Défis Rencontrés et Fonctionnalités Futures</h1>
 <p>Tout au long de ce projet, l'un des défis rencontrés a été la gestion des données d'entrée, notamment l'analyse et la conversion des coordonnées géographiques (latitude et longitude) dans différents formats. Cependant, avec les ressources fournies dans le sujet ainsi que d'autres que nous avons répertoriées dans les références, nous avons pu mieux comprendre le sujet.</p>
 <p>Nous avons également rencontré des difficultés avec l'utilisation de GitLab sur VS Code car nous sommes assez nouveaux dans ce domaine. Bien que cela ait ralenti notre rythme au début de notre projet, la maîtrise de l'utilisation de GitLab nous a permis de collaborer plus efficacement car nous pouvons travailler virtuellement sur le même projet et fusionner nos codes.</p>

@@ -28,28 +28,33 @@ make
 make clean
 ```
 ## Utilisation d'application
-1. Après avoir compilé le code source à l'aide de la commande make executez le programme en tapant:
+### Compilation et exécution du programme
+Après avoir compilé le code source à l'aide de la commande make executez le programme en tapant:
 ```
 ./main
 ```
-2. Le programme vous demandera de choisir l'une des options suivantes en tapant le numéro correspondant:
-* 1 : Saisir manuellement les trames GPS 
-* 2 : Lire les trames GPS à partir d'un fichier
-* 3 : Quitter l'application
+### Choix des données d'entrée
+Le programme vous demandera de choisir l'une des options suivantes en tapant le numéro correspondant:
+* **1** : Saisir manuellement les trames GPS 
+* **2** : Lire les trames GPS à partir d'un fichier
+* **3** : Quitter l'application
 
-3. Si vous choisissez de saisir manuellement les données, entrez les trames GPS une par une, suivies par la touche "Entrée". Pour terminer la saisie, tapez "exit".
+### Saisie manuelle des données
+Si vous choisissez de saisir manuellement les données, entrez les trames GPS une par une, suivies par la touche "Entrée". Pour terminer la saisie, tapez "exit".
 
-4. Si vous choisissez de lire les trames GPS à partir d'un fichier, indiquez le chemin vers votre fichier. Le format des trames GPS dans le fichier doit être comme le suivant:
+### Lecture des trames GPS à partir d'un fichier
+Si vous choisissez de lire les trames GPS à partir d'un fichier, indiquez le chemin vers votre fichier. Le format des trames GPS dans le fichier doit être comme le suivant:
 ```
 $GPGGA,133519,4807.038,N,01131.324,E,1,08,0.9,545.4,M,46.9,M, ,*42
 $GPGGA,123519,4124.8963,N,08151.6838,W,1,08,0.9,545.4,M,46.9,M, ,*42
 $GPGGA,235317.000,4003.9039,N,10512.5793,W,1,08,1.6,1577.9,M,-20.7,M,,0000*5F
 
 ```
+### Enregistrement du résultat dans un fichier
+Les résultats des converesions seront enregistrés dans un fichier appelé "enregistrements.txt" situé dans le répertoire du projet.
 
-5. Les résultats des converesions seront enregistrés dans un fichier appelé "enregistrements.txt" situé dans le répertoire du projet.
-
-6. Le programme vous demandera ensuite si vous souhaitez afficher les résultats de la conversion dans le terminal. 
+### Affichage du résultat
+Le programme vous demandera ensuite si vous souhaitez afficher les résultats de la conversion dans le terminal. 
 * Si vous répondez 1 (oui), les résultats contenus dans le fichier "enregistrements.txt" seront affichés et le programme se terminera.
 * Si vous répondez 0 (non), le programme se terminera sans affichage.
 
@@ -57,11 +62,6 @@ $GPGGA,235317.000,4003.9039,N,10512.5793,W,1,08,1.6,1577.9,M,-20.7,M,,0000*5F
 Les données contenant plusieurs trames GPS sont d'abord lues à partir d'un document fourni par l'utilisateur (un exemple du fichier nommé "data.txt" est donné). Les trames sont traitées une par une en vérifiant le type de trame en vérifiant le type de trame et en s'assurant qu'elle comporte au moins 15 champs. Ensuite, les informations pertinentes, à savoir l'heure de réception, la longitude et la latitude, sont extraites et testées pour leur format. Ensuite, la longitude et la latitude sont converties du format décimal au format degré. L'heure de réception est également formatée. Enfine, les informations traitées sont stockées dans un autre fichier nommé "enregistrement.txt".
 
 ## Outils Utilisées
-<img alt="VSC" width="30px" style="margin-right:300px;" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"/>
-<img alt="gitlab" width="30px" style="margin-right:300px;" src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/144_Gitlab_logo_logos-512.png"/>
-<img alt="VSC" width="30px" style="margin-right:300px;" src="https://miro.medium.com/v2/resize:fit:512/1*ucKJplvEklLYDMUMCkax3Q.png"/>
-<br/>
-<br/>
 
 **Visual Studio Code (VS Code)**<br/>
 Pour ce projet nous avons utilisé Visual Studio Code (VS Code) comme environnement de développement intégré (IDE) car il est très polyvalent et personnalisable. Nous avons pu utiliser le terminal ainsi que GitLab car VS Code s'intègre à Git. Cela nous a permis d'avoir une interface utilisateur conviviale, une large gamme d'extensions et un contrôle de cersion efficace dans l'IDE.

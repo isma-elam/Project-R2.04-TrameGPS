@@ -34,43 +34,35 @@ Format GPGGA \+: \hypertarget{index_autotoc_md2}{}\doxysection{Installation}\lab
 \end{DoxyCode}
  
 \end{DoxyEnumerate}\hypertarget{index_autotoc_md3}{}\doxysection{Utilisation d\textquotesingle{}application}\label{index_autotoc_md3}
-
-\begin{DoxyEnumerate}
-\item Après avoir compilé le code source à l\textquotesingle{}aide de la commande make executez le programme en tapant\+: 
+\hypertarget{index_autotoc_md4}{}\doxysubsection{Compilation et exécution du programme}\label{index_autotoc_md4}
+Après avoir compilé le code source à l\textquotesingle{}aide de la commande make executez le programme en tapant\+: 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{./main}
 
 \end{DoxyCode}
-
-\item Le programme vous demandera de choisir l\textquotesingle{}une des options suivantes en tapant le numéro correspondant\+:
-\end{DoxyEnumerate}
+ \hypertarget{index_autotoc_md5}{}\doxysubsection{Choix des données d\textquotesingle{}entrée}\label{index_autotoc_md5}
+Le programme vous demandera de choisir l\textquotesingle{}une des options suivantes en tapant le numéro correspondant\+:
 \begin{DoxyItemize}
-\item 1 \+: Saisir manuellement les trames GPS
-\item 2 \+: Lire les trames GPS à partir d\textquotesingle{}un fichier
-\item 3 \+: Quitter l\textquotesingle{}application
-\end{DoxyItemize}
-\begin{DoxyEnumerate}
-\item Si vous choisissez de saisir manuellement les données, entrez les trames GPS une par une, suivies par la touche \char`\"{}\+Entrée\char`\"{}. Pour terminer la saisie, tapez \char`\"{}exit\char`\"{}.
-\item Si vous choisissez de lire les trames GPS à partir d\textquotesingle{}un fichier, indiquez le chemin vers votre fichier. Le format des trames GPS dans le fichier doit être comme le suivant\+: 
+\item {\bfseries{1}} \+: Saisir manuellement les trames GPS
+\item {\bfseries{2}} \+: Lire les trames GPS à partir d\textquotesingle{}un fichier
+\item {\bfseries{3}} \+: Quitter l\textquotesingle{}application
+\end{DoxyItemize}\hypertarget{index_autotoc_md6}{}\doxysubsection{Saisie manuelle des données}\label{index_autotoc_md6}
+Si vous choisissez de saisir manuellement les données, entrez les trames GPS une par une, suivies par la touche \char`\"{}\+Entrée\char`\"{}. Pour terminer la saisie, tapez \char`\"{}exit\char`\"{}.\hypertarget{index_autotoc_md7}{}\doxysubsection{Lecture des trames GPS à partir d\textquotesingle{}un fichier}\label{index_autotoc_md7}
+Si vous choisissez de lire les trames GPS à partir d\textquotesingle{}un fichier, indiquez le chemin vers votre fichier. Le format des trames GPS dans le fichier doit être comme le suivant\+: 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\$GPGGA,133519,4807.038,N,01131.324,E,1,08,0.9,545.4,M,46.9,M, ,*42}
 \DoxyCodeLine{\$GPGGA,123519,4124.8963,N,08151.6838,W,1,08,0.9,545.4,M,46.9,M, ,*42}
 \DoxyCodeLine{\$GPGGA,235317.000,4003.9039,N,10512.5793,W,1,08,1.6,1577.9,M,-\/20.7,M,,0000*5F}
 
 \end{DoxyCode}
-
-\item Les résultats des converesions seront enregistrés dans un fichier appelé \char`\"{}enregistrements.\+txt\char`\"{} situé dans le répertoire du projet.
-\item Le programme vous demandera ensuite si vous souhaitez afficher les résultats de la conversion dans le terminal.
-\end{DoxyEnumerate}
+ \hypertarget{index_autotoc_md8}{}\doxysubsection{Enregistrement du résultat dans un fichier}\label{index_autotoc_md8}
+Les résultats des converesions seront enregistrés dans un fichier appelé \char`\"{}enregistrements.\+txt\char`\"{} situé dans le répertoire du projet.\hypertarget{index_autotoc_md9}{}\doxysubsection{Affichage du résultat}\label{index_autotoc_md9}
+Le programme vous demandera ensuite si vous souhaitez afficher les résultats de la conversion dans le terminal.
 \begin{DoxyItemize}
 \item Si vous répondez 1 (oui), les résultats contenus dans le fichier \char`\"{}enregistrements.\+txt\char`\"{} seront affichés et le programme se terminera.
 \item Si vous répondez 0 (non), le programme se terminera sans affichage.
-\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysection{Comment cet application fonctionne-\/t-\/il?}\label{index_autotoc_md4}
-Les données contenant plusieurs trames GPS sont d\textquotesingle{}abord lues à partir d\textquotesingle{}un document fourni par l\textquotesingle{}utilisateur (un exemple du fichier nommé \char`\"{}data.\+txt\char`\"{} est donné). Les trames sont traitées une par une en vérifiant le type de trame en vérifiant le type de trame et en s\textquotesingle{}assurant qu\textquotesingle{}elle comporte au moins 15 champs. Ensuite, les informations pertinentes, à savoir l\textquotesingle{}heure de réception, la longitude et la latitude, sont extraites et testées pour leur format. Ensuite, la longitude et la latitude sont converties du format décimal au format degré. L\textquotesingle{}heure de réception est également formatée. Enfine, les informations traitées sont stockées dans un autre fichier nommé \char`\"{}enregistrement.\+txt\char`\"{}.\hypertarget{index_autotoc_md5}{}\doxysection{Outils Utilisées}\label{index_autotoc_md5}
-   ~\newline
- ~\newline
-
-
+\end{DoxyItemize}\hypertarget{index_autotoc_md10}{}\doxysection{Comment cet application fonctionne-\/t-\/il?}\label{index_autotoc_md10}
+Les données contenant plusieurs trames GPS sont d\textquotesingle{}abord lues à partir d\textquotesingle{}un document fourni par l\textquotesingle{}utilisateur (un exemple du fichier nommé \char`\"{}data.\+txt\char`\"{} est donné). Les trames sont traitées une par une en vérifiant le type de trame en vérifiant le type de trame et en s\textquotesingle{}assurant qu\textquotesingle{}elle comporte au moins 15 champs. Ensuite, les informations pertinentes, à savoir l\textquotesingle{}heure de réception, la longitude et la latitude, sont extraites et testées pour leur format. Ensuite, la longitude et la latitude sont converties du format décimal au format degré. L\textquotesingle{}heure de réception est également formatée. Enfine, les informations traitées sont stockées dans un autre fichier nommé \char`\"{}enregistrement.\+txt\char`\"{}.\hypertarget{index_autotoc_md11}{}\doxysection{Outils Utilisées}\label{index_autotoc_md11}
 {\bfseries{Visual Studio Code (VS Code)}}~\newline
  Pour ce projet nous avons utilisé Visual Studio Code (VS Code) comme environnement de développement intégré (IDE) car il est très polyvalent et personnalisable. Nous avons pu utiliser le terminal ainsi que Git\+Lab car VS Code s\textquotesingle{}intègre à Git. Cela nous a permis d\textquotesingle{}avoir une interface utilisateur conviviale, une large gamme d\textquotesingle{}extensions et un contrôle de cersion efficace dans l\textquotesingle{}IDE.
 
@@ -78,9 +70,7 @@ Les données contenant plusieurs trames GPS sont d\textquotesingle{}abord lues �
  De plus nous avons utilisé Git\+Lab car il nous a permis de suivre les modifications tout au long ce projet et de collaborer avec les membre de l\textquotesingle{}équipe, ce qui nous a permis de collaborer, de faire des revues de code et de suivre les problèmes de fusion.
 
 {\bfseries{Compilateur GCC}}~\newline
- En ce qui concerne le compilateur, nous avons utilisé gcc, le suite de compilateurs C la plus largement utilisée car elle est open source est disponible gratuitement.
-
-La combinaison de ces outils offre un environnement de développement complet pour la construction de notre projet de manière efficace en founissant les outils pour promouvoir la qualité du code, la collaboration et la maintenabilité.\hypertarget{index_autotoc_md6}{}\doxysection{Défis Rencontrés et Fonctionnalités Futures}\label{index_autotoc_md6}
+ En ce qui concerne le compilateur, nous avons utilisé gcc, le suite de compilateurs C la plus largement utilisée car elle est open source est disponible gratuitement. La combinaison de ces outils offre un environnement de développement complet pour la construction de notre projet de manière efficace en founissant les outils pour promouvoir la qualité du code, la collaboration et la maintenabilité.\hypertarget{index_autotoc_md12}{}\doxysection{Défis Rencontrés et Fonctionnalités Futures}\label{index_autotoc_md12}
 Tout au long de ce projet, l\textquotesingle{}un des défis rencontrés a été la gestion des données d\textquotesingle{}entrée, notamment l\textquotesingle{}analyse et la conversion des coordonnées géographiques (latitude et longitude) dans différents formats. Cependant, avec les ressources fournies dans le sujet ainsi que d\textquotesingle{}autres que nous avons répertoriées dans les références, nous avons pu mieux comprendre le sujet.
 
 Nous avons également rencontré des difficultés avec l\textquotesingle{}utilisation de Git\+Lab sur VS Code car nous sommes assez nouveaux dans ce domaine. Bien que cela ait ralenti notre rythme au début de notre projet, la maîtrise de l\textquotesingle{}utilisation de Git\+Lab nous a permis de collaborer plus efficacement car nous pouvons travailler virtuellement sur le même projet et fusionner nos codes.
