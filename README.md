@@ -67,7 +67,7 @@ Pour accéder à la documentation complète générée avec Doxygen pour ce proj
 2. Ouvrez le fichier `index.html` situé dans le répertoire `html/index.html` à l'aide de votre navigateur préféré.
 
 Vous y trouverez une documentation détaillée sur le fonctionnement du projet ainsi que des explications sur les différentes fonctionnalités implémentées.
-
+Dans la navigation de la page de documentation, dans la section "classes", nous pourrons voir les structures utilisées pour le projet, et dans la section "files", nous pourrons voir la documentation sur les fichiers de code avec les fonctions utilisées.
 
 ## Comment cet application fonctionne-t-il?
 Les données contenant plusieurs trames GPS sont d'abord lues à partir d'un document fourni par l'utilisateur (un exemple du fichier nommé "data.txt" est donné). Les trames sont traitées une par une en vérifiant le type de trame en vérifiant le type de trame et en s'assurant qu'elle comporte au moins 15 champs. Ensuite, les informations pertinentes, à savoir l'heure de réception, la longitude et la latitude, sont extraites et testées pour leur format. Ensuite, la longitude et la latitude sont converties du format décimal au format degré. L'heure de réception est également formatée. Enfine, les informations traitées sont stockées dans un autre fichier nommé "enregistrement.txt".
