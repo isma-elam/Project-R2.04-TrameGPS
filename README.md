@@ -58,9 +58,16 @@ Le programme vous demandera ensuite si vous souhaitez afficher les résultats de
 * Si vous répondez 1 (oui), les résultats contenus dans le fichier "enregistrements.txt" seront affichés et le programme se terminera.
 * Si vous répondez 0 (non), le programme se terminera sans affichage.
 
-## Documentation
+## Documentation complète avec Doxygen
 
-The full documentation for this project can be found [here](html/index.html)
+Pour accéder à la documentation complète générée avec Doxygen pour ce projet (incluant les fonctions et autres éléments), veuillez suivre ces étapes :
+
+1. Téléchargez le projet dans votre espace de travail.
+
+2. Ouvrez le fichier `index.html` situé dans le répertoire `html/index.html` à l'aide de votre navigateur préféré.
+
+Vous y trouverez une documentation détaillée sur le fonctionnement du projet ainsi que des explications sur les différentes fonctionnalités implémentées.
+
 
 ## Comment cet application fonctionne-t-il?
 Les données contenant plusieurs trames GPS sont d'abord lues à partir d'un document fourni par l'utilisateur (un exemple du fichier nommé "data.txt" est donné). Les trames sont traitées une par une en vérifiant le type de trame en vérifiant le type de trame et en s'assurant qu'elle comporte au moins 15 champs. Ensuite, les informations pertinentes, à savoir l'heure de réception, la longitude et la latitude, sont extraites et testées pour leur format. Ensuite, la longitude et la latitude sont converties du format décimal au format degré. L'heure de réception est également formatée. Enfine, les informations traitées sont stockées dans un autre fichier nommé "enregistrement.txt".
