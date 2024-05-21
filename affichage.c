@@ -24,16 +24,19 @@
 *                                                                             *
 ******************************************************************************/
 
+/**
+ * @file affichage.c
+ * @brief Ce fichier contient les corps des fonctions pour l'affichage des données GPS.
+ * 
+ * Les fonctions ici permettent d'afficher un menu, de choisir la méthode de lecture des données,
+ * d'afficher les données extraites ou chargées, et de gérer les exceptions.
+ * 
+ * @author Ellisa EE, Ismael EL-AMRANI
+ * @date 2024
+ */
+
 #include "affichage.h"
 #include "conversion.h"
-
-void affichageLongLat(struct dmsInfo d){
-    printf("%d°%d\'%.2f\"\n",d.degre,d.minute,d.second);
-}
-
-void affichageHeure(struct heureInfo h){
-    printf("%dh%dm%ds\n",h.heure,h.minute,h.second);
-}
 
 int affichageMenu(){
     int choix = -1;
@@ -42,11 +45,11 @@ int affichageMenu(){
     printf("2 - Lire mes données à partir d'un fichier\n");
     printf("0 - Je quitte l'application\n");
     scanf("%d",&choix);
-        while(choix<0||choix>2){
-            printf("\nErreur de saisie, veuillez réessayer.\n\n");
-            affichageMenu(&choix);
-            scanf("%d",&choix);
-        } 
+    while(choix<0||choix>2){
+        printf("\nErreur de saisie, veuillez réessayer.\n\n");
+        affichageMenu(&choix);
+        scanf("%d",&choix);
+    } 
     return choix;
 }
 

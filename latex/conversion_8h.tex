@@ -1,0 +1,176 @@
+\hypertarget{conversion_8h}{}\doxysection{conversion.\+h File Reference}
+\label{conversion_8h}\index{conversion.h@{conversion.h}}
+
+
+Ce fichier contient les déclarations des fonctions pour convertir les données GPS.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Include dependency graph for conversion.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdmsInfo}{dms\+Info}}
+\begin{DoxyCompactList}\small\item\em Structure représentant une valeur en degrés, minutes, secondes. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structheureInfo}{heure\+Info}}
+\begin{DoxyCompactList}\small\item\em Structure représentant une heure au format HH\+:\+MM\+:SS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{conversion_8h_ad58ecd23fb80830563dd233ec1527d14}{conversion\+Lat}} (char $\ast$const dec, struct \mbox{\hyperlink{structdmsInfo}{dms\+Info}} $\ast$d)
+\begin{DoxyCompactList}\small\item\em Convertit une latitude décimale en degrés, minutes, secondes (DMS) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{conversion_8h_a6bc2d485dcc79873ff6322b8b99d4ca9}{conversion\+Long}} (char $\ast$const dec, struct \mbox{\hyperlink{structdmsInfo}{dms\+Info}} $\ast$d)
+\begin{DoxyCompactList}\small\item\em Convertit une longitude décimale en degré, minutes, secondes (DMS) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{conversion_8h_ac9645bfae39dad716e3014034b482355}{conversion\+Heure}} (char $\ast$const heure, struct \mbox{\hyperlink{structheureInfo}{heure\+Info}} $\ast$h)
+\begin{DoxyCompactList}\small\item\em Convertit une heure en format châine de caractères en heures, minutes, secondes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ce fichier contient les déclarations des fonctions pour convertir les données GPS. 
+
+\begin{DoxyAuthor}{Author}
+Ellisa EE, Ismael EL-\/\+AMRANI
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{conversion_8h_ac9645bfae39dad716e3014034b482355}\label{conversion_8h_ac9645bfae39dad716e3014034b482355}} 
+\index{conversion.h@{conversion.h}!conversionHeure@{conversionHeure}}
+\index{conversionHeure@{conversionHeure}!conversion.h@{conversion.h}}
+\doxysubsubsection{\texorpdfstring{conversionHeure()}{conversionHeure()}}
+{\footnotesize\ttfamily void conversion\+Heure (\begin{DoxyParamCaption}\item[{char $\ast$const}]{heure,  }\item[{struct \mbox{\hyperlink{structheureInfo}{heure\+Info}} $\ast$}]{h }\end{DoxyParamCaption})}
+
+
+
+Convertit une heure en format châine de caractères en heures, minutes, secondes. 
+
+Cette fonction prend une heure en format chaîne de caractères (HHMMSS) et la convertit en une structure \mbox{\hyperlink{structheureInfo}{heure\+Info}} qui contient les heures, minutes et secondes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em heure} & Heure en format chaîne de caractères (HHMMSS) \\
+\hline
+{\em h} & Pointeur vers la structure \mbox{\hyperlink{structheureInfo}{heure\+Info}} qui recevra les valeurs \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file conversion.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{80                                                            \{}
+\DoxyCodeLine{81     \textcolor{keywordtype}{char} heureChar[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{82     \textcolor{keywordtype}{char} minuteChar[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{83     \textcolor{keywordtype}{char} secondChar[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     strncat(heureChar,heure,2);}
+\DoxyCodeLine{86     strncat(minuteChar,heure+2,2);}
+\DoxyCodeLine{87     strncat(secondChar,heure+4,2);}
+\DoxyCodeLine{88     h-\/>\mbox{\hyperlink{structheureInfo_ab54841d8fa6fbde98300765ad23d1527}{heure}}=strtol(heureChar,NULL,10);}
+\DoxyCodeLine{89     h-\/>\mbox{\hyperlink{structheureInfo_a310ea773c06448c7498e7778d6a7684c}{minute}}=strtol(minuteChar,NULL,10);}
+\DoxyCodeLine{90     h-\/>\mbox{\hyperlink{structheureInfo_a3de49535b792c032cd4e8e5a109dd08b}{second}}=strtol(secondChar,NULL,10);}
+\DoxyCodeLine{91 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{conversion_8h_ad58ecd23fb80830563dd233ec1527d14}\label{conversion_8h_ad58ecd23fb80830563dd233ec1527d14}} 
+\index{conversion.h@{conversion.h}!conversionLat@{conversionLat}}
+\index{conversionLat@{conversionLat}!conversion.h@{conversion.h}}
+\doxysubsubsection{\texorpdfstring{conversionLat()}{conversionLat()}}
+{\footnotesize\ttfamily void conversion\+Lat (\begin{DoxyParamCaption}\item[{char $\ast$const}]{dec,  }\item[{struct \mbox{\hyperlink{structdmsInfo}{dms\+Info}} $\ast$}]{d }\end{DoxyParamCaption})}
+
+
+
+Convertit une latitude décimale en degrés, minutes, secondes (DMS) 
+
+Cette fonction prend une latitude en format décimal et la convertit en une structure \mbox{\hyperlink{structdmsInfo}{dms\+Info}} qui contient les degrés, minutes, secondes, et l\textquotesingle{}orientation
+
+
+\begin{DoxyParams}{Parameters}
+{\em dec} & Latitude en format décimal (chaîne de caractères) \\
+\hline
+{\em d} & Pointeur vers la structure \mbox{\hyperlink{structdmsInfo}{dms\+Info}} qui recevra les valeurs converties \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file conversion.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40                                                      \{}
+\DoxyCodeLine{41     \textcolor{keywordtype}{float} l;}
+\DoxyCodeLine{42     \textcolor{keywordtype}{float} decimaux;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{char} degC[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{45     \textcolor{keywordtype}{char} minC[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{46     \textcolor{keywordtype}{char} secC[LONGUEUR\_LONG\_LAT]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{47     \textcolor{keywordtype}{char}* p = strchr(dec,\textcolor{charliteral}{','});}
+\DoxyCodeLine{48     }
+\DoxyCodeLine{49     strncat(degC,dec,2);}
+\DoxyCodeLine{50     d-\/>\mbox{\hyperlink{structdmsInfo_a5e460b73705789c00d05a2d0167cc03f}{degre}}=strtol(degC,NULL,10);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     strncat(minC,dec+2,2);}
+\DoxyCodeLine{53     d-\/>\mbox{\hyperlink{structdmsInfo_a96f61f6df40f6a8704860dc9c303471c}{minute}}=strtol(minC,NULL,10);}
+\DoxyCodeLine{54     secC[0]=\textcolor{charliteral}{'0'};}
+\DoxyCodeLine{55     strncat(secC,dec+4,p-\/(dec+4));}
+\DoxyCodeLine{56     d-\/>\mbox{\hyperlink{structdmsInfo_a415d6d599f8e7e0a825f0d8990bc9ec8}{second}}=strtof(secC,NULL)*60;}
+\DoxyCodeLine{57     d-\/>\mbox{\hyperlink{structdmsInfo_a5ad853976ce381c4f5fb83a53a4378b9}{orientation}}=*(p+1);}
+\DoxyCodeLine{58 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{conversion_8h_a6bc2d485dcc79873ff6322b8b99d4ca9}\label{conversion_8h_a6bc2d485dcc79873ff6322b8b99d4ca9}} 
+\index{conversion.h@{conversion.h}!conversionLong@{conversionLong}}
+\index{conversionLong@{conversionLong}!conversion.h@{conversion.h}}
+\doxysubsubsection{\texorpdfstring{conversionLong()}{conversionLong()}}
+{\footnotesize\ttfamily void conversion\+Long (\begin{DoxyParamCaption}\item[{char $\ast$const}]{dec,  }\item[{struct \mbox{\hyperlink{structdmsInfo}{dms\+Info}} $\ast$}]{d }\end{DoxyParamCaption})}
+
+
+
+Convertit une longitude décimale en degré, minutes, secondes (DMS) 
+
+Cette fonction prend une longitude en format décimal (chaîne de caractères) et la convertit en une structure \mbox{\hyperlink{structdmsInfo}{dms\+Info}} qui contient les degrés, minutes, secondes et l\textquotesingle{}orientation
+
+
+\begin{DoxyParams}{Parameters}
+{\em dec} & Longitude en format décimal (chaîne de caractères) \\
+\hline
+{\em d} & Pointeur vers la structure \mbox{\hyperlink{structdmsInfo}{dms\+Info}} qui recevra les valeurs converties \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file conversion.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{60                                                       \{}
+\DoxyCodeLine{61     \textcolor{keywordtype}{float} l;}
+\DoxyCodeLine{62     \textcolor{keywordtype}{float} decimaux;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{keywordtype}{char} degC[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{65     \textcolor{keywordtype}{char} minC[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{66     \textcolor{keywordtype}{char} secC[LONGUEUR\_LONG\_LAT]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{67     \textcolor{keywordtype}{char}* p = strchr(dec,\textcolor{charliteral}{','});}
+\DoxyCodeLine{68     }
+\DoxyCodeLine{69     strncat(degC,dec,3);}
+\DoxyCodeLine{70     d-\/>\mbox{\hyperlink{structdmsInfo_a5e460b73705789c00d05a2d0167cc03f}{degre}}=strtol(degC,NULL,10);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     strncat(minC,dec+3,2);}
+\DoxyCodeLine{73     d-\/>\mbox{\hyperlink{structdmsInfo_a96f61f6df40f6a8704860dc9c303471c}{minute}}=strtol(minC,NULL,10);}
+\DoxyCodeLine{74     secC[0]=\textcolor{charliteral}{'0'};}
+\DoxyCodeLine{75     strncat(secC,dec+5,p-\/(dec+4));}
+\DoxyCodeLine{76     d-\/>\mbox{\hyperlink{structdmsInfo_a415d6d599f8e7e0a825f0d8990bc9ec8}{second}}=strtof(secC,NULL)*60;}
+\DoxyCodeLine{77     d-\/>\mbox{\hyperlink{structdmsInfo_a5ad853976ce381c4f5fb83a53a4378b9}{orientation}}=*(p+1);}
+\DoxyCodeLine{78 \}}
+
+\end{DoxyCode}

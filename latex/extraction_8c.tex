@@ -1,0 +1,185 @@
+\hypertarget{extraction_8c}{}\doxysection{extraction.\+c File Reference}
+\label{extraction_8c}\index{extraction.c@{extraction.c}}
+
+
+Ce fichier contient les corps des fonctions pour extraire et convertir les informations de trame GPS.  
+
+
+{\ttfamily \#include \char`\"{}extraction.\+h\char`\"{}}\newline
+Include dependency graph for extraction.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{extraction_8c_a104029a943c0f967614ebc3071445a00}{extraire\+Info\+Trame}} (char $\ast$t\+Char, struct \mbox{\hyperlink{structtrameInfo}{trame\+Info}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em Extrait les informations d\textquotesingle{}une trame donnée et les stocke dans une structure \mbox{\hyperlink{structtrameInfo}{trame\+Info}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{extraction_8c_a1ca3d0e47327f24d14197a5dc3594192}{extraire\+Heure}} (char $\ast$heure, char $\ast$const trame)
+\begin{DoxyCompactList}\small\item\em Extrait l\textquotesingle{}heure d\textquotesingle{}une trame donnée et la stocke dans une chaîne de caractères. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{extraction_8c_a7d634ce44d31bc337ad38f2f3e64f569}{extraire\+Latitude}} (char $\ast$latitude, char $\ast$const trame)
+\begin{DoxyCompactList}\small\item\em Extrait la latitude d\textquotesingle{}une trame donnée et la stocke dans une chaîne de caractères. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{extraction_8c_a070c3a6e0e89749808de3541a6c88de3}{extraire\+Longitude}} (char $\ast$longitude, char $\ast$const trame)
+\begin{DoxyCompactList}\small\item\em Extrait la longitude d\textquotesingle{}une trame donnée et la stocke dans une chaîne de caractères. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ce fichier contient les corps des fonctions pour extraire et convertir les informations de trame GPS. 
+
+Les fonctions ici permettent d\textquotesingle{}extraire les heures, latitudes et longitudes à partir d\textquotesingle{}une trame GPS au format décimal, puis de les convertir en degrés, minutes et secondes.
+
+\begin{DoxyAuthor}{Author}
+Ellisa EE, Ismael EL-\/\+AMRANI 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2024 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{extraction_8c_a1ca3d0e47327f24d14197a5dc3594192}\label{extraction_8c_a1ca3d0e47327f24d14197a5dc3594192}} 
+\index{extraction.c@{extraction.c}!extraireHeure@{extraireHeure}}
+\index{extraireHeure@{extraireHeure}!extraction.c@{extraction.c}}
+\doxysubsubsection{\texorpdfstring{extraireHeure()}{extraireHeure()}}
+{\footnotesize\ttfamily void extraire\+Heure (\begin{DoxyParamCaption}\item[{char $\ast$}]{heure,  }\item[{char $\ast$const}]{trame }\end{DoxyParamCaption})}
+
+
+
+Extrait l\textquotesingle{}heure d\textquotesingle{}une trame donnée et la stocke dans une chaîne de caractères. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em heure} & Chaîne de caractères où stocker l\textquotesingle{}heure extraite. \\
+\hline
+{\em trame} & Trame complète contenant l\textquotesingle{}heure à extraire. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file extraction.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54                                                    \{}
+\DoxyCodeLine{55     \textcolor{keywordtype}{char}* p;}
+\DoxyCodeLine{56     \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{57     p=strchr(trame,\textcolor{charliteral}{','});}
+\DoxyCodeLine{58     strncat(heure,p+1,LONGUEUR\_HEURE);}
+\DoxyCodeLine{59 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{extraction_8c_a104029a943c0f967614ebc3071445a00}\label{extraction_8c_a104029a943c0f967614ebc3071445a00}} 
+\index{extraction.c@{extraction.c}!extraireInfoTrame@{extraireInfoTrame}}
+\index{extraireInfoTrame@{extraireInfoTrame}!extraction.c@{extraction.c}}
+\doxysubsubsection{\texorpdfstring{extraireInfoTrame()}{extraireInfoTrame()}}
+{\footnotesize\ttfamily void extraire\+Info\+Trame (\begin{DoxyParamCaption}\item[{char $\ast$}]{t\+Char,  }\item[{struct \mbox{\hyperlink{structtrameInfo}{trame\+Info}} $\ast$}]{t }\end{DoxyParamCaption})}
+
+
+
+Extrait les informations d\textquotesingle{}une trame donnée et les stocke dans une structure \mbox{\hyperlink{structtrameInfo}{trame\+Info}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Char} & Chaîne de caractères représentant la trame. \\
+\hline
+{\em t} & Pointeur vers la structure \mbox{\hyperlink{structtrameInfo}{trame\+Info}} où stocker les informations extraites. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file extraction.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40                                                        \{}
+\DoxyCodeLine{41     \textcolor{keywordtype}{char} heure [LONGUEUR\_HEURE+1]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{42     \textcolor{keywordtype}{char} lo [LONGUEUR\_LONG\_LAT+1]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{43     \textcolor{keywordtype}{char} la [LONGUEUR\_LONG\_LAT+1]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{44     \mbox{\hyperlink{extraction_8c_a1ca3d0e47327f24d14197a5dc3594192}{extraireHeure}}(heure,tChar);}
+\DoxyCodeLine{45     \mbox{\hyperlink{conversion_8c_ac9645bfae39dad716e3014034b482355}{conversionHeure}}(heure,\&t-\/>heure);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \mbox{\hyperlink{extraction_8c_a7d634ce44d31bc337ad38f2f3e64f569}{extraireLatitude}}(la,tChar);}
+\DoxyCodeLine{48     \mbox{\hyperlink{conversion_8c_ad58ecd23fb80830563dd233ec1527d14}{conversionLat}}(la,\&t-\/>latitude);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \mbox{\hyperlink{extraction_8c_a070c3a6e0e89749808de3541a6c88de3}{extraireLongitude}}(lo,tChar);}
+\DoxyCodeLine{51     \mbox{\hyperlink{conversion_8c_a6bc2d485dcc79873ff6322b8b99d4ca9}{conversionLong}}(lo,\&t-\/>longitude);}
+\DoxyCodeLine{52 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{extraction_8c_a7d634ce44d31bc337ad38f2f3e64f569}\label{extraction_8c_a7d634ce44d31bc337ad38f2f3e64f569}} 
+\index{extraction.c@{extraction.c}!extraireLatitude@{extraireLatitude}}
+\index{extraireLatitude@{extraireLatitude}!extraction.c@{extraction.c}}
+\doxysubsubsection{\texorpdfstring{extraireLatitude()}{extraireLatitude()}}
+{\footnotesize\ttfamily void extraire\+Latitude (\begin{DoxyParamCaption}\item[{char $\ast$}]{latitude,  }\item[{char $\ast$const}]{trame }\end{DoxyParamCaption})}
+
+
+
+Extrait la latitude d\textquotesingle{}une trame donnée et la stocke dans une chaîne de caractères. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em latitude} & Chaîne de caractères où stocker la latitude extraite. \\
+\hline
+{\em trame} & Trame complète contenant la latitude à extraire. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file extraction.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61                                                         \{}
+\DoxyCodeLine{62     \textcolor{keywordtype}{char}* p;}
+\DoxyCodeLine{63     \textcolor{keywordtype}{char}* p2;}
+\DoxyCodeLine{64     p=strchr(trame,\textcolor{charliteral}{','});}
+\DoxyCodeLine{65     p=p+1;}
+\DoxyCodeLine{66     p=strchr(p,\textcolor{charliteral}{','});}
+\DoxyCodeLine{67     p=p+1;}
+\DoxyCodeLine{68     p2=p;}
+\DoxyCodeLine{69     p2=strchr(p,\textcolor{charliteral}{','});}
+\DoxyCodeLine{70     strncat(latitude,p,p2-\/p);}
+\DoxyCodeLine{71     strcat(latitude,\textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{72     strncat(latitude,p2+1,1); }
+\DoxyCodeLine{73 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{extraction_8c_a070c3a6e0e89749808de3541a6c88de3}\label{extraction_8c_a070c3a6e0e89749808de3541a6c88de3}} 
+\index{extraction.c@{extraction.c}!extraireLongitude@{extraireLongitude}}
+\index{extraireLongitude@{extraireLongitude}!extraction.c@{extraction.c}}
+\doxysubsubsection{\texorpdfstring{extraireLongitude()}{extraireLongitude()}}
+{\footnotesize\ttfamily void extraire\+Longitude (\begin{DoxyParamCaption}\item[{char $\ast$}]{longitude,  }\item[{char $\ast$const}]{trame }\end{DoxyParamCaption})}
+
+
+
+Extrait la longitude d\textquotesingle{}une trame donnée et la stocke dans une chaîne de caractères. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em longitude} & Chaîne de caractères où stocker la longitude extraite. \\
+\hline
+{\em trame} & Trame complète contenant la longitude à extraire. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 75 of file extraction.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75                                                           \{}
+\DoxyCodeLine{76     \textcolor{keywordtype}{char}* p;}
+\DoxyCodeLine{77     \textcolor{keywordtype}{char}* p2;}
+\DoxyCodeLine{78     \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{79     p=strchr(trame,\textcolor{charliteral}{','});}
+\DoxyCodeLine{80     p=p+1;}
+\DoxyCodeLine{81     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0 ; i < 3 ; i++)\{}
+\DoxyCodeLine{82         p=strchr(p,\textcolor{charliteral}{','});}
+\DoxyCodeLine{83         p=p+1;}
+\DoxyCodeLine{84     \}}
+\DoxyCodeLine{85     p2=p;}
+\DoxyCodeLine{86     p2=strchr(p,\textcolor{charliteral}{','});}
+\DoxyCodeLine{87     strncat(longitude,p,p2-\/p);}
+\DoxyCodeLine{88     strcat(longitude,\textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{89     strncat(longitude,p2+1,1); }
+\DoxyCodeLine{90 \}}
+
+\end{DoxyCode}

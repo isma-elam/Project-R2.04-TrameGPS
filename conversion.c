@@ -23,6 +23,16 @@
 *  Nom du fichier : conversion.c                                              *
 *                                                                             *
 ******************************************************************************/
+/**
+ * @file conversion.c
+ * @brief Ce fichier contient les corps des fonctions pour la conversion de coordonnées et d'heures.
+ * 
+ * Les fonctions ici permettent de convertir des coordonnées géographiques
+ * (latitude et longitude) et des heures au format décimal en degrés, minutes et secondes.
+ * 
+ * @author Ellisa EE, Ismael EL-AMRANI
+ * @date 2024
+ */
 
 #include "conversion.h"
 #include "extraction.h"
@@ -78,5 +88,4 @@ void conversionHeure(char* const heure,struct heureInfo* h){
     h->heure=strtol(heureChar,NULL,10);
     h->minute=strtol(minuteChar,NULL,10);
     h->second=strtol(secondChar,NULL,10);
-    // printf("h:%d  m:%d  s:%d\n",h->heure,h->minute,h->second);
 }

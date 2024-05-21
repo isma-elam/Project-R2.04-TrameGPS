@@ -26,6 +26,16 @@
 
 #include "chargerRep.h"
 
+/**
+ * @file chargerRep.c
+ * @brief Ce fichier contient les corps des fonctions pour charger et stocker les données GPS.
+ * 
+ * Les fonctions ici permettent de charger les données à partir d'un fichier ou de l'entrée standard,
+ * de vérifier leur validité et de les stocker dans une structure de trames.
+ * 
+ * @author Ellisa EE, Ismael EL-AMRANI
+ * @date 2024
+ */
 void charger(struct trameTab* trameTab,int* nb,char nomFic[],jmp_buf ptRep){
     FILE* file;
     *nb=0;
@@ -35,7 +45,7 @@ void charger(struct trameTab* trameTab,int* nb,char nomFic[],jmp_buf ptRep){
         printf("Impossible d'ouvrir en lecture le fichier %s\n",nomFic);
         longjmp(ptRep,CHEMIN_INVALIDE);
     }else{ 
-        char ligne[200]="\0";
+        char ligne[LONGUEUR_TRAME]="\0";
         while (fgets(ligne, sizeof(ligne), file) != NULL && *nb < LONGUEUR_TRAME){
             if(ligne[strlen(ligne)-1]=='\n'){
                 ligne[strlen(ligne)-1]=='\0';
@@ -55,7 +65,7 @@ void charger(struct trameTab* trameTab,int* nb,char nomFic[],jmp_buf ptRep){
 }
 
 void lireDonnees(struct trameTab* trameTab,int* nb,char nomFic[],jmp_buf ptRep){
-    char ligne[200];
+    char ligne[LONGUEUR_TRAME];
     *nb=0;
     struct trameInfo tInfo;
     scanf(" %[^\n]",ligne);
