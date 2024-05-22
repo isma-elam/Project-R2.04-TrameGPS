@@ -75,7 +75,7 @@ void verifier_latitude(int degre, int minute, float second,char orientation,jmp_
 }
 
 void verifier_longitude(int degre, int minute, float second,char orientation,jmp_buf ptRep) {
-    if (degre<0 || degre>180 || minute<0 || minute>59 || second<0 || second>59 || !(orientation=='S' || orientation=='W')){
+    if (degre<0 || degre>180 || minute<0 || minute>59 || second<0 || second>59 || !(orientation=='E' || orientation=='W')){
         longjmp(ptRep,LONGITUDE_INVALIDE);
     }
 }
