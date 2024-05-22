@@ -106,9 +106,10 @@ void verifier_heure_min_sec(int heure,int min,int sec, jmp_buf ptRep);
  * @param degre Degré de latitude.
  * @param minute Minute de latitude.
  * @param second Seconde de latitude.
+ * @param orientation Orientation de latitude
  * @param ptRep Pointeur vers le contexte de saut pour gérer les erreurs.
  */
-void verifier_latitude(int degre, int minute, float second,jmp_buf ptRep);
+void verifier_latitude(int degre, int minute, float second,char orientation,jmp_buf ptRep);
 
 /**
  * @brief Vérifie le format de la longitude dans la trame GPS.
@@ -119,7 +120,8 @@ void verifier_latitude(int degre, int minute, float second,jmp_buf ptRep);
  * @param degre Degré de longitude.
  * @param minute Minute de longitude.
  * @param second Seconde de longitude.
+ * @param orientation Orientation de longitude
  * @param ptRep Pointeur vers le contexte de saut pour gérer les erreurs.
  */
-void verifier_longitude(int degre, int minute, float second,jmp_buf ptRep);
+void verifier_longitude(int degre, int minute, float second,char orientation,jmp_buf ptRep);
 

@@ -55,8 +55,8 @@ void charger(struct trameTab* trameTab,int* nb,char nomFic[],jmp_buf ptRep){
             verifier_format_heure(ligne,ptRep);      
             extraireInfoTrame(ligne,&tInfo);
             verifier_heure_min_sec(tInfo.heure.heure,tInfo.heure.minute,tInfo.heure.second,ptRep);
-            verifier_latitude(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,ptRep);
-            verifier_longitude(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,ptRep);
+            verifier_latitude(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,tInfo.latitude.orientation,ptRep);
+            verifier_longitude(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,tInfo.longitude.orientation,ptRep);
             trameTab->trame[*nb]=tInfo;
             (*nb)++;  
         }
@@ -78,8 +78,8 @@ void lireDonnees(struct trameTab* trameTab,int* nb,char nomFic[],jmp_buf ptRep){
         verifier_format_heure(ligne,ptRep);      
         extraireInfoTrame(ligne,&tInfo);
         verifier_heure_min_sec(tInfo.heure.heure,tInfo.heure.minute,tInfo.heure.second,ptRep);
-        verifier_latitude(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,ptRep);
-        verifier_longitude(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,ptRep);
+        verifier_latitude(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,tInfo.latitude.orientation,ptRep);
+        verifier_longitude(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,tInfo.longitude.orientation,ptRep);
         trameTab->trame[*nb]=tInfo;
         (*nb)++;
         scanf(" %[^\n]",ligne);
@@ -97,10 +97,10 @@ void ranger(struct trameTab trameTab,int nb,char nomFic[]){
         printf("Impossible d'ouvrir en ecriture le fichier %s\n",nomFic);
     }else{
         for (i = 0 ; i < nb ; i++){
-            fprintf(file,"Heure : %dh%dm%ds ; Latitude : %d°%d\'%.2f\" ; Longitude : %d°%d\'%.2f\"\n",
+            fprintf(file,"Heure : %dh%dm%ds ; Latitude : %d°%d\'%.2f\"%c ; Longitude : %d°%d\'%.2f\"%c\n",
             trameTab.trame[i].heure.heure,trameTab.trame[i].heure.minute,trameTab.trame[i].heure.second,
-            trameTab.trame[i].latitude.degre,trameTab.trame[i].latitude.minute,trameTab.trame[i].latitude.second,
-            trameTab.trame[i].longitude.degre,trameTab.trame[i].longitude.minute,trameTab.trame[i].longitude.second);
+            trameTab.trame[i].latitude.degre,trameTab.trame[i].latitude.minute,trameTab.trame[i].latitude.second,trameTab.trame[i].latitude.orientation,
+            trameTab.trame[i].longitude.degre,trameTab.trame[i].longitude.minute,trameTab.trame[i].longitude.second,trameTab.trame[i].longitude.orientation);
         }
     }
     fclose(file);

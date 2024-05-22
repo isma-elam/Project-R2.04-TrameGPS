@@ -127,12 +127,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ac7a329cfb0776e800305d76d50e44b62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="verificationFormat_8h.html#ac7a329cfb0776e800305d76d50e44b62">verifier_heure_min_sec</a> (int heure, int min, int sec, jmp_buf ptRep)</td></tr>
 <tr class="memdesc:ac7a329cfb0776e800305d76d50e44b62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie le format des heures, minutes et secondes.  <a href="verificationFormat_8h.html#ac7a329cfb0776e800305d76d50e44b62">More...</a><br /></td></tr>
 <tr class="separator:ac7a329cfb0776e800305d76d50e44b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf17eff23be33d9dda8876705952027a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="verificationFormat_8h.html#acf17eff23be33d9dda8876705952027a">verifier_latitude</a> (int degre, int minute, float second, jmp_buf ptRep)</td></tr>
-<tr class="memdesc:acf17eff23be33d9dda8876705952027a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie le format de la latitude dans la trame GPS.  <a href="verificationFormat_8h.html#acf17eff23be33d9dda8876705952027a">More...</a><br /></td></tr>
-<tr class="separator:acf17eff23be33d9dda8876705952027a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e6448a215b6acf053b0dba7d8be47be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="verificationFormat_8h.html#a6e6448a215b6acf053b0dba7d8be47be">verifier_longitude</a> (int degre, int minute, float second, jmp_buf ptRep)</td></tr>
-<tr class="memdesc:a6e6448a215b6acf053b0dba7d8be47be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie le format de la longitude dans la trame GPS.  <a href="verificationFormat_8h.html#a6e6448a215b6acf053b0dba7d8be47be">More...</a><br /></td></tr>
-<tr class="separator:a6e6448a215b6acf053b0dba7d8be47be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f14d7d0ee0c48cb44f2f5aac279330d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="verificationFormat_8h.html#a5f14d7d0ee0c48cb44f2f5aac279330d">verifier_latitude</a> (int degre, int minute, float second, char orientation, jmp_buf ptRep)</td></tr>
+<tr class="memdesc:a5f14d7d0ee0c48cb44f2f5aac279330d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie le format de la latitude dans la trame GPS.  <a href="verificationFormat_8h.html#a5f14d7d0ee0c48cb44f2f5aac279330d">More...</a><br /></td></tr>
+<tr class="separator:a5f14d7d0ee0c48cb44f2f5aac279330d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5489f3e3ffa7fde832400fc523c1b370"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="verificationFormat_8h.html#a5489f3e3ffa7fde832400fc523c1b370">verifier_longitude</a> (int degre, int minute, float second, char orientation, jmp_buf ptRep)</td></tr>
+<tr class="memdesc:a5489f3e3ffa7fde832400fc523c1b370"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie le format de la longitude dans la trame GPS.  <a href="verificationFormat_8h.html#a5489f3e3ffa7fde832400fc523c1b370">More...</a><br /></td></tr>
+<tr class="separator:a5489f3e3ffa7fde832400fc523c1b370"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Ce fichier contient les déclarations des fonctions pour vérifier le format des données GPS. </p>
@@ -248,8 +248,8 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="acf17eff23be33d9dda8876705952027a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf17eff23be33d9dda8876705952027a">&#9670;&nbsp;</a></span>verifier_latitude()</h2>
+<a id="a5f14d7d0ee0c48cb44f2f5aac279330d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f14d7d0ee0c48cb44f2f5aac279330d">&#9670;&nbsp;</a></span>verifier_latitude()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -275,6 +275,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>orientation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">jmp_buf&#160;</td>
           <td class="paramname"><em>ptRep</em>&#160;</td>
         </tr>
@@ -293,22 +299,23 @@ Functions</h2></td></tr>
     <tr><td class="paramname">degre</td><td>Degré de latitude. </td></tr>
     <tr><td class="paramname">minute</td><td>Minute de latitude. </td></tr>
     <tr><td class="paramname">second</td><td>Seconde de latitude. </td></tr>
+    <tr><td class="paramname">orientation</td><td>Orientation de latitude </td></tr>
     <tr><td class="paramname">ptRep</td><td>Pointeur vers le contexte de saut pour gérer les erreurs. </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="verificationFormat_8c_source.html#l00071">71</a> of file <a class="el" href="verificationFormat_8c_source.html">verificationFormat.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                                                          {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (degre&lt;0 || degre&gt;90 || minute&lt;0 || minute&gt;59 || second&lt;0 || second&gt;59){</div>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                                                                           {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (degre&lt;0 || degre&gt;90 || minute&lt;0 || minute&gt;59 || second&lt;0 || second&gt;59 || !(orientation==<span class="charliteral">&#39;N&#39;</span> || orientation==<span class="charliteral">&#39;S&#39;</span>)){</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        longjmp(ptRep,LATITUDE_INVALIDE);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a6e6448a215b6acf053b0dba7d8be47be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e6448a215b6acf053b0dba7d8be47be">&#9670;&nbsp;</a></span>verifier_longitude()</h2>
+<a id="a5489f3e3ffa7fde832400fc523c1b370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5489f3e3ffa7fde832400fc523c1b370">&#9670;&nbsp;</a></span>verifier_longitude()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -334,6 +341,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>orientation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">jmp_buf&#160;</td>
           <td class="paramname"><em>ptRep</em>&#160;</td>
         </tr>
@@ -352,14 +365,15 @@ Functions</h2></td></tr>
     <tr><td class="paramname">degre</td><td>Degré de longitude. </td></tr>
     <tr><td class="paramname">minute</td><td>Minute de longitude. </td></tr>
     <tr><td class="paramname">second</td><td>Seconde de longitude. </td></tr>
+    <tr><td class="paramname">orientation</td><td>Orientation de longitude </td></tr>
     <tr><td class="paramname">ptRep</td><td>Pointeur vers le contexte de saut pour gérer les erreurs. </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="verificationFormat_8c_source.html#l00077">77</a> of file <a class="el" href="verificationFormat_8c_source.html">verificationFormat.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                                           {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (degre&lt;0 || degre&gt;180 || minute&lt;0 || minute&gt;59 || second&lt;0 || second&gt;59){</div>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                                                            {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (degre&lt;0 || degre&gt;180 || minute&lt;0 || minute&gt;59 || second&lt;0 || second&gt;59 || !(orientation==<span class="charliteral">&#39;S&#39;</span> || orientation==<span class="charliteral">&#39;W&#39;</span>)){</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        longjmp(ptRep,LONGITUDE_INVALIDE);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>

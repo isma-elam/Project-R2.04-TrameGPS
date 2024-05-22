@@ -99,8 +99,8 @@ Definition at line 39 of file charger\+Rep.\+c.
 \DoxyCodeLine{55             \mbox{\hyperlink{verificationFormat_8c_aa8612598656151584883a57fc4b5ab17}{verifier\_format\_heure}}(ligne,ptRep);      }
 \DoxyCodeLine{56             \mbox{\hyperlink{extraction_8c_a104029a943c0f967614ebc3071445a00}{extraireInfoTrame}}(ligne,\&tInfo);}
 \DoxyCodeLine{57             \mbox{\hyperlink{verificationFormat_8c_ac7a329cfb0776e800305d76d50e44b62}{verifier\_heure\_min\_sec}}(tInfo.heure.heure,tInfo.heure.minute,tInfo.heure.second,ptRep);}
-\DoxyCodeLine{58             \mbox{\hyperlink{verificationFormat_8c_acf17eff23be33d9dda8876705952027a}{verifier\_latitude}}(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,ptRep);}
-\DoxyCodeLine{59             \mbox{\hyperlink{verificationFormat_8c_a6e6448a215b6acf053b0dba7d8be47be}{verifier\_longitude}}(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,ptRep);}
+\DoxyCodeLine{58             \mbox{\hyperlink{verificationFormat_8c_a5f14d7d0ee0c48cb44f2f5aac279330d}{verifier\_latitude}}(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,tInfo.latitude.orientation,ptRep);}
+\DoxyCodeLine{59             \mbox{\hyperlink{verificationFormat_8c_a5489f3e3ffa7fde832400fc523c1b370}{verifier\_longitude}}(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,tInfo.longitude.orientation,ptRep);}
 \DoxyCodeLine{60             \mbox{\hyperlink{structtrameTab}{trameTab}}-\/>trame[*nb]=tInfo;}
 \DoxyCodeLine{61             (*nb)++;  }
 \DoxyCodeLine{62         \}}
@@ -152,8 +152,8 @@ Definition at line 67 of file charger\+Rep.\+c.
 \DoxyCodeLine{78         \mbox{\hyperlink{verificationFormat_8c_aa8612598656151584883a57fc4b5ab17}{verifier\_format\_heure}}(ligne,ptRep);      }
 \DoxyCodeLine{79         \mbox{\hyperlink{extraction_8c_a104029a943c0f967614ebc3071445a00}{extraireInfoTrame}}(ligne,\&tInfo);}
 \DoxyCodeLine{80         \mbox{\hyperlink{verificationFormat_8c_ac7a329cfb0776e800305d76d50e44b62}{verifier\_heure\_min\_sec}}(tInfo.heure.heure,tInfo.heure.minute,tInfo.heure.second,ptRep);}
-\DoxyCodeLine{81         \mbox{\hyperlink{verificationFormat_8c_acf17eff23be33d9dda8876705952027a}{verifier\_latitude}}(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,ptRep);}
-\DoxyCodeLine{82         \mbox{\hyperlink{verificationFormat_8c_a6e6448a215b6acf053b0dba7d8be47be}{verifier\_longitude}}(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,ptRep);}
+\DoxyCodeLine{81         \mbox{\hyperlink{verificationFormat_8c_a5f14d7d0ee0c48cb44f2f5aac279330d}{verifier\_latitude}}(tInfo.latitude.degre,tInfo.latitude.minute,tInfo.latitude.second,tInfo.latitude.orientation,ptRep);}
+\DoxyCodeLine{82         \mbox{\hyperlink{verificationFormat_8c_a5489f3e3ffa7fde832400fc523c1b370}{verifier\_longitude}}(tInfo.longitude.degre,tInfo.longitude.minute,tInfo.longitude.second,tInfo.longitude.orientation,ptRep);}
 \DoxyCodeLine{83         \mbox{\hyperlink{structtrameTab}{trameTab}}-\/>trame[*nb]=tInfo;}
 \DoxyCodeLine{84         (*nb)++;}
 \DoxyCodeLine{85         scanf(\textcolor{stringliteral}{"{} \%[\string^\(\backslash\)n]"{}},ligne);}
@@ -199,10 +199,10 @@ Definition at line 92 of file charger\+Rep.\+c.
 \DoxyCodeLine{97         printf(\textcolor{stringliteral}{"{}Impossible d'ouvrir en ecriture le fichier \%s\(\backslash\)n"{}},nomFic);}
 \DoxyCodeLine{98     \}\textcolor{keywordflow}{else}\{}
 \DoxyCodeLine{99         \textcolor{keywordflow}{for} (i = 0 ; i < nb ; i++)\{}
-\DoxyCodeLine{100             fprintf(file,\textcolor{stringliteral}{"{}Heure : \%dh\%dm\%ds ; Latitude : \%d°\%d\(\backslash\)'\%.2f\(\backslash\)"{} ; Longitude : \%d°\%d\(\backslash\)'\%.2f\(\backslash\)"{}\(\backslash\)n"{}},}
+\DoxyCodeLine{100             fprintf(file,\textcolor{stringliteral}{"{}Heure : \%dh\%dm\%ds ; Latitude : \%d°\%d\(\backslash\)'\%.2f\(\backslash\)"{}\%c ; Longitude : \%d°\%d\(\backslash\)'\%.2f\(\backslash\)"{}\%c\(\backslash\)n"{}},}
 \DoxyCodeLine{101             \mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].heure.\mbox{\hyperlink{structheureInfo_ab54841d8fa6fbde98300765ad23d1527}{heure}},\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].heure.\mbox{\hyperlink{structheureInfo_a310ea773c06448c7498e7778d6a7684c}{minute}},\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].heure.\mbox{\hyperlink{structheureInfo_a3de49535b792c032cd4e8e5a109dd08b}{second}},}
-\DoxyCodeLine{102             \mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].latitude.\mbox{\hyperlink{structdmsInfo_a5e460b73705789c00d05a2d0167cc03f}{degre}},\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].latitude.\mbox{\hyperlink{structdmsInfo_a96f61f6df40f6a8704860dc9c303471c}{minute}},\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].latitude.\mbox{\hyperlink{structdmsInfo_a415d6d599f8e7e0a825f0d8990bc9ec8}{second}},}
-\DoxyCodeLine{103             \mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].longitude.\mbox{\hyperlink{structdmsInfo_a5e460b73705789c00d05a2d0167cc03f}{degre}},\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].longitude.\mbox{\hyperlink{structdmsInfo_a96f61f6df40f6a8704860dc9c303471c}{minute}},\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].longitude.\mbox{\hyperlink{structdmsInfo_a415d6d599f8e7e0a825f0d8990bc9ec8}{second}});}
+\DoxyCodeLine{102             \mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].latitude.\mbox{\hyperlink{structdmsInfo_a5e460b73705789c00d05a2d0167cc03f}{degre}},\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].latitude.\mbox{\hyperlink{structdmsInfo_a96f61f6df40f6a8704860dc9c303471c}{minute}},\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].latitude.\mbox{\hyperlink{structdmsInfo_a415d6d599f8e7e0a825f0d8990bc9ec8}{second}},\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].latitude.\mbox{\hyperlink{structdmsInfo_a5ad853976ce381c4f5fb83a53a4378b9}{orientation}},}
+\DoxyCodeLine{103             \mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].longitude.\mbox{\hyperlink{structdmsInfo_a5e460b73705789c00d05a2d0167cc03f}{degre}},\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].longitude.\mbox{\hyperlink{structdmsInfo_a96f61f6df40f6a8704860dc9c303471c}{minute}},\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].longitude.\mbox{\hyperlink{structdmsInfo_a415d6d599f8e7e0a825f0d8990bc9ec8}{second}},\mbox{\hyperlink{structtrameTab}{trameTab}}.trame[i].longitude.\mbox{\hyperlink{structdmsInfo_a5ad853976ce381c4f5fb83a53a4378b9}{orientation}});}
 \DoxyCodeLine{104         \}}
 \DoxyCodeLine{105     \}}
 \DoxyCodeLine{106     fclose(file);}

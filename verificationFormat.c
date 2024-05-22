@@ -68,14 +68,14 @@ void verifier_heure_min_sec(int heure,int min,int sec, jmp_buf ptRep){
     }
 }
 
-void verifier_latitude(int degre, int minute, float second,jmp_buf ptRep) {
-    if (degre<0 || degre>90 || minute<0 || minute>59 || second<0 || second>59){
+void verifier_latitude(int degre, int minute, float second,char orientation,jmp_buf ptRep) {
+    if (degre<0 || degre>90 || minute<0 || minute>59 || second<0 || second>59 || !(orientation=='N' || orientation=='S')){
         longjmp(ptRep,LATITUDE_INVALIDE);
     }
 }
 
-void verifier_longitude(int degre, int minute, float second,jmp_buf ptRep) {
-    if (degre<0 || degre>180 || minute<0 || minute>59 || second<0 || second>59){
+void verifier_longitude(int degre, int minute, float second,char orientation,jmp_buf ptRep) {
+    if (degre<0 || degre>180 || minute<0 || minute>59 || second<0 || second>59 || !(orientation=='S' || orientation=='W')){
         longjmp(ptRep,LONGITUDE_INVALIDE);
     }
 }
