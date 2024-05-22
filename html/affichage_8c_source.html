@@ -96,54 +96,55 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="conversion_8h.html">conversion.h</a>&quot;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="affichage_8c.html#a7c190fbca47364a8ddc6c5a2c50c308e">   41</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="affichage_8c.html#a7c190fbca47364a8ddc6c5a2c50c308e">affichageMenu</a>(){</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> choix = -1;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">char</span> choix = <span class="charliteral">&#39;9&#39;</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    printf(<span class="stringliteral">&quot;Comment voulez-vous lire vos données? Veuillez choisir l&#39;une des méthodes suivantes pour commencer:\n&quot;</span>);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    printf(<span class="stringliteral">&quot;1 - Saisir mes données manuellement\n&quot;</span>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    printf(<span class="stringliteral">&quot;2 - Lire mes données à partir d&#39;un fichier\n&quot;</span>);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    printf(<span class="stringliteral">&quot;0 - Je quitte l&#39;application\n&quot;</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    scanf(<span class="stringliteral">&quot;%d&quot;</span>,&amp;choix);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">while</span>(choix&lt;0||choix&gt;2){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    scanf(<span class="stringliteral">&quot; %c&quot;</span>,&amp;choix);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (choix&lt;&#39;0&#39; || choix&gt;<span class="charliteral">&#39;2&#39;</span>){</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        printf(<span class="stringliteral">&quot;\nErreur de saisie, veuillez réessayer.\n\n&quot;</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="affichage_8c.html#a7c190fbca47364a8ddc6c5a2c50c308e">affichageMenu</a>(&amp;choix);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        scanf(<span class="stringliteral">&quot;%d&quot;</span>,&amp;choix);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    } </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> choix;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="affichage_8c.html#a7c190fbca47364a8ddc6c5a2c50c308e">affichageMenu</a>(); </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    } </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> strtol(&amp;choix,NULL,10);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="affichage_8c.html#a1ac3bdfbdc153068f7218a946e4e3e8c">   56</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="affichage_8c.html#a1ac3bdfbdc153068f7218a946e4e3e8c">affichageDonneesChoix</a>(){</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span> choixAffichage=0;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    printf(<span class="stringliteral">&quot;Voulez-vouz afficher les données? 1 - oui, 0 - non\n&quot;</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    scanf(<span class="stringliteral">&quot;%d&quot;</span>,&amp;choixAffichage);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">while</span> (choixAffichage!=1 &amp;&amp; choixAffichage!=0){</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        printf(<span class="stringliteral">&quot;Veillez entrer votre choix.\n&quot;</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        printf(<span class="stringliteral">&quot;Voulez-vouz afficher les données? 1 - oui, 0 - non\n&quot;</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        scanf(<span class="stringliteral">&quot;%d&quot;</span>,&amp;choixAffichage);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> choixAffichage;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="affichage_8c.html#a7864f4c36edf57890d9e7681198cf8bb">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichage_8c.html#a7864f4c36edf57890d9e7681198cf8bb">affichageDonneesFichier</a>(<span class="keywordtype">char</span> nomFic[]){</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    printf(<span class="stringliteral">&quot;\nContenu du fichier \&quot;%s\&quot; : \n&quot;</span>,nomFic);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    FILE* file;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    file = fopen(nomFic,<span class="stringliteral">&quot;r&quot;</span>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (file==NULL){</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        printf(<span class="stringliteral">&quot;Impossible d&#39;ouvrir en lecture le fichier %s\n&quot;</span>,nomFic);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">char</span> c;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (c == EOF) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        printf(<span class="stringliteral">&quot;File is empty or couldn&#39;t be read.\n&quot;</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        fclose(file);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    printf(<span class="stringliteral">&quot;%c&quot;</span>,c);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">while</span> (c != EOF){</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        printf(<span class="stringliteral">&quot;%c&quot;</span>,c);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        c=fgetc(file);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    fclose(file);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="ttc" id="aaffichage_8c_html_a1ac3bdfbdc153068f7218a946e4e3e8c"><div class="ttname"><a href="affichage_8c.html#a1ac3bdfbdc153068f7218a946e4e3e8c">affichageDonneesChoix</a></div><div class="ttdeci">int affichageDonneesChoix()</div><div class="ttdoc">Permet à l'utilisateur de choisir s'il souhaite afficher le résultat de l'analyse de trames GPS donné...</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8c_source.html#l00056">affichage.c:56</a></div></div>
-<div class="ttc" id="aaffichage_8c_html_a7864f4c36edf57890d9e7681198cf8bb"><div class="ttname"><a href="affichage_8c.html#a7864f4c36edf57890d9e7681198cf8bb">affichageDonneesFichier</a></div><div class="ttdeci">void affichageDonneesFichier(char nomFic[])</div><div class="ttdoc">Affiche le contenu du fichier contenant le résultat de l'analyse de trames GPS.</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8c_source.html#l00068">affichage.c:68</a></div></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="affichage_8c.html#a1ac3bdfbdc153068f7218a946e4e3e8c">   57</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="affichage_8c.html#a1ac3bdfbdc153068f7218a946e4e3e8c">affichageDonneesChoix</a>(){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> choixAffichage=0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    printf(<span class="stringliteral">&quot;Voulez-vouz afficher les données? 1 - oui, 0 - non\n&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    scanf(<span class="stringliteral">&quot;%d&quot;</span>,&amp;choixAffichage);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">while</span> (choixAffichage!=1 &amp;&amp; choixAffichage!=0){</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        printf(<span class="stringliteral">&quot;Veillez entrer votre choix.\n&quot;</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        printf(<span class="stringliteral">&quot;Voulez-vouz afficher les données? 1 - oui, 0 - non\n&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        scanf(<span class="stringliteral">&quot;%d&quot;</span>,&amp;choixAffichage);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> choixAffichage;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="affichage_8c.html#a7864f4c36edf57890d9e7681198cf8bb">   69</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="affichage_8c.html#a7864f4c36edf57890d9e7681198cf8bb">affichageDonneesFichier</a>(<span class="keywordtype">char</span> nomFic[]){</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    printf(<span class="stringliteral">&quot;\nContenu du fichier \&quot;%s\&quot; : \n&quot;</span>,nomFic);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    FILE* file;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    file = fopen(nomFic,<span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (file==NULL){</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        printf(<span class="stringliteral">&quot;Impossible d&#39;ouvrir en lecture le fichier %s\n&quot;</span>,nomFic);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">char</span> c;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (c == EOF) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        printf(<span class="stringliteral">&quot;File is empty or couldn&#39;t be read.\n&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        fclose(file);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    printf(<span class="stringliteral">&quot;%c&quot;</span>,c);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">while</span> (c != EOF){</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        printf(<span class="stringliteral">&quot;%c&quot;</span>,c);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        c=fgetc(file);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    fclose(file);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="ttc" id="aaffichage_8c_html_a1ac3bdfbdc153068f7218a946e4e3e8c"><div class="ttname"><a href="affichage_8c.html#a1ac3bdfbdc153068f7218a946e4e3e8c">affichageDonneesChoix</a></div><div class="ttdeci">int affichageDonneesChoix()</div><div class="ttdoc">Permet à l'utilisateur de choisir s'il souhaite afficher le résultat de l'analyse de trames GPS donné...</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8c_source.html#l00057">affichage.c:57</a></div></div>
+<div class="ttc" id="aaffichage_8c_html_a7864f4c36edf57890d9e7681198cf8bb"><div class="ttname"><a href="affichage_8c.html#a7864f4c36edf57890d9e7681198cf8bb">affichageDonneesFichier</a></div><div class="ttdeci">void affichageDonneesFichier(char nomFic[])</div><div class="ttdoc">Affiche le contenu du fichier contenant le résultat de l'analyse de trames GPS.</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8c_source.html#l00069">affichage.c:69</a></div></div>
 <div class="ttc" id="aaffichage_8c_html_a7c190fbca47364a8ddc6c5a2c50c308e"><div class="ttname"><a href="affichage_8c.html#a7c190fbca47364a8ddc6c5a2c50c308e">affichageMenu</a></div><div class="ttdeci">int affichageMenu()</div><div class="ttdoc">Affiche le menu et permet à l'utilisateur de choisir une méthode pour lire les données.</div><div class="ttdef"><b>Definition:</b> <a href="affichage_8c_source.html#l00041">affichage.c:41</a></div></div>
 <div class="ttc" id="aaffichage_8h_html"><div class="ttname"><a href="affichage_8h.html">affichage.h</a></div><div class="ttdoc">Ce fichier contient les déclarations des fonctions pour l'affichage des données GPS.</div></div>
 <div class="ttc" id="aconversion_8h_html"><div class="ttname"><a href="conversion_8h.html">conversion.h</a></div><div class="ttdoc">Ce fichier contient les déclarations des fonctions pour convertir les données GPS.</div></div>

@@ -137,19 +137,19 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="conversion_8c_source.html#l00080">80</a> of file <a class="el" href="conversion_8c_source.html">conversion.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                           {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">char</span> heureChar[3]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">char</span> minuteChar[3]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">char</span> secondChar[3]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    strncat(heureChar,heure,2);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    strncat(minuteChar,heure+2,2);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    strncat(secondChar,heure+4,2);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    h-&gt;<a class="code" href="structheureInfo.html#ab54841d8fa6fbde98300765ad23d1527">heure</a>=strtol(heureChar,NULL,10);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    h-&gt;<a class="code" href="structheureInfo.html#a310ea773c06448c7498e7778d6a7684c">minute</a>=strtol(minuteChar,NULL,10);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    h-&gt;<a class="code" href="structheureInfo.html#a3de49535b792c032cd4e8e5a109dd08b">second</a>=strtol(secondChar,NULL,10);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="conversion_8c_source.html#l00074">74</a> of file <a class="el" href="conversion_8c_source.html">conversion.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                                           {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">char</span> heureChar[3]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">char</span> minuteChar[3]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">char</span> secondChar[3]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    strncat(heureChar,heure,2);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    strncat(minuteChar,heure+2,2);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    strncat(secondChar,heure+4,2);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    h-&gt;<a class="code" href="structheureInfo.html#ab54841d8fa6fbde98300765ad23d1527">heure</a>=strtol(heureChar,NULL,10);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    h-&gt;<a class="code" href="structheureInfo.html#a310ea773c06448c7498e7778d6a7684c">minute</a>=strtol(minuteChar,NULL,10);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    h-&gt;<a class="code" href="structheureInfo.html#a3de49535b792c032cd4e8e5a109dd08b">second</a>=strtol(secondChar,NULL,10);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 <div class="ttc" id="astructheureInfo_html_a310ea773c06448c7498e7778d6a7684c"><div class="ttname"><a href="structheureInfo.html#a310ea773c06448c7498e7778d6a7684c">heureInfo::minute</a></div><div class="ttdeci">int minute</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8h_source.html#l00064">conversion.h:64</a></div></div>
 <div class="ttc" id="astructheureInfo_html_a3de49535b792c032cd4e8e5a109dd08b"><div class="ttname"><a href="structheureInfo.html#a3de49535b792c032cd4e8e5a109dd08b">heureInfo::second</a></div><div class="ttdeci">int second</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8h_source.html#l00065">conversion.h:65</a></div></div>
 <div class="ttc" id="astructheureInfo_html_ab54841d8fa6fbde98300765ad23d1527"><div class="ttname"><a href="structheureInfo.html#ab54841d8fa6fbde98300765ad23d1527">heureInfo::heure</a></div><div class="ttdeci">int heure</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8h_source.html#l00063">conversion.h:63</a></div></div>
@@ -194,24 +194,21 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="conversion_8c_source.html#l00040">40</a> of file <a class="el" href="conversion_8c_source.html">conversion.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                                     {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">float</span> l;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">float</span> decimaux;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">char</span> degC[3]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">char</span> minC[3]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">char</span> secC[LONGUEUR_LONG_LAT]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">char</span>* p = strchr(dec,<span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    strncat(degC,dec,2);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a5e460b73705789c00d05a2d0167cc03f">degre</a>=strtol(degC,NULL,10);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    strncat(minC,dec+2,2);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a96f61f6df40f6a8704860dc9c303471c">minute</a>=strtol(minC,NULL,10);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    secC[0]=<span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    strncat(secC,dec+4,p-(dec+4));</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a415d6d599f8e7e0a825f0d8990bc9ec8">second</a>=strtof(secC,NULL)*60;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a5ad853976ce381c4f5fb83a53a4378b9">orientation</a>=*(p+1);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">char</span> degC[3]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">char</span> minC[3]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">char</span> secC[LONGUEUR_LONG_LAT]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">char</span>* p = strchr(dec,<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    strncat(degC,dec,2);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a5e460b73705789c00d05a2d0167cc03f">degre</a>=strtol(degC,NULL,10);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    strncat(minC,dec+2,2);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a96f61f6df40f6a8704860dc9c303471c">minute</a>=strtol(minC,NULL,10);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    secC[0]=<span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    strncat(secC,dec+4,p-(dec+4));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a415d6d599f8e7e0a825f0d8990bc9ec8">second</a>=strtof(secC,NULL)*60;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a5ad853976ce381c4f5fb83a53a4378b9">orientation</a>=*(p+1);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="ttc" id="astructdmsInfo_html_a415d6d599f8e7e0a825f0d8990bc9ec8"><div class="ttname"><a href="structdmsInfo.html#a415d6d599f8e7e0a825f0d8990bc9ec8">dmsInfo::second</a></div><div class="ttdeci">float second</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8h_source.html#l00052">conversion.h:52</a></div></div>
 <div class="ttc" id="astructdmsInfo_html_a5ad853976ce381c4f5fb83a53a4378b9"><div class="ttname"><a href="structdmsInfo.html#a5ad853976ce381c4f5fb83a53a4378b9">dmsInfo::orientation</a></div><div class="ttdeci">char orientation</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8h_source.html#l00053">conversion.h:53</a></div></div>
 <div class="ttc" id="astructdmsInfo_html_a5e460b73705789c00d05a2d0167cc03f"><div class="ttname"><a href="structdmsInfo.html#a5e460b73705789c00d05a2d0167cc03f">dmsInfo::degre</a></div><div class="ttdeci">int degre</div><div class="ttdef"><b>Definition:</b> <a href="conversion_8h_source.html#l00050">conversion.h:50</a></div></div>
@@ -255,26 +252,23 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="conversion_8c_source.html#l00060">60</a> of file <a class="el" href="conversion_8c_source.html">conversion.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                      {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">float</span> l;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">float</span> decimaux;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">char</span> degC[3]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">char</span> minC[3]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">char</span> secC[LONGUEUR_LONG_LAT]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">char</span>* p = strchr(dec,<span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    strncat(degC,dec,3);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a5e460b73705789c00d05a2d0167cc03f">degre</a>=strtol(degC,NULL,10);</div>
+<p class="definition">Definition at line <a class="el" href="conversion_8c_source.html#l00057">57</a> of file <a class="el" href="conversion_8c_source.html">conversion.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                                      {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">char</span> degC[3]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">char</span> minC[3]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">char</span> secC[LONGUEUR_LONG_LAT]=<span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">char</span>* p = strchr(dec,<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    strncat(degC,dec,3);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a5e460b73705789c00d05a2d0167cc03f">degre</a>=strtol(degC,NULL,10);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    strncat(minC,dec+3,2);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a96f61f6df40f6a8704860dc9c303471c">minute</a>=strtol(minC,NULL,10);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    secC[0]=<span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    strncat(secC,dec+5,p-(dec+5));</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a415d6d599f8e7e0a825f0d8990bc9ec8">second</a>=strtof(secC,NULL)*60;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    p = strchr(dec,<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a5ad853976ce381c4f5fb83a53a4378b9">orientation</a>=*(p+1);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    strncat(minC,dec+3,2);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a96f61f6df40f6a8704860dc9c303471c">minute</a>=strtol(minC,NULL,10);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    secC[0]=<span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    strncat(secC,dec+5,p-(dec+4));</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a415d6d599f8e7e0a825f0d8990bc9ec8">second</a>=strtof(secC,NULL)*60;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    d-&gt;<a class="code" href="structdmsInfo.html#a5ad853976ce381c4f5fb83a53a4378b9">orientation</a>=*(p+1);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

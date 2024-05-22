@@ -64,22 +64,22 @@ Cette fonction prend une heure en format chaîne de caractères (HHMMSS) et la c
 \end{DoxyParams}
 
 
-Definition at line 80 of file conversion.\+c.
+Definition at line 74 of file conversion.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{80                                                            \{}
-\DoxyCodeLine{81     \textcolor{keywordtype}{char} heureChar[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
-\DoxyCodeLine{82     \textcolor{keywordtype}{char} minuteChar[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
-\DoxyCodeLine{83     \textcolor{keywordtype}{char} secondChar[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
-\DoxyCodeLine{84 }
-\DoxyCodeLine{85     strncat(heureChar,heure,2);}
-\DoxyCodeLine{86     strncat(minuteChar,heure+2,2);}
-\DoxyCodeLine{87     strncat(secondChar,heure+4,2);}
-\DoxyCodeLine{88     h-\/>\mbox{\hyperlink{structheureInfo_ab54841d8fa6fbde98300765ad23d1527}{heure}}=strtol(heureChar,NULL,10);}
-\DoxyCodeLine{89     h-\/>\mbox{\hyperlink{structheureInfo_a310ea773c06448c7498e7778d6a7684c}{minute}}=strtol(minuteChar,NULL,10);}
-\DoxyCodeLine{90     h-\/>\mbox{\hyperlink{structheureInfo_a3de49535b792c032cd4e8e5a109dd08b}{second}}=strtol(secondChar,NULL,10);}
-\DoxyCodeLine{91 \}}
+\DoxyCodeLine{74                                                            \{}
+\DoxyCodeLine{75     \textcolor{keywordtype}{char} heureChar[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{76     \textcolor{keywordtype}{char} minuteChar[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{77     \textcolor{keywordtype}{char} secondChar[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     strncat(heureChar,heure,2);}
+\DoxyCodeLine{80     strncat(minuteChar,heure+2,2);}
+\DoxyCodeLine{81     strncat(secondChar,heure+4,2);}
+\DoxyCodeLine{82     h-\/>\mbox{\hyperlink{structheureInfo_ab54841d8fa6fbde98300765ad23d1527}{heure}}=strtol(heureChar,NULL,10);}
+\DoxyCodeLine{83     h-\/>\mbox{\hyperlink{structheureInfo_a310ea773c06448c7498e7778d6a7684c}{minute}}=strtol(minuteChar,NULL,10);}
+\DoxyCodeLine{84     h-\/>\mbox{\hyperlink{structheureInfo_a3de49535b792c032cd4e8e5a109dd08b}{second}}=strtol(secondChar,NULL,10);}
+\DoxyCodeLine{85 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{conversion_8h_ad58ecd23fb80830563dd233ec1527d14}\label{conversion_8h_ad58ecd23fb80830563dd233ec1527d14}} 
@@ -108,24 +108,21 @@ Definition at line 40 of file conversion.\+c.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{40                                                      \{}
-\DoxyCodeLine{41     \textcolor{keywordtype}{float} l;}
-\DoxyCodeLine{42     \textcolor{keywordtype}{float} decimaux;}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44     \textcolor{keywordtype}{char} degC[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
-\DoxyCodeLine{45     \textcolor{keywordtype}{char} minC[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
-\DoxyCodeLine{46     \textcolor{keywordtype}{char} secC[LONGUEUR\_LONG\_LAT]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
-\DoxyCodeLine{47     \textcolor{keywordtype}{char}* p = strchr(dec,\textcolor{charliteral}{','});}
-\DoxyCodeLine{48     }
-\DoxyCodeLine{49     strncat(degC,dec,2);}
-\DoxyCodeLine{50     d-\/>\mbox{\hyperlink{structdmsInfo_a5e460b73705789c00d05a2d0167cc03f}{degre}}=strtol(degC,NULL,10);}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52     strncat(minC,dec+2,2);}
-\DoxyCodeLine{53     d-\/>\mbox{\hyperlink{structdmsInfo_a96f61f6df40f6a8704860dc9c303471c}{minute}}=strtol(minC,NULL,10);}
-\DoxyCodeLine{54     secC[0]=\textcolor{charliteral}{'0'};}
-\DoxyCodeLine{55     strncat(secC,dec+4,p-\/(dec+4));}
-\DoxyCodeLine{56     d-\/>\mbox{\hyperlink{structdmsInfo_a415d6d599f8e7e0a825f0d8990bc9ec8}{second}}=strtof(secC,NULL)*60;}
-\DoxyCodeLine{57     d-\/>\mbox{\hyperlink{structdmsInfo_a5ad853976ce381c4f5fb83a53a4378b9}{orientation}}=*(p+1);}
-\DoxyCodeLine{58 \}}
+\DoxyCodeLine{41     \textcolor{keywordtype}{char} degC[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{42     \textcolor{keywordtype}{char} minC[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{43     \textcolor{keywordtype}{char} secC[LONGUEUR\_LONG\_LAT]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{44     \textcolor{keywordtype}{char}* p = strchr(dec,\textcolor{charliteral}{','});}
+\DoxyCodeLine{45     }
+\DoxyCodeLine{46     strncat(degC,dec,2);}
+\DoxyCodeLine{47     d-\/>\mbox{\hyperlink{structdmsInfo_a5e460b73705789c00d05a2d0167cc03f}{degre}}=strtol(degC,NULL,10);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     strncat(minC,dec+2,2);}
+\DoxyCodeLine{50     d-\/>\mbox{\hyperlink{structdmsInfo_a96f61f6df40f6a8704860dc9c303471c}{minute}}=strtol(minC,NULL,10);}
+\DoxyCodeLine{51     secC[0]=\textcolor{charliteral}{'0'};}
+\DoxyCodeLine{52     strncat(secC,dec+4,p-\/(dec+4));}
+\DoxyCodeLine{53     d-\/>\mbox{\hyperlink{structdmsInfo_a415d6d599f8e7e0a825f0d8990bc9ec8}{second}}=strtof(secC,NULL)*60;}
+\DoxyCodeLine{54     d-\/>\mbox{\hyperlink{structdmsInfo_a5ad853976ce381c4f5fb83a53a4378b9}{orientation}}=*(p+1);}
+\DoxyCodeLine{55 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{conversion_8h_a6bc2d485dcc79873ff6322b8b99d4ca9}\label{conversion_8h_a6bc2d485dcc79873ff6322b8b99d4ca9}} 
@@ -149,28 +146,25 @@ Cette fonction prend une longitude en format décimal (chaîne de caractères) e
 \end{DoxyParams}
 
 
-Definition at line 60 of file conversion.\+c.
+Definition at line 57 of file conversion.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{60                                                       \{}
-\DoxyCodeLine{61     \textcolor{keywordtype}{float} l;}
-\DoxyCodeLine{62     \textcolor{keywordtype}{float} decimaux;}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64     \textcolor{keywordtype}{char} degC[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
-\DoxyCodeLine{65     \textcolor{keywordtype}{char} minC[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
-\DoxyCodeLine{66     \textcolor{keywordtype}{char} secC[LONGUEUR\_LONG\_LAT]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
-\DoxyCodeLine{67     \textcolor{keywordtype}{char}* p = strchr(dec,\textcolor{charliteral}{','});}
-\DoxyCodeLine{68     }
-\DoxyCodeLine{69     strncat(degC,dec,3);}
-\DoxyCodeLine{70     d-\/>\mbox{\hyperlink{structdmsInfo_a5e460b73705789c00d05a2d0167cc03f}{degre}}=strtol(degC,NULL,10);}
+\DoxyCodeLine{57                                                       \{}
+\DoxyCodeLine{58     \textcolor{keywordtype}{char} degC[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{59     \textcolor{keywordtype}{char} minC[3]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{60     \textcolor{keywordtype}{char} secC[LONGUEUR\_LONG\_LAT]=\textcolor{stringliteral}{"{}\(\backslash\)0"{}};}
+\DoxyCodeLine{61     \textcolor{keywordtype}{char}* p = strchr(dec,\textcolor{charliteral}{','});}
+\DoxyCodeLine{62     strncat(degC,dec,3);}
+\DoxyCodeLine{63     d-\/>\mbox{\hyperlink{structdmsInfo_a5e460b73705789c00d05a2d0167cc03f}{degre}}=strtol(degC,NULL,10);}
+\DoxyCodeLine{64     strncat(minC,dec+3,2);}
+\DoxyCodeLine{65     d-\/>\mbox{\hyperlink{structdmsInfo_a96f61f6df40f6a8704860dc9c303471c}{minute}}=strtol(minC,NULL,10);}
+\DoxyCodeLine{66     secC[0]=\textcolor{charliteral}{'0'};}
+\DoxyCodeLine{67     strncat(secC,dec+5,p-\/(dec+5));}
+\DoxyCodeLine{68     d-\/>\mbox{\hyperlink{structdmsInfo_a415d6d599f8e7e0a825f0d8990bc9ec8}{second}}=strtof(secC,NULL)*60;}
+\DoxyCodeLine{69     p = strchr(dec,\textcolor{charliteral}{','});}
+\DoxyCodeLine{70     d-\/>\mbox{\hyperlink{structdmsInfo_a5ad853976ce381c4f5fb83a53a4378b9}{orientation}}=*(p+1);}
 \DoxyCodeLine{71 }
-\DoxyCodeLine{72     strncat(minC,dec+3,2);}
-\DoxyCodeLine{73     d-\/>\mbox{\hyperlink{structdmsInfo_a96f61f6df40f6a8704860dc9c303471c}{minute}}=strtol(minC,NULL,10);}
-\DoxyCodeLine{74     secC[0]=\textcolor{charliteral}{'0'};}
-\DoxyCodeLine{75     strncat(secC,dec+5,p-\/(dec+4));}
-\DoxyCodeLine{76     d-\/>\mbox{\hyperlink{structdmsInfo_a415d6d599f8e7e0a825f0d8990bc9ec8}{second}}=strtof(secC,NULL)*60;}
-\DoxyCodeLine{77     d-\/>\mbox{\hyperlink{structdmsInfo_a5ad853976ce381c4f5fb83a53a4378b9}{orientation}}=*(p+1);}
-\DoxyCodeLine{78 \}}
+\DoxyCodeLine{72 \}}
 
 \end{DoxyCode}

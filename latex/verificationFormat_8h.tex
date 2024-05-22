@@ -47,9 +47,9 @@ void \mbox{\hyperlink{verificationFormat_8h_aa8612598656151584883a57fc4b5ab17}{v
 \begin{DoxyCompactList}\small\item\em Vérifie le format de l\textquotesingle{}heure dans la trame GPS. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{verificationFormat_8h_ac7a329cfb0776e800305d76d50e44b62}{verifier\+\_\+heure\+\_\+min\+\_\+sec}} (int heure, int min, int sec, jmp\+\_\+buf pt\+Rep)
 \begin{DoxyCompactList}\small\item\em Vérifie le format des heures, minutes et secondes. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{verificationFormat_8h_acf17eff23be33d9dda8876705952027a}{verifier\+\_\+latitude}} (int degre, int minute, float second, jmp\+\_\+buf pt\+Rep)
+void \mbox{\hyperlink{verificationFormat_8h_a5f14d7d0ee0c48cb44f2f5aac279330d}{verifier\+\_\+latitude}} (int degre, int minute, float second, char orientation, jmp\+\_\+buf pt\+Rep)
 \begin{DoxyCompactList}\small\item\em Vérifie le format de la latitude dans la trame GPS. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{verificationFormat_8h_a6e6448a215b6acf053b0dba7d8be47be}{verifier\+\_\+longitude}} (int degre, int minute, float second, jmp\+\_\+buf pt\+Rep)
+void \mbox{\hyperlink{verificationFormat_8h_a5489f3e3ffa7fde832400fc523c1b370}{verifier\+\_\+longitude}} (int degre, int minute, float second, char orientation, jmp\+\_\+buf pt\+Rep)
 \begin{DoxyCompactList}\small\item\em Vérifie le format de la longitude dans la trame GPS. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -135,11 +135,11 @@ Definition at line 65 of file verification\+Format.\+c.
 \DoxyCodeLine{69 \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{verificationFormat_8h_acf17eff23be33d9dda8876705952027a}\label{verificationFormat_8h_acf17eff23be33d9dda8876705952027a}} 
+\mbox{\Hypertarget{verificationFormat_8h_a5f14d7d0ee0c48cb44f2f5aac279330d}\label{verificationFormat_8h_a5f14d7d0ee0c48cb44f2f5aac279330d}} 
 \index{verificationFormat.h@{verificationFormat.h}!verifier\_latitude@{verifier\_latitude}}
 \index{verifier\_latitude@{verifier\_latitude}!verificationFormat.h@{verificationFormat.h}}
 \doxysubsubsection{\texorpdfstring{verifier\_latitude()}{verifier\_latitude()}}
-{\footnotesize\ttfamily void verifier\+\_\+latitude (\begin{DoxyParamCaption}\item[{int}]{degre,  }\item[{int}]{minute,  }\item[{float}]{second,  }\item[{jmp\+\_\+buf}]{pt\+Rep }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void verifier\+\_\+latitude (\begin{DoxyParamCaption}\item[{int}]{degre,  }\item[{int}]{minute,  }\item[{float}]{second,  }\item[{char}]{orientation,  }\item[{jmp\+\_\+buf}]{pt\+Rep }\end{DoxyParamCaption})}
 
 
 
@@ -155,6 +155,8 @@ Cette fonction vérifie si la latitude est dans une plage valide. Si la latitude
 \hline
 {\em second} & Seconde de latitude. \\
 \hline
+{\em orientation} & Orientation de latitude \\
+\hline
 {\em pt\+Rep} & Pointeur vers le contexte de saut pour gérer les erreurs. \\
 \hline
 \end{DoxyParams}
@@ -164,18 +166,18 @@ Definition at line 71 of file verification\+Format.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{71                                                                           \{}
-\DoxyCodeLine{72     \textcolor{keywordflow}{if} (degre<0 || degre>90 || minute<0 || minute>59 || second<0 || second>59)\{}
+\DoxyCodeLine{71                                                                                            \{}
+\DoxyCodeLine{72     \textcolor{keywordflow}{if} (degre<0 || degre>90 || minute<0 || minute>59 || second<0 || second>59 || !(orientation==\textcolor{charliteral}{'N'} || orientation==\textcolor{charliteral}{'S'}))\{}
 \DoxyCodeLine{73         longjmp(ptRep,LATITUDE\_INVALIDE);}
 \DoxyCodeLine{74     \}}
 \DoxyCodeLine{75 \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{verificationFormat_8h_a6e6448a215b6acf053b0dba7d8be47be}\label{verificationFormat_8h_a6e6448a215b6acf053b0dba7d8be47be}} 
+\mbox{\Hypertarget{verificationFormat_8h_a5489f3e3ffa7fde832400fc523c1b370}\label{verificationFormat_8h_a5489f3e3ffa7fde832400fc523c1b370}} 
 \index{verificationFormat.h@{verificationFormat.h}!verifier\_longitude@{verifier\_longitude}}
 \index{verifier\_longitude@{verifier\_longitude}!verificationFormat.h@{verificationFormat.h}}
 \doxysubsubsection{\texorpdfstring{verifier\_longitude()}{verifier\_longitude()}}
-{\footnotesize\ttfamily void verifier\+\_\+longitude (\begin{DoxyParamCaption}\item[{int}]{degre,  }\item[{int}]{minute,  }\item[{float}]{second,  }\item[{jmp\+\_\+buf}]{pt\+Rep }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void verifier\+\_\+longitude (\begin{DoxyParamCaption}\item[{int}]{degre,  }\item[{int}]{minute,  }\item[{float}]{second,  }\item[{char}]{orientation,  }\item[{jmp\+\_\+buf}]{pt\+Rep }\end{DoxyParamCaption})}
 
 
 
@@ -191,6 +193,8 @@ Cette fonction vérifie si la longitude est dans une plage valide. Si la longitu
 \hline
 {\em second} & Seconde de longitude. \\
 \hline
+{\em orientation} & Orientation de longitude \\
+\hline
 {\em pt\+Rep} & Pointeur vers le contexte de saut pour gérer les erreurs. \\
 \hline
 \end{DoxyParams}
@@ -200,8 +204,8 @@ Definition at line 77 of file verification\+Format.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{77                                                                            \{}
-\DoxyCodeLine{78     \textcolor{keywordflow}{if} (degre<0 || degre>180 || minute<0 || minute>59 || second<0 || second>59)\{}
+\DoxyCodeLine{77                                                                                             \{}
+\DoxyCodeLine{78     \textcolor{keywordflow}{if} (degre<0 || degre>180 || minute<0 || minute>59 || second<0 || second>59 || !(orientation==\textcolor{charliteral}{'S'} || orientation==\textcolor{charliteral}{'W'}))\{}
 \DoxyCodeLine{79         longjmp(ptRep,LONGITUDE\_INVALIDE);}
 \DoxyCodeLine{80     \}}
 \DoxyCodeLine{81 \}}

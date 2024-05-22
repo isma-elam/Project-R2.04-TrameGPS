@@ -38,9 +38,6 @@
 #include "extraction.h"
 
 void conversionLat(char* const dec,struct dmsInfo* d){
-    float l;
-    float decimaux;
-
     char degC[3]="\0";
     char minC[3]="\0";
     char secC[LONGUEUR_LONG_LAT]="\0";
@@ -58,23 +55,20 @@ void conversionLat(char* const dec,struct dmsInfo* d){
 }
 
 void conversionLong(char* const dec,struct dmsInfo* d){
-    float l;
-    float decimaux;
-
     char degC[3]="\0";
     char minC[3]="\0";
     char secC[LONGUEUR_LONG_LAT]="\0";
     char* p = strchr(dec,',');
-    
     strncat(degC,dec,3);
     d->degre=strtol(degC,NULL,10);
-
     strncat(minC,dec+3,2);
     d->minute=strtol(minC,NULL,10);
     secC[0]='0';
-    strncat(secC,dec+5,p-(dec+4));
+    strncat(secC,dec+5,p-(dec+5));
     d->second=strtof(secC,NULL)*60;
+    p = strchr(dec,',');
     d->orientation=*(p+1);
+
 }
 
 void conversionHeure(char* const heure,struct heureInfo* h){

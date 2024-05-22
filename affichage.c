@@ -39,19 +39,20 @@
 #include "conversion.h"
 
 int affichageMenu(){
-    int choix = -1;
+    char choix = '9';
     printf("Comment voulez-vous lire vos données? Veuillez choisir l'une des méthodes suivantes pour commencer:\n");
     printf("1 - Saisir mes données manuellement\n");
     printf("2 - Lire mes données à partir d'un fichier\n");
     printf("0 - Je quitte l'application\n");
-    scanf("%d",&choix);
-    while(choix<0||choix>2){
+    scanf(" %c",&choix);
+    if (choix<'0' || choix>'2'){
         printf("\nErreur de saisie, veuillez réessayer.\n\n");
-        affichageMenu(&choix);
-        scanf("%d",&choix);
+        return affichageMenu(); 
     } 
-    return choix;
+    return strtol(&choix,NULL,10);
 }
+
+
 
 int affichageDonneesChoix(){
     int choixAffichage=0;
